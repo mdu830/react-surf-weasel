@@ -1,0 +1,37 @@
+
+
+.titleBar {
+    box-shadow:
+    -1px -1px 0 rgba(255, 255, 255, 0),
+    1px 1px 0 rgba(0,0,0,.25),
+    3px 3px 3px rgba(0,0,0,.25);
+}
+
+.icon {
+    width: 100px;
+    height: auto;
+}
+
+.appTitle {
+    color: black;
+    font-weight: bolder;
+    font-size: 40px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-shadow:
+    -1px -1px 0 rgba(255, 255, 255, 0),
+    1px 1px 0 rgba(0,0,0,.25),
+    3px 3px 3px rgba(0,0,0,.25);;
+}
+
+.navBrand {
+    padding-left: 10px;
+    margin-bottom: 2.5px;
+}
+
+.navigation {
+    margin-top: 4px;
+}
+
+.navToggler {
+    padding-right: 20px;
+}
