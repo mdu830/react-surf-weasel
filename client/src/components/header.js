@@ -30,7 +30,7 @@ const Header = (props) => {
                 <Navbar className="titleBar" color="light" light expand="md">
                     <NavbarBrand href="/"><img className="image-fluid icon" alt="" src={Icon}></img></NavbarBrand>
                     <div className="appTitle mr-auto">Surf Weasel</div>
-                    <NavbarToggler className="m-1 mb-2" onClick={toggle} />
+                    <NavbarToggler className="m-3" onClick={toggle} />
                     <Collapse isOpen={isOpen} navbar>
                         <Nav className="mr-auto" navbar>
 
