@@ -44,3 +44,16 @@
     width: 100%;
     height: auto;
 }
+
+@media screen and (max-width: 551px) {
+    .appTitle {
+        color: black;
+        font-weight: bolder;
+        font-size: 30px;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        text-shadow:
+        -1px -1px 0 rgba(255, 255, 255, 0),
+        1px 1px 0 rgba(0,0,0,.25),
+        3px 3px 3px rgba(0,0,0,.25);
+    }
+}
