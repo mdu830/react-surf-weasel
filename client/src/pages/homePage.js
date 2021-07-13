@@ -37,7 +37,7 @@ const items = [
 ];
 
 const homePage = (props) => {
-
+    
     const [activeIndex, setActiveIndex] = useState(0);
     const [animating, setAnimating] = useState(false);
 
@@ -61,8 +61,6 @@ const homePage = (props) => {
     const slides = items.map((item) => {
         return (
             <CarouselItem
-                fade={true}
-                slide={false}
                 onExiting={() => setAnimating(true)}
                 onExited={() => setAnimating(false)}
                 key={item.src}
@@ -75,6 +73,7 @@ const homePage = (props) => {
 
     return (
         <Carousel
+            fade={true}
             activeIndex={activeIndex}
             next={next}
             previous={previous}
