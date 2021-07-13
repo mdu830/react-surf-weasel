@@ -62,7 +62,7 @@ const homePage = (props) => {
         return (
             <CarouselItem
                 onExiting={() => setAnimating(true)}
-                onExited={() => setAnimating(false)}
+                onExited={() => setAnimating(true)}
                 key={item.src}
             >
                 <img className="slideImg" src={item.src} alt={item.altText} />
