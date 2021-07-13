@@ -73,6 +73,8 @@ const homePage = (props) => {
 
     return (
         <Carousel
+            fade={true}
+            slide={false}
             activeIndex={activeIndex}
             next={next}
             previous={previous}
