@@ -13,9 +13,10 @@ import waveOrange from '../assets/images/waveOrange.jpg'
 import waveBlue from '../assets/images/waveBlue.jpg'
 import waveGreen from '../assets/images/waveGreen.jpg'
 
-import { fadeIn } from 'react-animations'
-import styled, {keyframes} from 'styled-components'
+// import { fadeIn } from 'react-animations'
+// import styled, {keyframes} from 'styled-components'
 
+// const Animate = styled.div`animation: 1.3s ${keyframes`${fadeIn}`} `;
 
 const items = [
     {
@@ -78,8 +79,8 @@ const homePage = (props) => {
         >
             <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
             {slides}
-            <CarouselControl direction="prev" directionText="" onClickHandler={previous} />
-            <CarouselControl direction="next" directionText="" onClickHandler={next} />
+            <CarouselControl direction="prev" directionText=" " onClickHandler={previous} />
+            <CarouselControl direction="next" directionText=" " onClickHandler={next} />
         </Carousel>
     );
 }
