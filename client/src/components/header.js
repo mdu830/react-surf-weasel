@@ -29,7 +29,8 @@ const Header = (props) => {
                     <div className="appTitle mr-auto">Surf Weasel</div>
                 </nav>
                 <Navbar className="navigation" color="light" light expand="md">
-                    <NavbarBrand className="navBrand" href="/">Welcome to surf Weasel!</NavbarBrand>
+                    <NavbarBrand className="navBrand" href="/">Home</NavbarBrand>
+                    
                     <NavbarToggler className="m-2" onClick={toggle} />
                     <Collapse isOpen={isOpen} navbar>
                         <Nav className="mr-auto" navbar>
