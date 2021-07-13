@@ -1,4 +1,4 @@
-
+/* Header */
 
 .titleBar {
     box-shadow:
@@ -34,4 +34,11 @@
 
 .navToggler {
     padding-right: 20px;
+}
+
+/* Home Page */
+
+.slideImg {
+    width: 100%;
+    height: auto;
 }

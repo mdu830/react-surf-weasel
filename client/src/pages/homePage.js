@@ -60,7 +60,7 @@ const homePage = (props) => {
                 onExited={() => setAnimating(false)}
                 key={item.src}
             >
-                <img src={item.src} alt={item.altText} />
+                <img className="slideImg" src={item.src} alt={item.altText} />
                 <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
             </CarouselItem>
         );
@@ -74,8 +74,8 @@ const homePage = (props) => {
         >
             <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
             {slides}
-            <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
-            <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
+            <CarouselControl direction="prev" directionText="" onClickHandler={previous} />
+            <CarouselControl direction="next" directionText="" onClickHandler={next} />
         </Carousel>
     );
 }
