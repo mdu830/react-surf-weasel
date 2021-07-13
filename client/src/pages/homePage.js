@@ -13,6 +13,9 @@ import waveOrange from '../assets/images/waveOrange.jpg'
 import waveBlue from '../assets/images/waveBlue.jpg'
 import waveGreen from '../assets/images/waveGreen.jpg'
 
+import { fadeIn } from 'react-animations'
+import styled, {keyframes} from 'styled-components'
+
 
 const items = [
     {
