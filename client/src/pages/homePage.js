@@ -8,6 +8,7 @@ import {
     CarouselIndicators,
     CarouselCaption
 } from 'reactstrap';
+
 import waveOrange from '../assets/images/waveOrange.jpg'
 import waveBlue from '../assets/images/waveBlue.jpg'
 import waveGreen from '../assets/images/waveGreen.jpg'
@@ -16,18 +17,18 @@ import waveGreen from '../assets/images/waveGreen.jpg'
 const items = [
     {
         src: waveOrange,
-        altText: 'Slide 1',
-        caption: 'Slide 1'
+        altText: '',
+        caption: ''
     },
     {
         src: waveBlue,
-        altText: 'Slide 2',
-        caption: 'Slide 2'
+        altText: '',
+        caption: ''
     },
     {
         src: waveGreen,
-        altText: 'Slide 3',
-        caption: 'Slide 3'
+        altText: '',
+        caption: ''
     }
 ];
 

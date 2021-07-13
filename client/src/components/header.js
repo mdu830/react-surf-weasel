@@ -24,13 +24,12 @@ const Header = (props) => {
     return (
         <>
             <div>
-                <nav className="navbar justify-content-center bg-light titleBar">
+                {/* <nav className="navbar justify-content-center bg-light titleBar">
+
+                </nav> */}
+                <Navbar className="titleBar" color="light" light expand="md">
                     <NavbarBrand href="/"><img className="image-fluid icon" alt="" src={Icon}></img></NavbarBrand>
                     <div className="appTitle mr-auto">Surf Weasel</div>
-                </nav>
-                <Navbar className="navigation" color="light" light expand="md">
-                    <NavbarBrand className="navBrand" href="/">Home</NavbarBrand>
-                    
                     <NavbarToggler className="m-2" onClick={toggle} />
                     <Collapse isOpen={isOpen} navbar>
                         <Nav className="mr-auto" navbar>
