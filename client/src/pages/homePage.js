@@ -1,4 +1,4 @@
-/* eslint-disable react-hooks/rules-of-hooks */
+
 
 import React, { useState } from 'react';
 import Carousel from 'react-material-ui-carousel'
