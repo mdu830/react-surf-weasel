@@ -1,7 +1,7 @@
 {
   "name": "surf-weasel-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "An application that helps surfers find the best conditions for waves",
   "main": "server.js",
   "scripts": {
     "start": "NODE_ENV=production && npm run start:prod || npm run start:dev",
