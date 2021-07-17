@@ -39,7 +39,7 @@ class homePage extends React.Component {
           <TweenOne className="banner-user-text" 
             animation={{ y: 30, opacity: 0, type: 'from', delay: 100 }}
           >
-            The Best Place to Find the Swell
+            The Best Place to Find the Swell So You Can Shred the Gnar
           </TweenOne>
         </Element>
         <Element 
