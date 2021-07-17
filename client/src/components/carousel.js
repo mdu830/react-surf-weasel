@@ -19,7 +19,7 @@ class Carousel extends React.Component {
 
   render(){
     return (
-      <BannerAnim prefixCls="banner-user" type="acrossOverlay" autoPlay>
+      <BannerAnim prefixCls="banner-user" type="acrossOverlay" autoPlay duration="1000">
         <Element 
           prefixCls="banner-user-elem"
           key="0"
