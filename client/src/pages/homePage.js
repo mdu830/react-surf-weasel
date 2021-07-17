@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Carousel from 'react-material-ui-carousel'
-import { Paper, Button } from '@material-ui/core'
 
 import waveOrange from '../assets/images/waveOrange.jpg'
 import waveBlue from '../assets/images/waveBlue.jpg'
@@ -27,7 +26,6 @@ const items = [
 ];
 
 const homePage = (props) => {
-
 
     return (
         <Carousel>
