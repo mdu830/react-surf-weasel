@@ -14,6 +14,9 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: {
         marginLeft: theme.spacing(3),
     },
+    marginRight: {
+        marginRight: theme.spacing(4),
+    },
     marginBottom: {
         marginBottom: theme.spacing(.5),
     },
@@ -31,7 +34,7 @@ const SearchBar = () => {
                     <Grid item className={classes.marginLeft}>
                         <SearchIcon />
                     </Grid>
-                    <Grid item>
+                    <Grid item className={classes.marginRight}>
                         <TextField id="input-with-icon-grid" label="Beach Search" />
                     </Grid>
                     <Grid item className={classes.marginLeft}>
