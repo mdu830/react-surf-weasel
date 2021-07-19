@@ -30,6 +30,8 @@ const Header = (props) => {
                 <Navbar className="titleBar" color="light" light expand="md">
                     <NavbarBrand href="/"><img className="image-fluid icon" alt="" src={Icon}></img></NavbarBrand>
                     <div className="appTitle mr-auto">Surf Weasel</div>
+                    
+
                     <NavbarToggler className="m-3" onClick={toggle} />
                     <Collapse isOpen={isOpen} navbar>
                         <Nav className="mr-auto" navbar>
@@ -40,21 +42,6 @@ const Header = (props) => {
                             <NavItem>
                                 <NavLink href="/register">Register</NavLink>
                             </NavItem>
-
-                            {/* <UncontrolledDropdown nav inNavbar>
-                                <DropdownToggle nav caret>
-                                    Sign In
-                                </DropdownToggle>
-                                <DropdownMenu right>
-                                    <DropdownItem>
-                                        <NavLink href="/login">Login</NavLink>
-                                    </DropdownItem>
-                                    <DropdownItem divider />
-                                    <DropdownItem>
-                                        <NavLink href="/register">Register</NavLink>
-                                    </DropdownItem>
-                                </DropdownMenu>
-                            </UncontrolledDropdown> */}
                         </Nav>
                     </Collapse>
                 </Navbar>
