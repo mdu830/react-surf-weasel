@@ -12,7 +12,9 @@ import {
     NavLink
 } from 'reactstrap';
 
-const Header = (props) => {
+function Header() {
+
+    const history = useHistory;
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -34,10 +36,10 @@ const Header = (props) => {
                         <Nav className="mr-auto" navbar>
 
                             <NavItem>
-                                <NavLink href="/login" onClick={() => useHistory.push('/login')}>Login</NavLink>
+                                <NavLink href="/login" onClick={() => history.push('/login')}>Login</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/register">Register</NavLink>
+                                <NavLink href="/register" onClick={() => history.push('/register')}>Register</NavLink>
                             </NavItem>
                         </Nav>
                     </Collapse>
