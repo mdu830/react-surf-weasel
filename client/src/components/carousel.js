@@ -95,7 +95,7 @@ class Carousel extends React.Component {
             animation={{ y: 30, opacity: 0, type: 'from', delay: 100 }}
           >
             <div className="carouselText">
-              We are working fast to deliver a smooth experience so you cant spend more time surfing and less time searching for waves
+              We are working fast to deliver a smooth experience so you can spend more time surfing and less time searching for waves
             </div>
           </TweenOne>
         </Element>
