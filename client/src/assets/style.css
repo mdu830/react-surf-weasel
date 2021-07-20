@@ -87,19 +87,26 @@ body {
 .searchIcon {
   margin-top: 23px;
   margin-right: 10px;
+  margin-bottom: 7px;
+
 }
 
 .searchForm{
+  margin-top: 5px;
   margin-left: 40px;
   margin-right: 60px;
+  margin-bottom: 7px;
+
+
 
 }
 
 
 
 .beachButtons {
-  margin-top: 10px;
+  margin-top: 5px;
   margin-left: 10px;
+  margin-bottom: 5px;
 
   box-shadow:
   -1px -1px 0 rgba(255, 255, 255, 0),
