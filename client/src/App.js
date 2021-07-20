@@ -11,11 +11,11 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <Router basename="#/">
+      <Router basename="/">
           <Switch>
-            <Route exact path={["/"]} component={homePage} />
-            <Route exact path={["/register"]} component={registerPage} />
-            <Route exact path={["/login"]} component={loginPage} />
+            <Route exact path={["#/"]} component={homePage} />
+            <Route exact path={["#/register"]} component={registerPage} />
+            <Route exact path={["#/login"]} component={loginPage} />
           </Switch>
       </Router>
     </div>
