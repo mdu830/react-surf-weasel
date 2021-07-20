@@ -1,6 +1,7 @@
 import Icon from "../assets/images/Icon.png"
 import '../assets/style.css'
 import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
 import {
     Collapse,
     Navbar,
@@ -8,11 +9,7 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem
+    NavLink
 } from 'reactstrap';
 
 const Header = (props) => {
@@ -37,7 +34,7 @@ const Header = (props) => {
                         <Nav className="mr-auto" navbar>
 
                             <NavItem>
-                                <NavLink href="/login">Login</NavLink>
+                                <NavLink href="/login" onClick={() => useHistory.push('/login')}>Login</NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink href="/register">Register</NavLink>

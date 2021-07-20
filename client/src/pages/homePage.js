@@ -4,7 +4,7 @@ import SearchBar from '../components/searchBar';
 import Footer from '../components/footer';
 
 
-const homePage = (props) => {
+const homePage = () => {
 
   return (
     <div>
