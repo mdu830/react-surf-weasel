@@ -17,10 +17,10 @@ class Carousel extends React.Component {
     ];
   }
 
-  render(){
+  render() {
     return (
       <BannerAnim prefixCls="banner-user" type="acrossOverlay" autoPlay duration="1000">
-        <Element 
+        <Element
           prefixCls="banner-user-elem"
           key="0"
         >
@@ -34,17 +34,21 @@ class Carousel extends React.Component {
             }}
           />
           <TweenOne className="banner-user-title" animation={{ y: 30, opacity: 0, type: 'from' }}>
-            Welcome To Surf Weasel
+            <div className="carouselText">
+              Welcome To Surf Weasel
+            </div>
           </TweenOne>
-          <TweenOne className="banner-user-text" 
+          <TweenOne className="banner-user-text"
             animation={{ y: 30, opacity: 0, type: 'from', delay: 100 }}
           >
-            The Best Place to Find the Swell So You Can Shred the Gnar
+            <div className="carouselText">
+              The Best Place to Find the Swell So You Can Shred the Gnar
+            </div>
           </TweenOne>
         </Element>
-        <Element 
+        <Element
           prefixCls="banner-user-elem"
-          key="1" 
+          key="1"
         >
           <BgElement
             key="bg"
@@ -56,15 +60,20 @@ class Carousel extends React.Component {
             }}
           />
           <TweenOne className="banner-user-title" animation={{ y: 30, opacity: 0, type: 'from' }}>
-            This Website is still under contruction 
+            <div className="carouselText">
+              This Website is Still Under Construction
+            </div>
           </TweenOne>
-          <TweenOne className="banner-user-text" 
+          <TweenOne className="banner-user-text"
             animation={{ y: 30, opacity: 0, type: 'from', delay: 100 }}
           >
-            Please bare with us while we get everything built
+            <div className="carouselText">
+              We are currently setting up our beach cameras and surf report for Carteret County and the surrounding areas
+
+            </div>
           </TweenOne>
         </Element>
-        <Element 
+        <Element
           prefixCls="banner-user-elem"
           key="2"
         >
@@ -78,12 +87,16 @@ class Carousel extends React.Component {
             }}
           />
           <TweenOne className="banner-user-title" animation={{ y: 30, opacity: 0, type: 'from' }}>
-            Surf Weasel is Currently in its first stages of developement
+            <div className="carouselText">
+              Surf Weasel is Currently in its first stages of developement
+            </div>
           </TweenOne>
-          <TweenOne className="banner-user-text" 
+          <TweenOne className="banner-user-text"
             animation={{ y: 30, opacity: 0, type: 'from', delay: 100 }}
           >
-            We are working fast to deliver a smooth experience so you cant spend more time surfing and less time on the computer
+            <div className="carouselText">
+              We are working fast to deliver a smooth experience so you cant spend more time surfing and less time searching for waves
+            </div>
           </TweenOne>
         </Element>
       </BannerAnim>);
