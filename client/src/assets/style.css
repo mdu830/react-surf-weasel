@@ -79,7 +79,24 @@
   3px 3px 3px rgba(0,0,0,.25);
 
 }
+
+.searchIcon {
+  margin-top: 23px;
+  margin-right: 10px;
+}
+
+.searchForm{
+  margin-left: 40px;
+  margin-right: 40px;
+
+}
+
+
+
 .beachButtons {
+  margin-top: 10px;
+  margin-left: 10px;
+
   box-shadow:
   -1px -1px 0 rgba(255, 255, 255, 0),
   1px 1px 0 rgba(0,0,0,.25),
