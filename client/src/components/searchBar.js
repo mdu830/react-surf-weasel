@@ -1,28 +1,11 @@
 import React, { useState } from 'react';
 import { TextField } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import SearchIcon from '@material-ui/icons/Search';
 import {
     Navbar,
-    Button,
-    Input
+    Button
 } from 'reactstrap';
-
-// const useStyles = makeStyles((theme) => ({
-//     margin: {
-//         margin: theme.spacing(1),
-//     },
-//     marginLeft: {
-//         marginLeft: theme.spacing(3),
-//     },
-//     marginRight: {
-//         marginRight: theme.spacing(4),
-//     },
-//     marginBottom: {
-//         marginBottom: theme.spacing(.5),
-//     },
-// }));
 
 class SearchBar extends React.Component {
 
@@ -59,8 +42,6 @@ class SearchBar extends React.Component {
                     <Button className="beachButtons" outline color="success">Emerald Isle NC</Button>{' '}
                     <Button className="beachButtons" outline color="success">Topsail NC</Button>{' '}
                 </Grid>
-
-
             </Navbar>
         )
     }
