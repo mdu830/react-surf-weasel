@@ -12,13 +12,11 @@ function App() {
     <div className="App">
       <Header/>
       <Router>
-        <div>
           <Switch>
             <Route exact path={["/"]} component={homePage} />
             <Route exact path={["/register"]} component={registerPage} />
             <Route exact path={["/login"]} component={loginPage} />
           </Switch>
-        </div>
       </Router>
     </div>
   );

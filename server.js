@@ -16,16 +16,8 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
 }
 
-  // Error Handler
-app.use( (err, req, res, next) => {
-    console.log('===== ERROR =====');
-    console.error(err.stack);
-    res.status(500);
-});
-
-app.get('/login', (req, res) => {
-    res.sendFile(path.resolve(__dirname + '/client/build/index.html'))
-  })
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.listen(PORT, () => {
     console.log(`Server listening on PORT ${PORT}`);
