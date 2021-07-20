@@ -47,20 +47,17 @@ class SearchBar extends React.Component {
     render() {
         return (
             <Navbar className="searchBar" color="light" light expand="md">
-                <Grid container spacing={1} alignItems="flex-end">
-
-                    <Grid item>
-                        <form className="searchForm" onSubmit={this.handleSubmit}>
-                            <SearchIcon className="searchIcon" />
-                            <TextField id="standard-basic" type="text" label="Beach Search" value={this.state.value} onChange={this.handleChange} />
-                        </form>
-                    </Grid>
-                    <Grid item>
-                        <Button className="beachButtons" outline color="success">Atlantic Beach NC</Button>{' '}
-                        <Button className="beachButtons" outline color="success">Indian Beach NC</Button>{' '}
-                        <Button className="beachButtons" outline color="success">Emerald Isle NC</Button>{' '}
-                        <Button className="beachButtons" outline color="success">Topsail NC</Button>{' '}
-                    </Grid>
+                <Grid item>
+                    <form className="searchForm" onSubmit={this.handleSubmit}>
+                        <SearchIcon className="searchIcon" />
+                        <TextField id="standard-basic" type="text" label="Beach Search" value={this.state.value} onChange={this.handleChange} />
+                    </form>
+                </Grid>
+                <Grid item>
+                    <Button className="beachButtons" outline color="success">Atlantic Beach NC</Button>{' '}
+                    <Button className="beachButtons" outline color="success">Indian Beach NC</Button>{' '}
+                    <Button className="beachButtons" outline color="success">Emerald Isle NC</Button>{' '}
+                    <Button className="beachButtons" outline color="success">Topsail NC</Button>{' '}
                 </Grid>
 
 
