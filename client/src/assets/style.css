@@ -1,5 +1,5 @@
 body {
-  background-image: url(../assets/images/background.jpg)
+  background-image: url(../assets/images/background.jpg);
 }
 
 /* Header */
@@ -101,8 +101,6 @@ body {
 
 }
 
-
-
 .beachButtons {
   margin-top: 5px;
   margin-left: 10px;
@@ -117,6 +115,16 @@ body {
   -1px -1px 0 rgba(255, 255, 255, 0),
   1px 1px 0 rgba(0,0,0,.25),
   3px 3px 3px rgba(0,0,0,.25);
+}
+
+/*  Footer */
+
+.footer {
+  background-color: rgb(56, 56, 56);
+  color: antiquewhite;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 
