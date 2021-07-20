@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <Router>
+      <Router basename="#/">
           <Switch>
             <Route exact path={["/"]} component={homePage} />
             <Route exact path={["/register"]} component={registerPage} />
