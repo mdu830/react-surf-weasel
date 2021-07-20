@@ -10,8 +10,8 @@ const router = require('express').Router();
 // router.use('/api', apiRoutes);
 
 // If no routes are hit, send to React Application
-router.use((req, res) => {
-    res.sendFile(path.join(__dirname, '../client/public/index.html'));
-});
+// router.use((req, res) => {
+//     res.sendFile(path.join(__dirname, '../client/public/index.html'));
+// });
 
 module.exports = router;

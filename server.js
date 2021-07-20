@@ -23,7 +23,7 @@ app.use( (err, req, res, next) => {
     res.status(500);
 });
 
-app.get('/*', (req, res) => {
+app.get('/login', (req, res) => {
     res.sendFile(path.resolve(__dirname + '/client/build/index.html'))
   })
 
