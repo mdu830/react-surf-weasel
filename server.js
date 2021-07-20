@@ -1,5 +1,6 @@
 if (process.env.NODE_ENV !== 'production') {
     console.log('loading dev environments');
+    
     // require('dotenv').config();
 }
 // require('dotenv').config();
@@ -7,6 +8,8 @@ if (process.env.NODE_ENV !== 'production') {
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3001;
+const routes = require('./routes');
+
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
