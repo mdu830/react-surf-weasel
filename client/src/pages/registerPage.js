@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Registerpage = () => {
+const RegisterPage = () => {
 
     return(
         <>
@@ -11,4 +11,4 @@ const Registerpage = () => {
     )
 }
 
-export default Registerpage;
+export default RegisterPage;
