@@ -13,10 +13,8 @@ import {
     Button,
     Modal
 } from 'reactstrap';
-
 import { TextField } from '@material-ui/core';
-// import { makeStyles } from '@material-ui/core/styles';
-// import AccountCircle from '@material-ui/icons/AccountCircle';
+import AccountCircle from '@material-ui/icons/AccountCircle';
 
 
 
@@ -42,26 +40,28 @@ function Header(props) {
         <>
             <div>
                 {/* Login popup modal */}
-                <div>
-                    <Modal isOpen={modal} toggle={toggle2} className="">
-                        <form className="m-3" id="loginForm" noValidate autoComplete="off">
-                            <div>
-                                <h1 className="text-center p-3">Login</h1>
-                            </div>
-                            <div>
-                                {/* <AccountCircle className="accountCircle" /> */}
-                                <TextField id="" type="email" label="Email" />
-                            </div>
-                            <div>
-                                <TextField id="" type="password" label="Password" defaultValue="" />
-                            </div>
-                            <div className="loginButtons">
+
+                <Modal isOpen={modal}
+                    toggle={toggle2}
+                    className="modaler">
+                    <form className="m-3" id="loginForm" noValidate autoComplete="off">
+                        <div>
+                            <h1 className="text-center p-3">Login</h1>
+                        </div>
+                        <div>
+                            <AccountCircle className="accountCircle" />
+                            <TextField id="" type="email" label="Email" />
+                        </div>
+                        <div>
+                            <AccountCircle className="accountCircle" />
+                            <TextField id="" type="password" label="Password" defaultValue="" />
+                        </div>
+                        <div className="loginButtons">
                             <Button className="m-1" color="outline-secondary" onClick={() => history.push('/register') && toggle2}>Register</Button>
                             <Button className="m-1" color="primary" type="submit" onSubmit={handleLoginReq}>Login</Button>{' '}
                         </div>
-                        </form>
-                    </Modal>
-                </div>
+                    </form>
+                </Modal>
 
                 {/* Navbar */}
                 <Navbar className="titleBar" color="light" light expand="md">
