@@ -9,12 +9,20 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
-    NavLink
+    NavLink,
+    Button,
+    Modal,
+    ModalBody,
+    Container
 } from 'reactstrap';
 
+import { TextField } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import AccountCircle from '@material-ui/icons/AccountCircle';
 
 
-function Header() {
+
+function Header(props) {
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -22,9 +30,50 @@ function Header() {
 
     let history = useHistory();
 
+    const [modal, setModal] = useState(false);
+
+    const toggle2 = () => setModal(!modal);
+
+
+    const useStyles = makeStyles((theme) => ({
+        root: {
+            '& .MuiTextField-root': {
+                margin: theme.spacing(1),
+                width: 200,
+            },
+        },
+    }));
+
+    const classes = useStyles();
+
+
     return (
         <>
             <div>
+                {/* Login popup modal */}
+                <div>
+                    <Modal isOpen={modal} toggle={toggle2} className="">
+                        <ModalBody>
+                            <Container >
+                                <form className={classes.root} id="loginForm" noValidate autoComplete="off">
+                                    <div>
+                                        <h1 className="text-center">Login</h1>
+                                    </div>
+                                    <div>
+                                        <AccountCircle className="accountCircle" />
+                                        <TextField id="" label="Email" />
+                                    </div>
+                                    <div>
+                                        <TextField id="" type="password" label="Password" defaultValue="" />
+                                    </div>
+                                    <Button color="primary" onClick={toggle2}>Do Something</Button>{' '}
+                                </form>
+                            </Container>
+                        </ModalBody>
+                    </Modal>
+                </div>
+
+                {/* Navbar */}
                 <Navbar className="titleBar" color="light" light expand="md">
                     <NavbarBrand href="/"><img className="image-fluid icon" alt="" src={Icon} /></NavbarBrand>
                     <NavbarBrand href="/"><div className="appTitle mr-auto">Surf Weasel</div></NavbarBrand>
@@ -35,7 +84,7 @@ function Header() {
                         <Nav className="mr-auto" navbar>
 
                             <NavItem>
-                                <NavLink onClick={() => history.push('/login')}>Login</ NavLink>
+                                <NavLink onClick={toggle2}>Login</ NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink onClick={() => history.push('/register')}>Register</NavLink>

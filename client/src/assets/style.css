@@ -133,10 +133,17 @@ body {
   3px 3px 3px rgba(0,0,0,.25);
 }
 
-/* Login Page */
+/* Login modal */
 
 .accountCircle {
   margin-top: 30px;
+}
+
+#loginForm {
+  display: flex;
+  flex-direction: column; /* defined the main axis */
+  justify-content: center; /* y-axis */
+  align-items: center; /* x-axis */
 }
 
 /*  Footer */
