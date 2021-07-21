@@ -26,8 +26,8 @@ function Header() {
         <>
             <div>
                 <Navbar className="titleBar" color="light" light expand="md">
-                    <NavbarBrand href="/"><img className="image-fluid icon" alt="" src={Icon}></img></NavbarBrand>
-                    <div className="appTitle mr-auto">Surf Weasel</div>
+                    <NavbarBrand href="/"><img className="image-fluid icon" alt="" src={Icon} /></NavbarBrand>
+                    <NavbarBrand href="/"><div className="appTitle mr-auto">Surf Weasel</div></NavbarBrand>
 
 
                     <NavbarToggler className="m-3" onClick={toggle} />
