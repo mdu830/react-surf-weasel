@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import Carousel from '../components/carousel'
 import SearchBar from '../components/searchBar';
 import Footer from '../components/footer';
+import Header from '../components/header';
 
 
-const homePage = () => {
+
+const Homepage = () => {
 
   return (
     <div>
+      <Header />
       <Carousel />
       <SearchBar />
       <Footer />
@@ -15,4 +18,4 @@ const homePage = () => {
   );
 }
 
-export default homePage;
+export default Homepage;

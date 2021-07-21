@@ -1,21 +1,19 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import loginPage from './pages/loginPage.js';
-import homePage from './pages/homePage.js';
-import registerPage from './pages/registerPage.js'
-import Header from './components/header';
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import Loginpage from './pages/Loginpage.js';
+import Homepage from './pages/Homepage.js';
+import Registerpage from './pages/Registerpage.js'
 
 
 
 function App() {
   return (
     <div className="App">
-      <Header/>
       <Router>
           <Switch>
-            <Route exact path={["/"]} component={homePage} />
-            <Route exact path={["/register"]} component={registerPage} />
-            <Route exact path={["/login"]} component={loginPage} />
+            <Route exact path={["/"]} component={Homepage} />
+            <Route exact path={["/register"]} component={Registerpage} />
+            <Route exact path={["/login"]} component={Loginpage} />
           </Switch>
       </Router>
     </div>

@@ -12,34 +12,37 @@ import {
     NavLink
 } from 'reactstrap';
 
-function Header() {
 
-    const history = useHistory;
+
+function Header() {
 
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
 
+    let history = useHistory();
+
+    const handleLoginClick = () => {
+        history.push('/login')
+    }
+
     return (
         <>
             <div>
-                {/* <nav className="navbar justify-content-center bg-light titleBar">
-
-                </nav> */}
                 <Navbar className="titleBar" color="light" light expand="md">
                     <NavbarBrand href="/"><img className="image-fluid icon" alt="" src={Icon}></img></NavbarBrand>
                     <div className="appTitle mr-auto">Surf Weasel</div>
-                    
+
 
                     <NavbarToggler className="m-3" onClick={toggle} />
                     <Collapse isOpen={isOpen} navbar>
                         <Nav className="mr-auto" navbar>
 
                             <NavItem>
-                                <NavLink href="/login" onClick={() => history.push('/login')}>Login</NavLink>
+                                <NavLink onClick={() => history.push('/login')}>Login</ NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/register" onClick={() => history.push('/register')}>Register</NavLink>
+                                <NavLink onClick={() => history.push('/register')}>Register</NavLink>
                             </NavItem>
                         </Nav>
                     </Collapse>
