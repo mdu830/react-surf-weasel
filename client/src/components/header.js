@@ -22,10 +22,6 @@ function Header() {
 
     let history = useHistory();
 
-    const handleLoginClick = () => {
-        history.push('/login')
-    }
-
     return (
         <>
             <div>
