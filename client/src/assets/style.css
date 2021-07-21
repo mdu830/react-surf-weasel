@@ -138,6 +138,7 @@ body {
 .modaler .modal-content {
   background-color: rgba(248, 248, 248, 0.863);
   border-radius: 20px;
+  border: 2px solid rgb(168, 168, 168);
 }
 
 .modal-content {
