@@ -15,7 +15,7 @@ import {
 } from 'reactstrap';
 
 import { TextField } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+// import { makeStyles } from '@material-ui/core/styles';
 // import AccountCircle from '@material-ui/icons/AccountCircle';
 
 
@@ -32,17 +32,6 @@ function Header(props) {
 
     const toggle2 = () => setModal(!modal);
 
-
-    const useStyles = makeStyles((theme) => ({
-        root: {
-            '& .MuiTextField-root': {
-                margin: theme.spacing(1),
-                width: 200,
-            },
-        }
-    }));
-
-    const classes = useStyles();
 
     const handleLoginReq = () => {
         toggle2();
