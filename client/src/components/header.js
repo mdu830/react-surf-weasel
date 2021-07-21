@@ -16,7 +16,7 @@ import {
     Container
 } from 'reactstrap';
 
-import { TextField } from '@material-ui/core';
+import { Grid, TextField } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 
@@ -41,10 +41,14 @@ function Header(props) {
                 margin: theme.spacing(1),
                 width: 200,
             },
-        },
+        }
     }));
 
     const classes = useStyles();
+
+    const handleLoginReq = () => {
+        toggle2();
+    }
 
 
     return (
@@ -53,23 +57,22 @@ function Header(props) {
                 {/* Login popup modal */}
                 <div>
                     <Modal isOpen={modal} toggle={toggle2} className="">
-                        <ModalBody>
-                            <Container >
-                                <form className={classes.root} id="loginForm" noValidate autoComplete="off">
-                                    <div>
-                                        <h1 className="text-center">Login</h1>
-                                    </div>
-                                    <div>
-                                        <AccountCircle className="accountCircle" />
-                                        <TextField id="" label="Email" />
-                                    </div>
-                                    <div>
-                                        <TextField id="" type="password" label="Password" defaultValue="" />
-                                    </div>
-                                    <Button color="primary" onClick={toggle2}>Do Something</Button>{' '}
-                                </form>
-                            </Container>
-                        </ModalBody>
+                        <form className="m-3" id="loginForm" noValidate autoComplete="off">
+                            <div>
+                                <h1 className="text-center p-3">Login</h1>
+                            </div>
+                            <div>
+                                {/* <AccountCircle className="accountCircle" /> */}
+                                <TextField id="" type="email" label="Email" />
+                            </div>
+                            <div>
+                                <TextField id="" type="password" label="Password" defaultValue="" />
+                            </div>
+                            <div className="loginButtons">
+                            <Button className="m-1" color="outline-secondary" onClick={() => history.push('/register') && toggle2}>Register</Button>
+                            <Button className="m-1" color="primary" type="submit" onSubmit={handleLoginReq}>Login</Button>{' '}
+                        </div>
+                        </form>
                     </Modal>
                 </div>
 
