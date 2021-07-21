@@ -1,8 +1,8 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import Loginpage from './pages/Loginpage';
-import Homepage from './pages/Homepage';
-import Registerpage from './pages/Registerpage'
+import Loginpage from './pages/LoginPage';
+import Homepage from './pages/HomePage';
+import Registerpage from './pages/RegisterPage'
 
 
 
