@@ -35,6 +35,11 @@ function Header(props) {
         toggle2();
     }
 
+    const handleRegisterReq = () => {
+        history.push('/register');
+        toggle2();
+    }
+
 
     return (
         <>
@@ -57,7 +62,7 @@ function Header(props) {
                             <TextField id="" type="password" label="Password" defaultValue="" />
                         </div>
                         <div className="loginButtons">
-                            <Button className="m-1" color="outline-secondary" onClick={() => history.push('/register') && toggle2}>Register</Button>
+                            <Button className="m-1" color="outline-secondary" onClick={handleRegisterReq}>Register</Button>
                             <Button className="m-1" color="primary" type="submit" onSubmit={handleLoginReq}>Login</Button>{' '}
                         </div>
                     </form>

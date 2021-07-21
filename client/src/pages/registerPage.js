@@ -13,12 +13,14 @@ const RegisterPage = () => {
         <>
             <div className="page">
                 <Header />
-                <Animate>
-                    <div className="registerCont m-3">
-                        <h1>Register</h1>
+                <div className="registerCont">
+                    <Animate>
+                        <div>
+                            <h1>Register</h1>
 
-                    </div>
-                </Animate>
+                        </div>
+                    </Animate>
+                </div>
                 <Footer />
             </div>
         </>
