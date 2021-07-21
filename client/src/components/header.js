@@ -11,14 +11,12 @@ import {
     NavItem,
     NavLink,
     Button,
-    Modal,
-    ModalBody,
-    Container
+    Modal
 } from 'reactstrap';
 
-import { Grid, TextField } from '@material-ui/core';
+import { TextField } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import AccountCircle from '@material-ui/icons/AccountCircle';
+// import AccountCircle from '@material-ui/icons/AccountCircle';
 
 
 
