@@ -5,13 +5,13 @@ import Footer from '../components/footer';
 import Header from '../components/header';
 
 const Homepage = (props) => {
-  
+
   return (
 
     <div>
       <Header />
-        <Carousel />
-        <SearchBar />
+      <Carousel />
+      <SearchBar />
       <Footer />
     </div>
   );
