@@ -136,7 +136,7 @@ body {
 /* Login modal */
 
 .modaler .modal-content {
-  background-color: rgba(248, 248, 248, 0.863);
+  background-color: rgba(248, 248, 248, 0.952);
   border-radius: 15px;
   border: 2px solid rgb(168, 168, 168);
 }

@@ -32,6 +32,7 @@ function Header(props) {
 
 
     const handleLoginReq = () => {
+        
         toggle2();
     }
 
