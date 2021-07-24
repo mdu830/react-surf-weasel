@@ -12,7 +12,7 @@ body {
 .titleBar {
   border: rgb(121, 121, 121) 1px solid;
   height: 80px;
-  z-index: +1;
+  z-index: +2;
   box-shadow:
   -1px -1px 0 rgba(255, 255, 255, 0),
   1px 1px 0 rgba(0,0,0,.25),
@@ -247,6 +247,7 @@ h1 {
 @media screen and (max-width: 551px) {
 
 /* Navbar */
+
   .titleBar {
     height: auto;
 
@@ -264,6 +265,7 @@ h1 {
   }
 
   /* Carousel */
+
   .banner-user{
     height: 300px;
   }
