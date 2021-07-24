@@ -1,9 +1,11 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Component } from 'react';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import Header from './components/header';
 import HomePage from './pages/homePage';
 import RegisterPage from './pages/registerPage'
-import { Component } from 'react';
-import Header from './components/header';
+
 
 
 class App extends Component {
@@ -17,10 +19,20 @@ class App extends Component {
           <div>
             <Header />
           </div>
-          <Switch>
-            <Route exact path={["/"]} component={HomePage} />
-            <Route exact path={["/register"]} component={RegisterPage} />
-          </Switch>
+          <Route render={({location}) => (
+            <TransitionGroup>
+              <CSSTransition
+                key={location.key}
+                timeout={500}
+                classNames="slide"
+              >
+                <Switch>
+                  <Route exact path={["/"]} component={HomePage} />
+                  <Route exact path={["/register"]} component={RegisterPage} />
+                </Switch>
+              </CSSTransition>
+            </TransitionGroup>
+          )} />
         </Router>
       </div>
     )

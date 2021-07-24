@@ -30,7 +30,7 @@ function Header(props) {
 
     const toggle2 = () => setModal(!modal);
 
-
+    // modal clicks
     const handleLoginReq = () => {
         
         toggle2();
@@ -39,6 +39,11 @@ function Header(props) {
     const handleRegisterReq = () => {
         history.push('/register');
         toggle2();
+    }
+
+    const handleRegisterLink = () => {
+        history.push('/register');
+        toggle();
     }
 
 
@@ -83,7 +88,7 @@ function Header(props) {
                                 <NavLink onClick={toggle2}>Login</ NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink onClick={() => history.push('/register')}>Register</NavLink>
+                                <NavLink onClick={handleRegisterLink}>Register</NavLink>
                             </NavItem>
                         </Nav>
                     </Collapse>

@@ -8,7 +8,7 @@ const Homepage = () => {
 
   return (
 
-    <div>
+    <div className="page">
       <Carousel />
       <SearchBar />
       <Footer />
