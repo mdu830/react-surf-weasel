@@ -246,6 +246,7 @@ h1 {
 
 @media screen and (max-width: 551px) {
 
+/* Navbar */
   .titleBar {
     height: auto;
 
@@ -262,9 +263,37 @@ h1 {
     3px 3px 3px rgba(0,0,0,.25);
   }
 
+  /* Carousel */
   .banner-user{
     height: 300px;
   }
+
+  .banner-user-elem{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .banner-user-elem .banner-user-title{
+    font-size: 28px;
+    top: 30%;
+  }
+  
+  .banner-user-elem .banner-user-text{
+    top: 32%;
+  }
+  
+  .banner-anim-elem .bg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+
+  /* page */
 
   .page {
     top: 90px;

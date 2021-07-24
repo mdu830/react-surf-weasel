@@ -88,14 +88,14 @@ class Carousel extends React.Component {
           />
           <TweenOne className="banner-user-title" animation={{ y: 30, opacity: 0, type: 'from' }}>
             <div className="carouselText">
-              Surf Weasel is Currently in its first stages of developement
+              Currently Optimized for the Iphone 6/7/8 and desktop PC 
             </div>
           </TweenOne>
           <TweenOne className="banner-user-text"
             animation={{ y: 30, opacity: 0, type: 'from', delay: 100 }}
           >
             <div className="carouselText">
-              We are working fast to deliver a smooth experience so you can spend more time surfing and less time searching for waves
+              We are still working on making the mobile experience smooth for everyone. 
             </div>
           </TweenOne>
         </Element>
