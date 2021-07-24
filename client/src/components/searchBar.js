@@ -29,7 +29,7 @@ class SearchBar extends React.Component {
 
     render() {
         return (
-            <Navbar className="searchBar" color="light" light expand="md">
+            <Navbar className="searchBar pb-3 pt-3" color="light" light expand="md">
                 <Grid item>
                     <form className="searchForm" onSubmit={this.handleSubmit}>
                         <SearchIcon className="searchIcon" />
