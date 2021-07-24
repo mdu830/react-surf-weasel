@@ -26,7 +26,7 @@ class App extends Component {
                 timeout={500}
                 classNames="slide"
               >
-                <Switch>
+                <Switch location={location}>
                   <Route exact path={["/"]} component={HomePage} />
                   <Route exact path={["/register"]} component={RegisterPage} />
                 </Switch>
