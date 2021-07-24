@@ -40,6 +40,10 @@ function Header(props) {
     }
 
     // navbar clicks
+    const handleHomeLink = () => {
+        history.push('/')
+        setIsOpen(false);
+    }
     const handleRegisterLink = () => {
         history.push('/register');
         toggle();
@@ -75,10 +79,10 @@ function Header(props) {
 
                 {/* Navbar */}
                 <Navbar className="titleBar" color="light" light expand="md">
-                    <NavLink onClick={() => { history.push('/') }}>
+                    <NavLink onClick={handleHomeLink}>
                         <img className="image-fluid icon" alt="" src={Icon} />
                     </NavLink>
-                    <NavLink onClick={() => { history.push('/') }}>
+                    <NavLink onClick={handleHomeLink}>
                         <div className="appTitle mr-auto">Surf Weasel</div>
                     </NavLink>
 

@@ -245,10 +245,12 @@ h1 {
 
 
 @media screen and (max-width: 551px) {
+
   .titleBar {
     height: auto;
 
   }
+
   .appTitle {
     color: black;
     font-weight: bolder;
@@ -259,6 +261,7 @@ h1 {
     1px 1px 0 rgba(0,0,0,.25),
     3px 3px 3px rgba(0,0,0,.25);
   }
+  
   .page {
     top: 90px;
   }
