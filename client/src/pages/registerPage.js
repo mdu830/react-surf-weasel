@@ -14,19 +14,19 @@ const RegisterPage = () => {
                         <div className="">
                             <Grid >
                                 <Grid item xs={12}>
-                                    <TextField required className="m-2" id="standard-required" label="Email Address" defaultValue="" />
+                                    <TextField required className="p-2" id="standard-required" label="Email Address" defaultValue="" />
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <TextField required className="m-2" id="standard-disabled" type="password" label="Password" defaultValue="" />
+                                    <TextField required className="p-2" id="standard-disabled" type="password" label="Password" defaultValue="" />
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <TextField required className="m-2" id="standard-disabled" type="password" label="Confirm Password" defaultValue="" />
+                                    <TextField required className="p-2" id="standard-disabled" type="password" label="Confirm Password" defaultValue="" />
                                 </Grid>
                                 <Grid item xs={12}>
-                                    <TextField className="m-2" id="standard-disabled" label="Favorite Beach" defaultValue="" />
+                                    <TextField className="p-2" id="standard-disabled" label="Favorite Beach" defaultValue="" />
                                 </Grid>
                             </Grid>
-                            <Button className="m-2 signupButton" color="outline-success">Sign Up</Button>
+                            <Button className="p-2 signupButton" color="outline-success">Sign Up</Button>
                         </div>
                     </div>
                 </div>
