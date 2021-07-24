@@ -214,9 +214,23 @@ h1 {
 
 /* Page Animation transitions */
 
-/* .slide-appear {
-  transform: translate3d(100%, 0, 0);
-} */
+.slide-appear 
+.slide-enter {
+  opacity: 0;
+  z-index: 1;
+}
+.slide-appear-active
+.slide-enter.slide-enter-active {
+  opacity: 1;
+  transition: opacity 300ms linear 150ms;
+}
+.slide-exit {
+  opacity: 1;
+}
+.slide-exit.slide-exit-active {
+  opacity: 0;
+  transition: opacity 150ms linear;
+}
 
 /* Media Queries */
 

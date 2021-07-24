@@ -32,7 +32,6 @@ function Header(props) {
 
     // modal clicks
     const handleLoginReq = () => {
-        
         toggle2();
     }
 
