@@ -11,6 +11,7 @@ body {
 
 .titleBar {
   border: rgb(121, 121, 121) 1px solid;
+  height: 80px;
   z-index: +1;
   box-shadow:
   -1px -1px 0 rgba(255, 255, 255, 0),
@@ -236,14 +237,18 @@ h1 {
 
 
 @media screen and (max-width: 551px) {
-    .appTitle {
-        color: black;
-        font-weight: bolder;
-        font-size: 15px;
-        margin:auto;
-        text-shadow:
-        -1px -1px 0 rgba(255, 255, 255, 0),
-        1px 1px 0 rgba(0,0,0,.25),
-        3px 3px 3px rgba(0,0,0,.25);
-    }
+  .titleBar {
+    height: auto;
+
+  }
+  .appTitle {
+      color: black;
+      font-weight: bolder;
+      font-size: 15px;
+      margin-left: -20px;
+      text-shadow:
+      -1px -1px 0 rgba(255, 255, 255, 0),
+      1px 1px 0 rgba(0,0,0,.25),
+      3px 3px 3px rgba(0,0,0,.25);
+  }
 }

@@ -40,6 +40,7 @@ function Header(props) {
         toggle2();
     }
 
+    // navbar clicks
     const handleRegisterLink = () => {
         history.push('/register');
         toggle();
@@ -75,9 +76,12 @@ function Header(props) {
 
                 {/* Navbar */}
                 <Navbar className="titleBar" color="light" light expand="md">
-                    <NavbarBrand href="/"><img className="image-fluid icon" alt="" src={Icon} /></NavbarBrand>
-                    <NavbarBrand href="/"><div className="appTitle mr-auto">Surf Weasel</div></NavbarBrand>
-
+                    <NavLink onClick={() => { history.push('/') }}>
+                        <img className="image-fluid icon" alt="" src={Icon} />
+                    </NavLink>
+                    <NavLink onClick={() => { history.push('/') }}>
+                        <div className="appTitle mr-auto">Surf Weasel</div>
+                    </NavLink>
 
                     <NavbarToggler className="m-3" onClick={toggle} />
                     <Collapse isOpen={isOpen} navbar>
