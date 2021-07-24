@@ -1,22 +1,21 @@
 import React from 'react';
-import Header from '../components/header';
+// import Header from '../components/header';
 import Footer from '../components/footer';
-import { fadeInUp } from 'react-animations';
-import styled, { keyframes } from 'styled-components';
+// import { fadeInUp } from 'react-animations';
+// import styled, { keyframes } from 'styled-components';
 import { Grid, TextField } from '@material-ui/core';
-// import { makeStyles } from '@material-ui/core';
 import { Button } from 'reactstrap';
 
 
-const Animate = styled.div`animation: 1.3s ${keyframes`${fadeInUp}`} `;
+// const Animate = styled.div`animation: 1.3s ${keyframes`${fadeInUp}`} `;
 
 const RegisterPage = () => {
 
     return (
         <>
             <div>
-                <Header />
-                <Animate>
+                {/* <Header /> */}
+                {/* <Animate> */}
                     <div className="registerCont">
                         <div className="m-4">
                             <h1>Register</h1>
@@ -39,7 +38,7 @@ const RegisterPage = () => {
                             </div>
                         </div>
                     </div>
-                </Animate>
+                {/* </Animate> */}
                 <Footer />
             </div>
         </>

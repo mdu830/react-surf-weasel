@@ -212,6 +212,14 @@ h1 {
   width: 100%;
 }
 
+/* Page Animation transitions */
+
+.slide-appear {
+  transform: translate3d(100%, 0, 0);
+}
+
+/* Media Queries */
+
 
 @media screen and (max-width: 551px) {
     .appTitle {
