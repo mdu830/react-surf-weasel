@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Component } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Header from './components/header';
+import Footer from './components/footer'
 import HomePage from './pages/homePage';
 import RegisterPage from './pages/registerPage'
 
@@ -33,6 +34,9 @@ class App extends Component {
               </CSSTransition>
             </TransitionGroup>
           )} />
+          <div>
+            <Footer />
+          </div>
         </Router>
       </div>
     )

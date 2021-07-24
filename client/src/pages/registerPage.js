@@ -1,5 +1,4 @@
 import React from 'react';
-import Footer from '../components/footer';
 import { Grid, TextField } from '@material-ui/core';
 import { Button } from 'reactstrap';
 
@@ -30,7 +29,6 @@ const RegisterPage = () => {
                         </div>
                     </div>
                 </div>
-                <Footer />
             </div>
         </>
     )
