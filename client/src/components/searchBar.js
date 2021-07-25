@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import { TextField } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import SearchIcon from '@material-ui/icons/Search';
-import {
-    Navbar,
-    Button
-} from 'reactstrap';
+import { Navbar, Button } from 'reactstrap';
 
 class SearchBar extends React.Component {
 
@@ -24,6 +21,7 @@ class SearchBar extends React.Component {
     handleSubmit(event) {
         console.log('A beach was submitted: ' + this.state.value);
         event.preventDefault();
+        
     }
 
 

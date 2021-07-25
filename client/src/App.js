@@ -5,7 +5,8 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Header from './components/header';
 import Footer from './components/footer'
 import HomePage from './pages/homePage';
-import RegisterPage from './pages/registerPage'
+import RegisterPage from './pages/registerPage';
+import SurfReportPage from './pages/surfReportPage';
 
 
 
@@ -30,6 +31,7 @@ class App extends Component {
                 <Switch location={location}>
                   <Route exact path={["/"]} component={HomePage} />
                   <Route exact path={["/register"]} component={RegisterPage} />
+                  <Route exact path={["/report"]} component={SurfReportPage} />
                 </Switch>
               </CSSTransition>
             </TransitionGroup>
