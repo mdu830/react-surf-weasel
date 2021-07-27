@@ -65,7 +65,7 @@ const SurfReportPage = (props) => {
     return (
         <div className="page">
             <div className="registerCont">
-                <h1>{searchReqName}</h1>
+                <h1 className="appTitle">{searchReqName}</h1>
             </div>
         </div>
     )
