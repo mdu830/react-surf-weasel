@@ -5,7 +5,6 @@ const SurfReportPage = (props) => {
     const searchReq = props.location.state.beachName;
 
     const [type, setType] = useState({
-
         wind: 'wind',
         wave: 'wave',
         tides: 'tides',
@@ -19,10 +18,6 @@ const SurfReportPage = (props) => {
     });
 
     let apiUrl = `https://services.surfline.com/kbyg/spots/forecasts/${type}?spotId=${spotId}`;
-
-    // if(searchReq === "Atlantic Beach NC") {
-    //     setSpotId(spotId.abSpotId)
-    // }
 
     useEffect(() => {
         console.log(searchReq);
