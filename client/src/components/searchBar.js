@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { setRef, TextField } from '@material-ui/core';
+import { TextField } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import SearchIcon from '@material-ui/icons/Search';
 import { Navbar, Button } from 'reactstrap';
@@ -8,26 +8,14 @@ import { useHistory } from "react-router-dom";
 
 const SearchBar = (props) => {
 
-    // constructor(props) {
-    //     super(props);
-    //     this.state = { value: '' };
-
-    //     this.handleChange = this.handleChange.bind(this);
-    //     this.handleSubmit = this.handleSubmit.bind(this);
-    // }
-
     let history = useHistory();
 
     const [searchValue, setSearchValue] = useState("");
-    // const [buttonValue, setButtonValue] = useState("");
-
     
     const handleSubmit = (evt) => {
         
         if(searchValue !== "") {
-
             console.log('A beach was submitted: ' + searchValue);
-
             evt.preventDefault(history.push({
                 pathname: '/report', 
                 state: {
@@ -39,13 +27,12 @@ const SearchBar = (props) => {
         } else {
             evt.preventDefault();
             alert("That ain't a beach");
-
         }
 
     }
 
     const handleButtonSubmit = (e) => {
-        // setButtonValue(e.target.value);
+
         e.preventDefault(history.push({
             pathname: '/report', 
             state: {
