@@ -14,7 +14,7 @@ const SearchBar = (props) => {
     
     const handleSubmit = (evt) => {
         
-        if(searchValue !== "") {
+        if(searchValue !== "" ) {
             console.log('A beach was submitted: ' + searchValue);
             evt.preventDefault(history.push({
                 pathname: '/report', 
@@ -53,7 +53,7 @@ const SearchBar = (props) => {
             </Grid>
             <Grid item>
                 <Button className="beachButtons" value="Atlantic Beach NC" onClick={(e) => {handleButtonSubmit(e)}} outline color="success">Atlantic Beach NC</Button>{' '}
-                <Button className="beachButtons" value="Indian Beach NC" onClick={(e) => handleButtonSubmit(e)} outline color="success">Indian Beach NC</Button>{' '}
+                {/* <Button className="beachButtons" value="Indian Beach NC" onClick={(e) => handleButtonSubmit(e)} outline color="success">Indian Beach NC</Button>{' '} */}
                 <Button className="beachButtons" value="Emerald Isle NC" onClick={(e) => handleButtonSubmit(e)} outline color="success">Emerald Isle NC</Button>{' '}
                 <Button className="beachButtons" value="Topsail NC" onClick={(e) => handleButtonSubmit(e)} outline color="success">Topsail NC</Button>{' '}
             </Grid>
