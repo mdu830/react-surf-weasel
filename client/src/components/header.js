@@ -49,11 +49,6 @@ function Header(props) {
         toggle();
     }
 
-    const handleReportLink = () => {
-        history.push('/report');
-        toggle();
-    }
-
     return (
         <>
             <div>
@@ -99,9 +94,6 @@ function Header(props) {
                             </NavItem>
                             <NavItem>
                                 <NavLink onClick={handleRegisterLink}>Register</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink onClick={handleReportLink}>Report</NavLink>
                             </NavItem>
                         </Nav>
                     </Collapse>

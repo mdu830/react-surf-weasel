@@ -10,7 +10,7 @@ const RegisterPage = () => {
                 <div className="registerCont">
                     <div className="m-4">
                         <h1>Register</h1>
-                        <div className="">
+                        <form className="">
                             <Grid >
                                 <Grid item xs={12}>
                                     <TextField required className="p-2" id="standard-required" label="Email Address" defaultValue="" />
@@ -26,7 +26,7 @@ const RegisterPage = () => {
                                 </Grid>
                             </Grid>
                             <Button className="p-2 signupButton" color="outline-success">Sign Up</Button>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
