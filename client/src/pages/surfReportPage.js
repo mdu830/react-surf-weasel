@@ -5,40 +5,61 @@ import axios from 'axios';
 
 const SurfReportPage = (props) => {
 
-    const [resData, setResData] = useState({});
-
     const searchReqName = props.location.state.beachName;
     const searchReqSpotId = props.location.state.spotId;
 
-    const reportWaveUrl = `https://services.surfline.com/kbyg/spots/forecasts/wave?spotId=${searchReqSpotId}`;
-
-    // console.log(reportWaveUrl);
-    // console.log(searchReqSpotId);
-
     useEffect(() => {
-        fetchSurfReport();
+        fetchWaveReport();
+        fetchTideReport();
+        fetchWindReport();
+        fetchWeatherReport();
     }, []);
 
-    const fetchSurfReport = async () => {
+    // waves query
+    const reportWaveUrl = `https://services.surfline.com/kbyg/spots/forecasts/wave?spotId=${searchReqSpotId}`;
+
+    const [resWave, setResWave] = useState({});
+
+    const fetchWaveReport = async () => {
         const res = await axios(reportWaveUrl);
-        const jsonData = res;
-        setResData(jsonData);
+        const waveData = res;
+        setResWave(waveData);
+    };
+    // tides query
+    const reportTidesUrl = `https://services.surfline.com/kbyg/spots/forecasts/tides?spotId=${searchReqSpotId}`;
+
+    const [resTides, setResTides] = useState({});
+
+    const fetchTideReport = async () => {
+        const res = await axios(reportTidesUrl);
+        const tidesData = res;
+        setResTides(tidesData);
+    };
+    // wind query
+    const reportWindUrl = `https://services.surfline.com/kbyg/spots/forecasts/wind?spotId=${searchReqSpotId}`;
+
+    const [resWind, setResWind] = useState({});
+
+    const fetchWindReport = async () => {
+        const res = await axios(reportWindUrl);
+        const windData = res;
+        setResWind(windData);
+    };
+    // weather query
+    const reportWeatherUrl = `https://services.surfline.com/kbyg/spots/forecasts/weather?spotId=${searchReqSpotId}`;
+
+    const [resWeather, setResWeather] = useState({});
+
+    const fetchWeatherReport = async () => {
+        const res = await axios(reportWeatherUrl);
+        const weatherData = res;
+        setResWeather(weatherData);
     };
 
-    console.log(resData);
-
-    // const [type, setType] = useState({
-    //     wind: 'wind?',
-    //     wave: 'wave?',
-    //     tides: 'tides?',
-    //     weather: 'weather?'
-    // });
-
-    // const [spotId, setSpotId] = useState({
-    //     atlanticBeach: '5842041f4e65fad6a7708a4e',
-    //     emeraldIsle: '5842041f4e65fad6a7708a4d',
-    //     topsailBeach: '5842041f4e65fad6a7708a4b'
-    // });
+    console.log(resWave);
+    console.log(resTides);
+    console.log(resWind);
+    console.log(resWeather);
 
 
     return (
