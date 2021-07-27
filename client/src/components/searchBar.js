@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { TextField } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import SearchIcon from '@material-ui/icons/Search';
@@ -6,7 +6,7 @@ import { Navbar, Button } from 'reactstrap';
 import { useHistory } from "react-router-dom";
 
 
-const SearchBar = (props) => {
+const SearchBar = () => {
 
     let history = useHistory();
 
@@ -20,6 +20,7 @@ const SearchBar = (props) => {
                 pathname: '/report', 
                 state: {
                     beachName: searchValue,
+                    spotId: '',
                     
                 }
             }));
@@ -32,12 +33,14 @@ const SearchBar = (props) => {
     }
 
     const handleButtonSubmit = (e) => {
+        // console.log(e.target.name);
 
         e.preventDefault(history.push({
             pathname: '/report', 
             state: {
-                beachName: e.target.value,
-                
+                beachName: e.target.name,
+                spotId: e.target.value
+
             }
         }));
          
@@ -52,10 +55,28 @@ const SearchBar = (props) => {
                 </form>
             </Grid>
             <Grid item>
-                <Button className="beachButtons" value="Atlantic Beach NC" onClick={(e) => {handleButtonSubmit(e)}} outline color="success">Atlantic Beach NC</Button>{' '}
-                {/* <Button className="beachButtons" value="Indian Beach NC" onClick={(e) => handleButtonSubmit(e)} outline color="success">Indian Beach NC</Button>{' '} */}
-                <Button className="beachButtons" value="Emerald Isle NC" onClick={(e) => handleButtonSubmit(e)} outline color="success">Emerald Isle NC</Button>{' '}
-                <Button className="beachButtons" value="Topsail NC" onClick={(e) => handleButtonSubmit(e)} outline color="success">Topsail NC</Button>{' '}
+                <Button 
+                className="beachButtons" 
+                name={"Atlantic Beach NC"}
+                value={"5842041f4e65fad6a7708a4e"} 
+                onClick={(e) => {handleButtonSubmit(e)}} 
+                outline color="success"
+                >Atlantic Beach NC
+                </Button>{' '}
+                <Button 
+                className="beachButtons" 
+                name="Emerald Isle NC"
+                value="5842041f4e65fad6a7708a4d" 
+                onClick={(e) => handleButtonSubmit(e)} 
+                outline color="success"
+                >Emerald Isle NC</Button>{' '}
+                <Button 
+                className="beachButtons" 
+                name="Topsail NC"
+                value="5842041f4e65fad6a7708a4b" 
+                onClick={(e) => handleButtonSubmit(e)} 
+                outline color="success"
+                >Topsail NC</Button>{' '}
             </Grid>
         </Navbar>
     )
