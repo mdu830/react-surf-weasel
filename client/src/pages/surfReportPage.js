@@ -57,9 +57,9 @@ const SurfReportPage = (props) => {
     };
 
     console.log(resWave);
-    console.log(resTides);
-    console.log(resWind);
-    console.log(resWeather);
+    // console.log(resTides);
+    // console.log(resWind);
+    // console.log(resWeather);
 
 
     return (
