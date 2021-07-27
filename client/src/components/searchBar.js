@@ -31,7 +31,7 @@ const SearchBar = (props) => {
             evt.preventDefault(history.push({
                 pathname: '/report', 
                 state: {
-                    value: searchValue,
+                    beachName: searchValue,
                     
                 }
             }));
@@ -49,7 +49,7 @@ const SearchBar = (props) => {
         e.preventDefault(history.push({
             pathname: '/report', 
             state: {
-                value: e.target.value,
+                beachName: e.target.value,
                 
             }
         }));
