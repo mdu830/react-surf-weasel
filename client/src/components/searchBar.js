@@ -48,7 +48,7 @@ const SearchBar = (props) => {
             <Grid item>
                 <form className="searchForm" onSubmit={handleSubmit}>
                     <SearchIcon className="searchIcon" />
-                    <TextField id="standard-basic" type="text" label="Beach Search" value={searchValue} onChange={(e) => setSearchValue(e.target.value)} />
+                    <TextField disabled id="standard-basic" type="text" label="Beach Search" value={searchValue} onChange={(e) => setSearchValue(e.target.value)} />
                 </form>
             </Grid>
             <Grid item>
