@@ -301,3 +301,10 @@ h1 {
     top: 90px;
   }
 }
+
+@media screen and (max-width: 768px) {
+    .titleBar {
+    height: auto;
+
+  }
+}
