@@ -17,7 +17,6 @@ const SurfReportPage = (props) => {
 
     useEffect(() => {
         fetchSurfReport();
-        console.log(resData);
     }, []);
 
     const fetchSurfReport = async () => {
@@ -26,7 +25,7 @@ const SurfReportPage = (props) => {
         setResData(jsonData);
     };
 
-    
+    console.log(resData);
 
     // const [type, setType] = useState({
     //     wind: 'wind?',
