@@ -5,6 +5,8 @@ body {
   background-attachment: fixed;
 }
 
+
+
 /* Header */
 
 @import url('https://fonts.googleapis.com/css2?family=Syncopate&display=swap');
@@ -303,8 +305,9 @@ h1 {
 }
 
 @media screen and (max-width: 768px) {
-    .titleBar {
+  .titleBar {
     height: auto;
 
   }
+
 }
