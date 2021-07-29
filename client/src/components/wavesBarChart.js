@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Bar } from 'react-chartjs-2';
 
-const WaveBarChart = () => {
+const WaveBarChart = (data) => {
+
+    const myData = data.data;
+
+    useEffect(() => {
+        console.log(myData);
+
+    },[]);
 
     return(
         <h1>BarChart</h1>

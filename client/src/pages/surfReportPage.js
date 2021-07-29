@@ -53,7 +53,7 @@ const SurfReportPage = (props) => {
         <div className="page">
             <div className="registerCont">
                 <h1 className="appTitle">{searchReqName}</h1>
-                <WaveBarChart />
+                <WaveBarChart data={response}/>
             </div>
         </div>
     )
