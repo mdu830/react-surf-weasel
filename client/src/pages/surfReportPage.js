@@ -6,49 +6,36 @@ const SurfReportPage = (props) => {
     const searchReqName = props.location.state.beachName.trim();;
     const searchReqSpotId = props.location.state.spotId;
 
-    const [resWave, setResWave] = useState({});
-    const [resTides, setResTides] = useState({});
-    const [resWind, setResWind] = useState({});
-    const [resWeather, setResWeather] = useState({});
+    const [response, setResponse] = useState({
+        wave: [],
+        tides: [],
+        wind: [],
+        weather: []
+    });
 
     const API = axios.create({
         baseURL: `https://services.surfline.com/kbyg/spots/forecasts/`
     });
 
     useEffect(() => {
-        async function fetchWaveReport() {
-            API.get(`/wave?spotId=${searchReqSpotId}`).then((res) => {
-                setResWave(res);
-                console.log(res);
+        async function fetchReport() {
+            const res = API.get(`/wave?spotId=${searchReqSpotId}`);
+            const res2 = API.get(`/tides?spotId=${searchReqSpotId}`);
+            const res3 = API.get(`/wind?spotId=${searchReqSpotId}`)
+            const res4 = API.get(`/weather?spotId=${searchReqSpotId}`)
+            setResponse({
+                wave: (await res).data.data,
+                tides: (await res2).data.data,
+                wind: (await res3).data.data,
+                weather: (await res4).data.data
             });
         };
+        fetchReport();
 
-        async function fetchTidesReport() {
-            API.get(`/tides?spotId=${searchReqSpotId}`).then((res) => {
-                setResTides(res);
-                console.log(res);
-            });
-        };
+    }, [searchReqSpotId]);
 
-        async function fetchWindReport() {
-            API.get(`/wind?spotId=${searchReqSpotId}`).then((res) => {
-                setResWind(res);
-                console.log(res);
-            });
-        };
-
-        async function fetchWeatherReport() {
-            API.get(`/weather?spotId=${searchReqSpotId}`).then((res) => {
-                setResWeather(res);
-                console.log(res);
-            });
-        };
-
-        fetchWaveReport();
-        fetchTidesReport();
-        fetchWindReport();
-        fetchWeatherReport();
-    }, []);
+    console.log(response);
+    // console.log(res.data.data.wave[120]);
 
     return (
         <div className="page">
