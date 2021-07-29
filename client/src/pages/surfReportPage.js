@@ -6,6 +6,7 @@ const SurfReportPage = (props) => {
     const searchReqName = props.location.state.beachName.trim();
     const searchReqSpotId = props.location.state.spotId;
 
+    const [isLoading, setLoading] = useState(true);
     const [response, setResponse] = useState({
         wave: [],
         tides: [],
@@ -29,6 +30,7 @@ const SurfReportPage = (props) => {
                 wind: (await res3).data.data.wind,
                 weather: (await res4).data.data.weather
             });
+            setLoading(false)
         };
         fetchReport();
     }, [searchReqSpotId]);
@@ -37,10 +39,18 @@ const SurfReportPage = (props) => {
         console.log(response);
     }, [response])
 
+    if (isLoading) {
+        
+        return(
+            <h1>Loading...</h1>
+        )
+    }
+
     return (
         <div className="page">
             <div className="registerCont">
                 <h1 className="appTitle">{searchReqName}</h1>
+                <h2>{response.wave[0].surf.max}</h2>
             </div>
         </div>
     )
