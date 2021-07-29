@@ -13,7 +13,7 @@ const WaveBarChart = (data) => {
     return (
         <div>
             <h1>BarChart</h1>
-            <Bar />
+            {/* <Bar /> */}
         </div>
     )
 }
