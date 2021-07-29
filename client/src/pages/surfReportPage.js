@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const SurfReportPage = (props) => {
 
-    const searchReqName = props.location.state.beachName.trim();;
+    const searchReqName = props.location.state.beachName.trim();
     const searchReqSpotId = props.location.state.spotId;
 
     const [response, setResponse] = useState({
@@ -21,21 +21,21 @@ const SurfReportPage = (props) => {
         async function fetchReport() {
             const res = API.get(`/wave?spotId=${searchReqSpotId}`);
             const res2 = API.get(`/tides?spotId=${searchReqSpotId}`);
-            const res3 = API.get(`/wind?spotId=${searchReqSpotId}`)
-            const res4 = API.get(`/weather?spotId=${searchReqSpotId}`)
+            const res3 = API.get(`/wind?spotId=${searchReqSpotId}`);
+            const res4 = API.get(`/weather?spotId=${searchReqSpotId}`);
             setResponse({
-                wave: (await res).data.data,
-                tides: (await res2).data.data,
-                wind: (await res3).data.data,
-                weather: (await res4).data.data
+                wave: (await res).data.data.wave,
+                tides: (await res2).data.data.tides,
+                wind: (await res3).data.data.wind,
+                weather: (await res4).data.data.weather
             });
         };
         fetchReport();
-
     }, [searchReqSpotId]);
 
-    console.log(response);
-    // console.log(res.data.data.wave[120]);
+    useEffect(() => {
+        console.log(response);
+    }, [response])
 
     return (
         <div className="page">
