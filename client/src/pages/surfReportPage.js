@@ -6,42 +6,65 @@ const SurfReportPage = (props) => {
     const searchReqName = props.location.state.beachName.trim();;
     const searchReqSpotId = props.location.state.spotId;
 
-    // const urlQueries = [{
-    //     wave: 'wave?',
-    //     tides: 'tides?',
-    //     wind: 'wind?',
-    //     waether: 'weather?'
-    // }];
+    const [resWave, setResWave] = useState({});
+    const [resTides, setResTides] = useState({});
+    const [resWind, setResWind] = useState({});
+    const [resWeather, setResWeather] = useState({});
 
     const API = axios.create({
-        baseURL: `https://services.surfline.com/kbyg/spots/forecasts/wave?spotId=${searchReqSpotId}`
+        baseURL: `https://services.surfline.com/kbyg/spots/forecasts/`
     });
 
     useEffect(() => {
-        fetchWaveReport();
+        fetchAll();
     }, []);
 
-    const [resWave, setResWave] = useState({});
+    useEffect(() => {
+        console.log(resWave);
+    }, [resWave]);
+
+    useEffect(() => {
+        console.log(resTides)
+    }, [resTides]);
+
+    useEffect(() => {
+        console.log(resWind)
+    }, [resWind]);
+
+    useEffect(() => {
+        console.log(resWeather)
+    }, [resWeather]);
 
     const fetchWaveReport = async () => {
-        API.get('/').then((res) => {
+        API.get(`/wave?spotId=${searchReqSpotId}`).then((res) => {
                 setResWave(res);
-                console.log(res.data.data.wave);
             });
     };
 
-        // waves query
-    // const reportWaveUrl = `https://services.surfline.com/kbyg/spots/forecasts/wave?spotId=${searchReqSpotId}`;
-    
-    // // tides query
-    // const reportTidesUrl = `https://services.surfline.com/kbyg/spots/forecasts/tides?spotId=${searchReqSpotId}`;
+    const fetchTidesReport = async () => {
+        API.get(`/tides?spotId=${searchReqSpotId}`).then((res) => {
+                setResTides(res);
+            });
+    };
 
-    // // wind query
-    // const reportWindUrl = `https://services.surfline.com/kbyg/spots/forecasts/wind?spotId=${searchReqSpotId}`;
+    const fetchWindReport = async () => {
+        API.get(`/wind?spotId=${searchReqSpotId}`).then((res) => {
+                setResWind(res);
+            });
+    };
 
-    // // weather query
-    // const reportWeatherUrl = `https://services.surfline.com/kbyg/spots/forecasts/weather?spotId=${searchReqSpotId}`;
+    const fetchWeatherReport = async () => {
+        API.get(`/weather?spotId=${searchReqSpotId}`).then((res) => {
+                setResWeather(res);
+            });
+    };
 
+    const fetchAll = async () => {
+        fetchWaveReport();
+        fetchTidesReport();
+        fetchWindReport();
+        fetchWeatherReport();
+    }
 
     return (
         <div className="page">
