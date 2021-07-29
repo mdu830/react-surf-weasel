@@ -7,11 +7,14 @@ const WaveBarChart = (data) => {
 
     useEffect(() => {
         console.log(myData);
+    }, []);
 
-    },[]);
 
-    return(
-        <h1>BarChart</h1>
+    return (
+        <div>
+            <h1>BarChart</h1>
+            <Bar />
+        </div>
     )
 }
 
