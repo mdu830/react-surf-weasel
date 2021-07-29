@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { CircularProgress } from '@material-ui/core'
 
 const SurfReportPage = (props) => {
 
@@ -40,9 +41,10 @@ const SurfReportPage = (props) => {
     }, [response])
 
     if (isLoading) {
-        
-        return(
-            <h1>Loading...</h1>
+        return (
+            <div>
+                <CircularProgress className="spinner"/>
+            </div>
         )
     }
 

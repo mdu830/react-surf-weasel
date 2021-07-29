@@ -205,6 +205,12 @@ h1 {
   float: right;
 }
 
+/* surf report page */
+
+.spinner {
+  margin-top: 200px;
+}
+
 /*  Footer */
 
 .footer {
