@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { CircularProgress } from '@material-ui/core'
-
+import { CircularProgress } from '@material-ui/core';
+import WaveBarChart from '../components/wavesBarChart';
+ 
 const SurfReportPage = (props) => {
 
     const searchReqName = props.location.state.beachName.trim();
@@ -52,7 +53,7 @@ const SurfReportPage = (props) => {
         <div className="page">
             <div className="registerCont">
                 <h1 className="appTitle">{searchReqName}</h1>
-                <h2>{response.wave[0].surf.max}</h2>
+                <WaveBarChart />
             </div>
         </div>
     )
