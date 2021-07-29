@@ -16,55 +16,39 @@ const SurfReportPage = (props) => {
     });
 
     useEffect(() => {
-        fetchAll();
-    }, []);
-
-    useEffect(() => {
-        console.log(resWave);
-    }, [resWave]);
-
-    useEffect(() => {
-        console.log(resTides)
-    }, [resTides]);
-
-    useEffect(() => {
-        console.log(resWind)
-    }, [resWind]);
-
-    useEffect(() => {
-        console.log(resWeather)
-    }, [resWeather]);
-
-    const fetchWaveReport = async () => {
-        API.get(`/wave?spotId=${searchReqSpotId}`).then((res) => {
+        async function fetchWaveReport() {
+            API.get(`/wave?spotId=${searchReqSpotId}`).then((res) => {
                 setResWave(res);
+                console.log(res);
             });
-    };
+        };
 
-    const fetchTidesReport = async () => {
-        API.get(`/tides?spotId=${searchReqSpotId}`).then((res) => {
+        async function fetchTidesReport() {
+            API.get(`/tides?spotId=${searchReqSpotId}`).then((res) => {
                 setResTides(res);
+                console.log(res);
             });
-    };
+        };
 
-    const fetchWindReport = async () => {
-        API.get(`/wind?spotId=${searchReqSpotId}`).then((res) => {
+        async function fetchWindReport() {
+            API.get(`/wind?spotId=${searchReqSpotId}`).then((res) => {
                 setResWind(res);
+                console.log(res);
             });
-    };
+        };
 
-    const fetchWeatherReport = async () => {
-        API.get(`/weather?spotId=${searchReqSpotId}`).then((res) => {
+        async function fetchWeatherReport() {
+            API.get(`/weather?spotId=${searchReqSpotId}`).then((res) => {
                 setResWeather(res);
+                console.log(res);
             });
-    };
+        };
 
-    const fetchAll = async () => {
         fetchWaveReport();
         fetchTidesReport();
         fetchWindReport();
         fetchWeatherReport();
-    }
+    }, []);
 
     return (
         <div className="page">
