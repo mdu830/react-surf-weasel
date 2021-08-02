@@ -1,33 +1,48 @@
-import React, { createRef, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // import { Bar } from 'react-chartjs-2';
 // import moment from 'moment';
 const WaveChart = (data) => {
 
     const myData = data.data;
 
-    const currentDate = Date.now();
+    const currentDate = Date.now() / 1000;
 
-    const [dataArray, setDataArray] = useState(null);
-    
+    const [timestampArray, setTimestampArray] = useState(null);
+
+    const [currentData, setCurrentData] = useState(null);
+
     useEffect(() => {
-        setDataArray(myData.map(element => element));
-
+        setTimestampArray(myData.map((element) => element.timestamp));
     }, [myData]);
 
-    
-
     useEffect(() => {
-        if(dataArray === null) { 
-            return 
-        } else { 
-            console.log(currentDate); 
-            console.log(dataArray); 
+        if (timestampArray != null) {
+            // console.log(currentDate); 
+            const closestTime = timestampArray.reduce((a, b) => {
+                let aDiff = Math.abs(a - currentDate);
+                let bDiff = Math.abs(b - currentDate);
+
+                // eslint-disable-next-line eqeqeq
+                if (aDiff == bDiff) {
+                    return a > b ? a : b;
+                } else {
+                    return bDiff < aDiff ? b : a;
+                }
+            });
+            // console.log(closestTime);
+            myData.map(element => {
+                if (element.timestamp === closestTime) {
+                    setCurrentData(element);
+                }
+                return element;
+            });
         }
 
-    }, [dataArray]);
+    }, [timestampArray]);
 
-    
-
+    if (currentData != null) {
+        console.log(currentData);
+    }
 
     // const formatDate = moment(CurrentDate).format();
     // const time = new Date(myData[i].timestamp*1000);
