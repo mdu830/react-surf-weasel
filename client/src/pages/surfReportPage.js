@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { CircularProgress } from '@material-ui/core';
-import WaveBarChart from '../components/wavesBarChart';
+import WaveChart from '../components/wavesChart';
 
 const SurfReportPage = (props) => {
 
@@ -37,6 +37,8 @@ const SurfReportPage = (props) => {
         fetchReport();
     }, [searchReqSpotId]);
 
+    // console.log(response)
+
     if (isLoading) {
         return (
             <CircularProgress className="spinner" />
@@ -47,7 +49,7 @@ const SurfReportPage = (props) => {
         <div className="page">
             <div className="registerCont">
                 <h1 className="appTitle">{searchReqName}</h1>
-                <WaveBarChart data={response} />
+                <WaveChart data={response.wave} />
             </div>
         </div>
     )
