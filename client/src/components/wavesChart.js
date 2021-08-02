@@ -7,15 +7,27 @@ const WaveChart = (data) => {
 
     const currentDate = Date.now();
 
-    const [dataArray, setDataArray] = useState();
+    const [dataArray, setDataArray] = useState(null);
     
     useEffect(() => {
         setDataArray(myData.map(element => element));
 
     }, [myData]);
+
     
-    console.log(dataArray);
-    console.log(currentDate);
+
+    useEffect(() => {
+        if(dataArray === null) { 
+            return 
+        } else { 
+            console.log(currentDate); 
+            console.log(dataArray); 
+        }
+
+    }, [dataArray]);
+
+    
+
 
     // const formatDate = moment(CurrentDate).format();
     // const time = new Date(myData[i].timestamp*1000);
