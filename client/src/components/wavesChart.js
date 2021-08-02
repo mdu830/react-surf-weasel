@@ -1,33 +1,32 @@
 import React, { createRef, useEffect, useState } from 'react';
 // import { Bar } from 'react-chartjs-2';
-import moment from 'moment';
+// import moment from 'moment';
 const WaveChart = (data) => {
 
     const myData = data.data;
-    
-   
-    // const [forcastTime, setForcastTime] = useState([]);
+
+    const currentDate = Date.now();
+
+    const [dataArray, setDataArray] = useState();
     
     useEffect(() => {
+        setDataArray(myData.map(element => element));
 
-        const CurrentDate = Date.now();
-        // const formatDate = moment(CurrentDate).format();
-        
-        console.log(CurrentDate);
+    }, [myData]);
+    
+    console.log(dataArray);
+    console.log(currentDate);
 
+    // const formatDate = moment(CurrentDate).format();
+    // const time = new Date(myData[i].timestamp*1000);
+    // const formatTime = moment(time).format();
+    // console.log(formatTime)
 
+    // for (let i = 0; i < myData.length; i++) {
 
-        for(let i = 0; i < myData.length; i++) {
-
-            // const time = new Date(myData[i].timestamp*1000);
-            // const formatTime = moment(time).format();
-            // console.log(formatTime)
-
-            const time = myData[i].timestamp*1000;
-            console.log(time)
-;        }
-}, [myData]);
-
+    //     const time = myData[i].timestamp * 1000;
+    //     console.log(time);
+    // }
 
     return (
         <div>
