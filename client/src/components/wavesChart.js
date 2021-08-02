@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-// import { Bar } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 // import moment from 'moment';
+
 const WaveChart = (data) => {
 
     const myData = data.data;
 
-    const currentDate = Date.now() / 1000;
+    const currentTme = Date.now() / 1000;
 
     const [timestampArray, setTimestampArray] = useState(null);
 
@@ -13,15 +14,15 @@ const WaveChart = (data) => {
 
     useEffect(() => {
         setTimestampArray(myData.map((element) => element.timestamp));
+        // console.log(myData);
     }, [myData]);
 
     useEffect(() => {
         if (timestampArray != null) {
-            // console.log(currentDate); 
+            // console.log(currentTme); 
             const closestTime = timestampArray.reduce((a, b) => {
-                let aDiff = Math.abs(a - currentDate);
-                let bDiff = Math.abs(b - currentDate);
-
+                let aDiff = Math.abs(a - currentTme);
+                let bDiff = Math.abs(b - currentTme);
                 // eslint-disable-next-line eqeqeq
                 if (aDiff == bDiff) {
                     return a > b ? a : b;
@@ -44,7 +45,7 @@ const WaveChart = (data) => {
         console.log(currentData);
     }
 
-    // const formatDate = moment(CurrentDate).format();
+    // const formatDate = moment(CurrentTme).format();
     // const time = new Date(myData[i].timestamp*1000);
     // const formatTime = moment(time).format();
     // console.log(formatTime)
@@ -55,11 +56,34 @@ const WaveChart = (data) => {
     //     console.log(time);
     // }
 
+    if (currentData != null) {
+        
+        const graphData = {
+            labels: ['Min Height', 'Max Height'],
+            datasets: [
+                {
+                    label: 'Surf Height (ft)',
+                    data: [currentData.surf.min, currentData.surf.max],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                    ]
+                }
+            ]
+        }
+
+        return (
+        
+            <div className="p-2">
+                <Bar data={graphData}/>
+            </div>
+        )
+    }
+
     return (
-        <div>
-            <h1>BarChart</h1>
-        </div>
+        <div />
     )
+
 }
 
 export default WaveChart;
