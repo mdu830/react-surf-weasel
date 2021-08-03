@@ -39,7 +39,8 @@ const WaveChart = (data) => {
     }, [timestampArray]);
 
     if (currentData != null) {
-        // console.log(moment(currentData);
+        console.log(currentData);
+        
         const readableTime = moment(currentData.timestamp * 1000).format('hh:mm a').replace(/^0+/, '');
 
         // Bar Chart Data and Options
@@ -78,7 +79,7 @@ const WaveChart = (data) => {
 
         return (
             <div className="p-2">
-                <h3>Reported Time: {readableTime}</h3>
+                <p>Reported Time: {readableTime}</p>
                 <Bar data={graphData} options={options} />
             </div>
         )
