@@ -67,9 +67,9 @@ const WaveChart = (data) => {
                     borderColor: [
                         'rgba(255, 99, 132, 1)',
                         'rgba(54, 162, 235, 1)',
-                      ],
-                      borderWidth: 1,
-                      borderRadius: 5,
+                    ],
+                    borderWidth: 1,
+                    borderRadius: 5,
                 }
             ]
         }
@@ -78,20 +78,20 @@ const WaveChart = (data) => {
             responsive: false,
             maintainAspectRatio: false,
             scales: {
-              yAxes: [
-                {
-                  ticks: {
-                    beginAtZero: true,
-                  },
-                },
-              ],
+                yAxes: [
+                    {
+                        ticks: {
+                            beginAtZero: true,
+                        },
+                    },
+                ],
             },
-          };
+        };
 
         return (
             <div className="p-2">
-                    <h3>At {readableTime}</h3>
-                    <Bar data={graphData} options={options} />
+                <h3>Reported Time: {readableTime}</h3>
+                <Bar data={graphData} options={options} />
             </div>
         )
     }
