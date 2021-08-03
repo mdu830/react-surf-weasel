@@ -53,7 +53,7 @@ const WaveChart = (data) => {
         console.log(currentData);
 
         const graphData = {
-            labels: ['Min Height', 'Max Height'],
+            labels: ['Min', 'Max'],
             datasets: [
                 {
                     label: 'Surf Height (FT)',
@@ -61,17 +61,33 @@ const WaveChart = (data) => {
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
-                    ]
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                      ],
+                      borderWidth: 1,
                 }
             ]
         }
 
-        return (
+        const options = {
+            responsive: false,
+            maintainAspectRatio: false,
+            scales: {
+              yAxes: [
+                {
+                  ticks: {
+                    beginAtZero: true,
+                  },
+                },
+              ],
+            },
+          };
 
+        return (
             <div className="p-2">
-                <article className="canvas-container">
-                    <Bar data={graphData} />
-                </article>
+                    <Bar data={graphData} options={options} />
             </div>
         )
     }
