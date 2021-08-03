@@ -39,7 +39,7 @@ const WaveChart = (data) => {
     }, [timestampArray]);
 
     if (currentData != null) {
-        console.log(currentData);
+        // console.log(currentData);
         
         const readableTime = moment(currentData.timestamp * 1000).format('hh:mm a').replace(/^0+/, '');
 
@@ -48,7 +48,7 @@ const WaveChart = (data) => {
             labels: ['Min', 'Max'],
             datasets: [
                 {
-                    label: 'Surf Height (FT)',
+                    label: 'Surf Height (FT)' + ` at ${readableTime}`,
                     data: [currentData.surf.min, currentData.surf.max],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
@@ -79,7 +79,6 @@ const WaveChart = (data) => {
 
         return (
             <div className="p-2">
-                <p>Reported Time: {readableTime}</p>
                 <Bar data={graphData} options={options} />
             </div>
         )
