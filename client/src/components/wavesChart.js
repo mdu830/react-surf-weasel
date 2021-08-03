@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Bar } from 'react-chartjs-2';
-// import moment from 'moment';
+import moment from 'moment';
 
 const WaveChart = (data) => {
 
@@ -50,7 +50,9 @@ const WaveChart = (data) => {
     // }
 
     if (currentData != null) {
-        console.log(currentData);
+        console.log(moment(currentData.timestamp * 1000).format('hh:mm a'));
+
+        const readableTime = moment(currentData.timestamp * 1000).format('hh:mm a').replace(/^0+/, '');
 
         const graphData = {
             labels: ['Min', 'Max'],
@@ -88,6 +90,7 @@ const WaveChart = (data) => {
 
         return (
             <div className="p-2">
+                    <h3>At {readableTime}</h3>
                     <Bar data={graphData} options={options} />
             </div>
         )
