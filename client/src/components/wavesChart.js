@@ -5,11 +5,8 @@ import { Bar } from 'react-chartjs-2';
 const WaveChart = (data) => {
 
     const myData = data.data;
-
     const currentTme = Date.now() / 1000;
-
     const [timestampArray, setTimestampArray] = useState(null);
-
     const [currentData, setCurrentData] = useState(null);
 
     useEffect(() => {
@@ -41,10 +38,6 @@ const WaveChart = (data) => {
 
     }, [timestampArray]);
 
-    if (currentData != null) {
-        console.log(currentData);
-    }
-
     // const formatDate = moment(CurrentTme).format();
     // const time = new Date(myData[i].timestamp*1000);
     // const formatTime = moment(time).format();
@@ -57,12 +50,13 @@ const WaveChart = (data) => {
     // }
 
     if (currentData != null) {
-        
+        console.log(currentData);
+
         const graphData = {
             labels: ['Min Height', 'Max Height'],
             datasets: [
                 {
-                    label: 'Surf Height (ft)',
+                    label: 'Surf Height (FT)',
                     data: [currentData.surf.min, currentData.surf.max],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
@@ -73,9 +67,11 @@ const WaveChart = (data) => {
         }
 
         return (
-        
+
             <div className="p-2">
-                <Bar data={graphData}/>
+                <article className="canvas-container">
+                    <Bar data={graphData} />
+                </article>
             </div>
         )
     }
