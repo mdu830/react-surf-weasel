@@ -4,15 +4,15 @@ import moment from 'moment';
 
 const WaveChart = (data) => {
 
-    const myData = data.data;
+    const waveData = data.data;
     const currentTme = Date.now() / 1000;
     const [timestampArray, setTimestampArray] = useState(null);
     const [currentData, setCurrentData] = useState(null);
 
     useEffect(() => {
-        setTimestampArray(myData.map((element) => element.timestamp));
-        // console.log(myData);
-    }, [myData]);
+        setTimestampArray(waveData.map((element) => element.timestamp));
+        // console.log(waveData);
+    }, [waveData]);
 
     useEffect(() => {
         if (timestampArray != null) {
@@ -28,7 +28,7 @@ const WaveChart = (data) => {
                 }
             });
             // console.log(closestTime);
-            myData.map(element => {
+            waveData.map(element => {
                 if (element.timestamp === closestTime) {
                     setCurrentData(element);
                 }
@@ -38,22 +38,11 @@ const WaveChart = (data) => {
 
     }, [timestampArray]);
 
-    // const formatDate = moment(CurrentTme).format();
-    // const time = new Date(myData[i].timestamp*1000);
-    // const formatTime = moment(time).format();
-    // console.log(formatTime)
-
-    // for (let i = 0; i < myData.length; i++) {
-
-    //     const time = myData[i].timestamp * 1000;
-    //     console.log(time);
-    // }
-
     if (currentData != null) {
-        console.log(moment(currentData.timestamp * 1000).format('hh:mm a'));
-
+        // console.log(moment(currentData);
         const readableTime = moment(currentData.timestamp * 1000).format('hh:mm a').replace(/^0+/, '');
 
+        // Bar Chart Data and Options
         const graphData = {
             labels: ['Min', 'Max'],
             datasets: [
@@ -73,7 +62,6 @@ const WaveChart = (data) => {
                 }
             ]
         }
-
         const options = {
             responsive: false,
             maintainAspectRatio: false,
