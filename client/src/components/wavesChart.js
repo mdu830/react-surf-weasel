@@ -67,6 +67,7 @@ const WaveChart = (data) => {
                         'rgba(54, 162, 235, 1)',
                       ],
                       borderWidth: 1,
+                      borderRadius: 5,
                 }
             ]
         }
