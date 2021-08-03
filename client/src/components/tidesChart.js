@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-// import { Bar } from 'react-chartjs-2';
 // import moment from 'moment';
 
 const TidesChart = (data) => {
@@ -9,10 +8,16 @@ const TidesChart = (data) => {
     const [timestampArray, setTimestampArray] = useState(null);
     const [currentData, setCurrentData] = useState(null);
 
+    const [highLowTides, setHighLowTides] = useState(null);
+
+    // get timestamps from all objects 
     useEffect(() => {
         setTimestampArray(tidesData.map((element) => element.timestamp));
+        setHighLowTides(tidesData.map((element) => [element.timestamp, element.type]));
         // console.log(tidesData);
     }, [tidesData]);
+
+    console.log(highLowTides);
 
     useEffect(() => {
         if (timestampArray != null) {
@@ -43,44 +48,10 @@ const TidesChart = (data) => {
         
         // const readableTime = moment(currentData.timestamp * 1000).format('hh:mm a').replace(/^0+/, '');
 
-        // Bar Chart Data and Options
-        // const graphData = {
-        //     labels: ['Min', 'Max'],
-        //     datasets: [
-        //         {
-        //             label: 'Surf Height (FT)',
-        //             data: [currentData.surf.min, currentData.surf.max],
-        //             backgroundColor: [
-        //                 'rgba(255, 99, 132, 0.2)',
-        //                 'rgba(54, 162, 235, 0.2)',
-        //             ],
-        //             borderColor: [
-        //                 'rgba(255, 99, 132, 1)',
-        //                 'rgba(54, 162, 235, 1)',
-        //             ],
-        //             borderWidth: 1,
-        //             borderRadius: 5,
-        //         }
-        //     ]
-        // }
-        // const options = {
-        //     responsive: false,
-        //     maintainAspectRatio: false,
-        //     scales: {
-        //         yAxes: [
-        //             {
-        //                 ticks: {
-        //                     beginAtZero: true,
-        //                 },
-        //             },
-        //         ],
-        //     },
-        // };
-
         return (
             <div className="p-2">
-                {/* <p>Reported Time: {readableTime}</p>
-                <Bar data={graphData} options={options} /> */}
+                <p>Tide</p>
+
             </div>
         )
     }

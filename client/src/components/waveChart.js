@@ -48,7 +48,7 @@ const WaveChart = (data) => {
             labels: ['Min', 'Max'],
             datasets: [
                 {
-                    label: ` ${readableTime} ` + 'Wave Height (FT)',
+                    label: `${readableTime} (FT)`,
                     data: [currentData.surf.min, currentData.surf.max],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
@@ -79,6 +79,7 @@ const WaveChart = (data) => {
 
         return (
             <div className="p-2">
+                <p>Surf Height</p>
                 <Bar data={graphData} options={options} />
             </div>
         )

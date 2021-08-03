@@ -38,7 +38,7 @@ const SurfReportPage = (props) => {
         fetchReport();
     }, [searchReqSpotId]);
 
-    // console.log(response)
+    // console.log(response);
 
     if (isLoading) {
         return (
