@@ -10,13 +10,12 @@ const WaveChart = (data) => {
     const [currentData, setCurrentData] = useState(null);
 
     useEffect(() => {
+        // get timestamps from all objects and set timestampArray
         setTimestampArray(waveData.map((element) => element.timestamp));
-        // console.log(waveData);
     }, [waveData]);
 
     useEffect(() => {
         if (timestampArray != null) {
-            // console.log(currentTme); 
             const closestTime = timestampArray.reduce((a, b) => {
                 let aDiff = Math.abs(a - currentTme);
                 let bDiff = Math.abs(b - currentTme);
@@ -37,16 +36,13 @@ const WaveChart = (data) => {
         }
 
     }, [timestampArray]);
-    
+
 
     if (currentData === null) {
         return (null)
     }
-
-    // console.log(currentData);
-
     const readableTime = moment(currentData.timestamp * 1000).format('hh:mm a').replace(/^0+/, '');
-
+    
     // Bar Chart Data and Options
     const graphData = {
         labels: ['Min', 'Max'],
