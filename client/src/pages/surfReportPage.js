@@ -52,8 +52,14 @@ const SurfReportPage = (props) => {
             <div className="registerCont pb-4">
                 <h1 className="appTitle">{searchReqName}</h1>
                 <WaveChart id="waveChart" data={response.wave} />
-                <TidesChart id="tidesChart" data={response.tides}/>
-                <WindChart id="windChart" data={response.wind}/>
+                <div className="row">
+                    <div className="col">
+                        <TidesChart id="tidesChart" data={response.tides} />
+                    </div>
+                    <div className="col">
+                        <WindChart id="windChart" data={response.wind} />
+                    </div>
+                </div>
             </div>
         </div>
     )
