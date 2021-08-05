@@ -56,20 +56,21 @@ const SurfReportPage = (props) => {
                 <Container>
                     <Row className="justify-content-center">
                         <Col xs="auto">
-                            <WaveChart id="waveChart" data={response.wave} />
                         </Col>
                     </Row>
-                    <Row>
-                        <Col xs="6">
+                    <Row className="justify-content-center">
+                        <Col xs="auto">
+                            <WaveChart id="waveChart" data={response.wave} />
+                        </Col>
+                        <Col xs="auto">
                             <TidesChart id="tidesChart" data={response.tides} />
                         </Col>
-                        <Col xs="6">
+                        <Col xs="auto">
                             <WindChart id="windChart" data={response.wind} />
                         </Col>
-                        <Col xs="6">
+                        <Col xs="auto">
                             <WeatherChart id="weather" data={response.weather} />
                         </Col>
-                        <Col xs="6"></Col>
                     </Row>
                 </Container>
             </div>
