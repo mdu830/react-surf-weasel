@@ -77,6 +77,9 @@ const WaveChart = (data) => {
         },
     };
 
+    // console.log(currentData);
+
+
     return (
         <div id="waveChart" className="p-2 m-2">
             <p>Surf Height</p>

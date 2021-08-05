@@ -251,7 +251,7 @@ h1 {
 
 /* charts */
 
-#waveChart, #tideChart, #windChart {
+#waveChart, #tideChart, #windChart, #weatherChart {
   background-color: rgb(233, 255, 248);
   border: rgb(71, 71, 71) 1px solid;
   border-radius: 15px;

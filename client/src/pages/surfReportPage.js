@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { Container, Row, Col } from 'reactstrap'
 import axios from 'axios';
 import { CircularProgress } from '@material-ui/core';
 import WaveChart from '../components/waveChart';
 import TidesChart from '../components/tidesChart';
 import WindChart from '../components/windChart';
+import WeatherChart from '../components/weatherChart';
 
 const SurfReportPage = (props) => {
 
@@ -51,15 +53,25 @@ const SurfReportPage = (props) => {
         <div className="page">
             <div className="registerCont pb-4">
                 <h1 className="appTitle">{searchReqName}</h1>
-                <WaveChart id="waveChart" data={response.wave} />
-                <div className="row">
-                    <div className="col">
-                        <TidesChart id="tidesChart" data={response.tides} />
-                    </div>
-                    <div className="col">
-                        <WindChart id="windChart" data={response.wind} />
-                    </div>
-                </div>
+                <Container>
+                    <Row className="justify-content-center">
+                        <Col xs="auto">
+                            <WaveChart id="waveChart" data={response.wave} />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs="auto"></Col>
+                        <Col xs="auto">
+                            <TidesChart id="tidesChart" data={response.tides} />
+                        </Col>
+                        <Col xs="auto">
+                            <WindChart id="windChart" data={response.wind} />
+                        </Col>
+                        <Col xs="auto">
+                            <WeatherChart id="weather" data={response.weather} />
+                        </Col>
+                    </Row>
+                </Container>
             </div>
         </div>
     )
