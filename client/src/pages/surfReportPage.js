@@ -60,16 +60,16 @@ const SurfReportPage = (props) => {
                         </Col>
                     </Row>
                     <Row>
-                        <Col xs="auto"></Col>
-                        <Col xs="auto">
+                        <Col xs="6">
                             <TidesChart id="tidesChart" data={response.tides} />
                         </Col>
-                        <Col xs="auto">
+                        <Col xs="6">
                             <WindChart id="windChart" data={response.wind} />
                         </Col>
-                        <Col xs="auto">
+                        <Col xs="6">
                             <WeatherChart id="weather" data={response.weather} />
                         </Col>
+                        <Col xs="6"></Col>
                     </Row>
                 </Container>
             </div>
