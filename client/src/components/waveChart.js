@@ -8,6 +8,8 @@ const WaveChart = (data) => {
     const currentTme = Date.now() / 1000;
     const [timestampArray, setTimestampArray] = useState(null);
     const [currentData, setCurrentData] = useState(null);
+    const [isLoading, setLoading] = useState(true);
+
 
     useEffect(() => {
         setTimestampArray(waveData.map((element) => element.timestamp));
@@ -31,6 +33,7 @@ const WaveChart = (data) => {
             waveData.map(element => {
                 if (element.timestamp === closestTime) {
                     setCurrentData(element);
+                    setLoading(false);
                 }
                 return element;
             });
@@ -38,55 +41,53 @@ const WaveChart = (data) => {
 
     }, [timestampArray]);
 
-    if (currentData != null) {
-        // console.log(currentData);
-        
-        const readableTime = moment(currentData.timestamp * 1000).format('hh:mm a').replace(/^0+/, '');
-
-        // Bar Chart Data and Options
-        const graphData = {
-            labels: ['Min', 'Max'],
-            datasets: [
-                {
-                    label: `${readableTime} (FT)`,
-                    data: [currentData.surf.min, currentData.surf.max],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                    ],
-                    borderWidth: 1,
-                    borderRadius: 5,
-                }
-            ]
-        }
-        const options = {
-            responsive: false,
-            maintainAspectRatio: false,
-            scales: {
-                yAxes: [
-                    {
-                        ticks: {
-                            beginAtZero: true,
-                        },
-                    },
-                ],
-            },
-        };
-
-        return (
-            <div className="p-2">
-                <p>Surf Height</p>
-                <Bar data={graphData} options={options} />
-            </div>
-        )
+    if (currentData === null) {
+        return (null)
     }
 
+    // console.log(currentData);
+
+    const readableTime = moment(currentData.timestamp * 1000).format('hh:mm a').replace(/^0+/, '');
+
+    // Bar Chart Data and Options
+    const graphData = {
+        labels: ['Min', 'Max'],
+        datasets: [
+            {
+                label: `${readableTime} (FT)`,
+                data: [currentData.surf.min, currentData.surf.max],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                ],
+                borderWidth: 1,
+                borderRadius: 5,
+            }
+        ]
+    }
+    const options = {
+        responsive: false,
+        maintainAspectRatio: false,
+        scales: {
+            yAxes: [
+                {
+                    ticks: {
+                        beginAtZero: true,
+                    },
+                },
+            ],
+        },
+    };
+
     return (
-        <div />
+        <div id="waveChart" className="p-2 m-2">
+            <p>Surf Height</p>
+            <Bar data={graphData} options={options} />
+        </div>
     )
 
 }

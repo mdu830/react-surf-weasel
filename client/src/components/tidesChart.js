@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-// import moment from 'moment';
+import moment from 'moment';
+
 
 const TidesChart = (data) => {
 
@@ -7,21 +8,17 @@ const TidesChart = (data) => {
     const currentTme = Date.now() / 1000;
     const [timestampArray, setTimestampArray] = useState(null);
     const [currentData, setCurrentData] = useState(null);
-
     const [highLowTides, setHighLowTides] = useState(null);
 
-    // get timestamps from all objects 
     useEffect(() => {
+        // get timestamps from all objects 
         setTimestampArray(tidesData.map((element) => element.timestamp));
-        setHighLowTides(tidesData.map((element) => [element.timestamp, element.type]));
-        // console.log(tidesData);
-    }, [tidesData]);
 
-    console.log(highLowTides);
+    }, [tidesData]);
 
     useEffect(() => {
         if (timestampArray != null) {
-            // console.log(currentTme); 
+            // find closest time to current time
             const closestTime = timestampArray.reduce((a, b) => {
                 let aDiff = Math.abs(a - currentTme);
                 let bDiff = Math.abs(b - currentTme);
@@ -39,27 +36,39 @@ const TidesChart = (data) => {
                 }
                 return element;
             });
-        }
 
+            // get next high/low tide
+            const futureTide = closestTime + 14000;
+
+            tidesData.map(element => {
+                if (element.timestamp <= futureTide && element.type !== "NORMAL") {
+                    const nextTide = {time: element.timestamp, type: element.type};
+                    setHighLowTides(nextTide);
+                   return nextTide
+                }
+                return tidesData
+            }
+            )
+        }
     }, [timestampArray]);
 
-    if (currentData != null) {
-        console.log(currentData);
-        
-        // const readableTime = moment(currentData.timestamp * 1000).format('hh:mm a').replace(/^0+/, '');
+    if (currentData && highLowTides != null) {
+        // console.log(highLowTides);
+        // console.log(currentData);
+        const formattedTideTime = moment(highLowTides.time * 1000).format('hh:mm a').replace(/^0+/, '');
 
         return (
-            <div className="p-2">
+            <div id="tideChart" className="p-2 m-2">
                 <p>Tide</p>
+                <h6>Height: {currentData.height} ft</h6>
 
+                {highLowTides.type === "LOW" ? 
+                <h6>Low tide at {formattedTideTime}</h6> : 
+                <h6>High tide at {formattedTideTime}</h6>}
             </div>
         )
     }
-
-    return (
-        <div />
-    )
-
+    return (null)
 }
 
 export default TidesChart;
