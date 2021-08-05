@@ -40,13 +40,14 @@ const WeatherChart = (data) => {
     if (currentData === null) {
         return (null)
     }
-    // console.log(currentData);
-    // console.log(waveData);
+    console.log(currentData);
     // const readableTime = moment(currentData.timestamp * 1000).format('hh:mm a').replace(/^0+/, '');
+    const temperature = Math.round(currentData.temperature)
 
     return (
         <div id="weatherChart" className="p-2 m-2">
             <p>Weather</p>
+            <h6>Temperature: {temperature}&deg;F</h6>
         </div>
     )
 
