@@ -28,7 +28,7 @@ const TidesChart = (data) => {
                     return bDiff < aDiff ? b : a;
                 }
             });
-            console.log(closestTime);
+            // console.log(closestTime);
             tidesData.map(element => {
                 if (element.timestamp === closestTime) {
                     setCurrentData(element);

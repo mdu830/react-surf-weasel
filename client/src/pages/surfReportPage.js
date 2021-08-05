@@ -3,6 +3,7 @@ import axios from 'axios';
 import { CircularProgress } from '@material-ui/core';
 import WaveChart from '../components/waveChart';
 import TidesChart from '../components/tidesChart';
+import WindChart from '../components/windChart';
 
 const SurfReportPage = (props) => {
 
@@ -51,7 +52,8 @@ const SurfReportPage = (props) => {
             <div className="registerCont">
                 <h1 className="appTitle">{searchReqName}</h1>
                 <WaveChart id="waveChart" data={response.wave} />
-                <TidesChart id ="tidesChart" data={response.tides}/>
+                <TidesChart id="tidesChart" data={response.tides}/>
+                <WindChart id="windChart" data={response.wind}/>
             </div>
         </div>
     )
