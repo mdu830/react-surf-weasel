@@ -15,6 +15,7 @@ body {
   border: rgb(121, 121, 121) 1px solid;
   height: 80px;
   z-index: +2;
+  position: fixed;
   box-shadow:
   -1px -1px 0 rgba(255, 255, 255, 0),
   1px 1px 0 rgba(0,0,0,.25),
@@ -216,7 +217,7 @@ h1 {
 .footer {
   background-color: rgb(56, 56, 56);
   color: antiquewhite;
-  position:fixed;
+  position: fixed;
   bottom: 0;
   width: 100%;
 }
