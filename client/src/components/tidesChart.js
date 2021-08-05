@@ -59,7 +59,7 @@ const TidesChart = (data) => {
 
         return (
             <div id="tideChart" className="p-2 m-2">
-                <p>Tide</p>
+                <h5>Tide</h5>
                 <h6>Height: {currentData.height} ft</h6>
 
                 {highLowTides.type === "LOW" ? 

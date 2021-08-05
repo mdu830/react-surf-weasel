@@ -255,6 +255,12 @@ h1 {
   background-color: rgb(233, 255, 248);
   border: rgb(71, 71, 71) 1px solid;
   border-radius: 15px;
+
+}
+
+#tideChart, #windChart, #weatherChart {
+  height: 200px;
+  /* width: 312px; */
 }
 
 /* Media Queries */
@@ -309,6 +315,13 @@ h1 {
     top: 0;
     left: 0;
     overflow: hidden;
+  }
+
+  /* charts */
+
+  #tideChart, #windChart, #weatherChart {
+    height: 128px;
+    width: 312px;
   }
 
   /* page */

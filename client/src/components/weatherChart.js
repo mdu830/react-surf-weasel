@@ -137,7 +137,7 @@ const WeatherChart = (data) => {
 
     return (
         <div id="weatherChart" className="p-2 m-2">
-            <p>Weather</p>
+            <h5>Weather</h5>
             {weatherInfo}
             <h6>Temperature: {temperature}&deg;F</h6>
         </div>
