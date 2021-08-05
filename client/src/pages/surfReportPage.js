@@ -49,7 +49,7 @@ const SurfReportPage = (props) => {
 
     return (
         <div className="page">
-            <div className="registerCont">
+            <div className="registerCont pb-4">
                 <h1 className="appTitle">{searchReqName}</h1>
                 <WaveChart id="waveChart" data={response.wave} />
                 <TidesChart id="tidesChart" data={response.tides}/>
