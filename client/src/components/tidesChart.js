@@ -37,7 +37,7 @@ const TidesChart = (data) => {
             });
 
             // get next high/low tide
-            const futureTide = closestTime + 24500;
+            const futureTide = closestTime + 24250;
 
             tidesData.map(element => {
                 if (element.timestamp <= futureTide && element.type !== "NORMAL") {
