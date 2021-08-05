@@ -13,7 +13,6 @@ const TidesChart = (data) => {
     useEffect(() => {
         // get timestamps from all objects 
         setTimestampArray(tidesData.map((element) => element.timestamp));
-
     }, [tidesData]);
 
     useEffect(() => {
@@ -29,7 +28,7 @@ const TidesChart = (data) => {
                     return bDiff < aDiff ? b : a;
                 }
             });
-            // console.log(closestTime);
+            console.log(closestTime);
             tidesData.map(element => {
                 if (element.timestamp === closestTime) {
                     setCurrentData(element);
@@ -38,11 +37,12 @@ const TidesChart = (data) => {
             });
 
             // get next high/low tide
-            const futureTide = closestTime + 14000;
+            const futureTide = closestTime + 24500;
 
             tidesData.map(element => {
                 if (element.timestamp <= futureTide && element.type !== "NORMAL") {
                     const nextTide = {time: element.timestamp, type: element.type};
+                    console.log(nextTide)
                     setHighLowTides(nextTide);
                    return nextTide
                 }
@@ -53,6 +53,8 @@ const TidesChart = (data) => {
     }, [timestampArray]);
 
     if (currentData && highLowTides != null) {
+        // console.log(highLowTides)
+        // console.log(tidesData);
 
         const formattedTideTime = moment(highLowTides.time * 1000).format('hh:mm a').replace(/^0+/, '');
 

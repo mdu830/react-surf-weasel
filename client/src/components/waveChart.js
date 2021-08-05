@@ -37,11 +37,14 @@ const WaveChart = (data) => {
         }
 
     }, [timestampArray]);
+    
 
     if (currentData === null) {
         return (null)
     }
+
     // console.log(currentData);
+
     const readableTime = moment(currentData.timestamp * 1000).format('hh:mm a').replace(/^0+/, '');
 
     // Bar Chart Data and Options
