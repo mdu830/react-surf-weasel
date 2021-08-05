@@ -8,8 +8,6 @@ const WaveChart = (data) => {
     const currentTme = Date.now() / 1000;
     const [timestampArray, setTimestampArray] = useState(null);
     const [currentData, setCurrentData] = useState(null);
-    const [isLoading, setLoading] = useState(true);
-
 
     useEffect(() => {
         setTimestampArray(waveData.map((element) => element.timestamp));
@@ -33,7 +31,6 @@ const WaveChart = (data) => {
             waveData.map(element => {
                 if (element.timestamp === closestTime) {
                     setCurrentData(element);
-                    setLoading(false);
                 }
                 return element;
             });
@@ -44,9 +41,7 @@ const WaveChart = (data) => {
     if (currentData === null) {
         return (null)
     }
-
     // console.log(currentData);
-
     const readableTime = moment(currentData.timestamp * 1000).format('hh:mm a').replace(/^0+/, '');
 
     // Bar Chart Data and Options

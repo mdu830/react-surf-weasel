@@ -53,8 +53,7 @@ const TidesChart = (data) => {
     }, [timestampArray]);
 
     if (currentData && highLowTides != null) {
-        // console.log(highLowTides);
-        // console.log(currentData);
+
         const formattedTideTime = moment(highLowTides.time * 1000).format('hh:mm a').replace(/^0+/, '');
 
         return (
