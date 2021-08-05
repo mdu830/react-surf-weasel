@@ -123,16 +123,14 @@ const WeatherChart = (data) => {
                 weather = <h6>Error</h6>
         }
         return weather
-
     }
-
 
     if (currentData === null) {
         return (null)
     }
+
     console.log(weatherData);
     // console.log(currentData);
-    // const readableTime = moment(currentData.timestamp * 1000).format('hh:mm a').replace(/^0+/, '');
     const temperature = Math.round(currentData.temperature);
     const weatherInfo = getWeatherConditionImg(currentData.condition);
 
@@ -140,7 +138,7 @@ const WeatherChart = (data) => {
     return (
         <div id="weatherChart" className="p-2 m-2">
             <p>Weather</p>
-            <h6>Condition: {weatherInfo}</h6>
+            <h6>{weatherInfo}</h6>
             <h6>Temperature: {temperature}&deg;F</h6>
         </div>
     )
