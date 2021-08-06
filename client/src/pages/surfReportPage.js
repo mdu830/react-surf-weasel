@@ -53,7 +53,7 @@ const SurfReportPage = (props) => {
     return (
         <div className="page">
             <div className="registerCont pb-4">
-                <h1 className="appTitle">{searchReqName}</h1>
+                <h1 className="appTitle mb-4">{searchReqName}</h1>
                 <Container>
                     <Row>
                         <SwellsGraph data={response.wave}/>
