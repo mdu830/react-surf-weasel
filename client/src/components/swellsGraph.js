@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import moment from 'moment';
+import { Line } from "react-chartjs-2";
+// import moment from 'moment';
+
 
 const SwellsGraph = (data) => {
 
@@ -40,12 +42,46 @@ const SwellsGraph = (data) => {
     if (currentData === null) {
         return (null)
     }
-    const readableTime = moment(currentData.timestamp * 1000).format('hh:mm a').replace(/^0+/, '');
+    // const readableTime = moment(currentData.timestamp * 1000).format('hh:mm a').replace(/^0+/, '');
 
     // console.log(currentData);
 
+    const graphData = {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+        datasets: [
+            {
+                label: "First dataset",
+                data: [33, 53, 85, 41, 44, 65],
+                fill: true,
+                backgroundColor: "rgba(75,192,192,0.2)",
+                borderColor: "rgba(75,192,192,1)"
+            },
+            {
+                label: "Second dataset",
+                data: [33, 25, 35, 51, 54, 76],
+                fill: false,
+                borderColor: "#742774"
+            }
+        ]
+    };
+
+    const options = {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+            yAxes: [
+                {
+                    ticks: {
+                        beginAtZero: true,
+                    },
+                },
+            ],
+        },
+    };
+
     return (
         <div id="SwellsGraph" className="m-1">
+            <Line options={options} data={graphData} />
 
         </div>
     )
