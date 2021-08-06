@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Line } from "react-chartjs-2";
+import { useMediaQuery } from 'react-responsive'
+
 // import moment from 'moment';
 
 
@@ -9,6 +11,8 @@ const SwellsGraph = (data) => {
     const currentTme = Date.now() / 1000;
     const [timestampArray, setTimestampArray] = useState(null);
     const [currentData, setCurrentData] = useState(null);
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 551px)' });
+    console.log(isTabletOrMobile);
 
     useEffect(() => {
         // get timestamps from all objects and set timestampArray
@@ -42,7 +46,6 @@ const SwellsGraph = (data) => {
     if (currentData === null) {
         return (null)
     }
-    // const readableTime = moment(currentData.timestamp * 1000).format('hh:mm a').replace(/^0+/, '');
 
     // console.log(currentData);
 
@@ -66,7 +69,7 @@ const SwellsGraph = (data) => {
     };
 
     const options = {
-        responsive: true,
+        responsive: isTabletOrMobile ? false : true,
         maintainAspectRatio: false,
         scales: {
             yAxes: [
@@ -80,7 +83,7 @@ const SwellsGraph = (data) => {
     };
 
     return (
-        <div id="" className="m-1 graph">
+        <div className="m-1 graph">
             <Line options={options} data={graphData} />
         </div>
     )
