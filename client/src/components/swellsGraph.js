@@ -67,7 +67,7 @@ const SwellsGraph = (data) => {
 
     const options = {
         responsive: true,
-        maintainAspectRatio: false,
+        maintainAspectRatio: true,
         scales: {
             yAxes: [
                 {
