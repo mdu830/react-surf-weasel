@@ -68,13 +68,8 @@ const SwellsGraph = (data) => {
         ]
     };
 
-    const isMobile = () => {
-        const query = isTabletOrMobile ? false : true;
-        return query;
-    }
-
     const options = {
-        responsive: isMobile,
+        responsive: isTabletOrMobile ? false : true,
         maintainAspectRatio: false,
         scales: {
             yAxes: [
