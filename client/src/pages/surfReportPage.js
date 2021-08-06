@@ -6,6 +6,7 @@ import WaveChart from '../components/waveChart';
 import TidesChart from '../components/tidesChart';
 import WindChart from '../components/windChart';
 import WeatherChart from '../components/weatherChart';
+import SwellsGraph from '../components/swellsGraph';
 
 const SurfReportPage = (props) => {
 
@@ -54,17 +55,20 @@ const SurfReportPage = (props) => {
             <div className="registerCont pb-4">
                 <h1 className="appTitle">{searchReqName}</h1>
                 <Container>
+                    <Row>
+                        <SwellsGraph data={response.wave}/>
+                    </Row>
                     <Row id="reportRow" className="justify-content-center">
-                        <Col xs="sm-3">
+                        <Col xs="sm">
                             <WaveChart data={response.wave} />
                         </Col>
-                        <Col xs="sm-3">
+                        <Col xs="sm">
                             <TidesChart data={response.tides} />
                         </Col>
-                        <Col xs="sm-3">
+                        <Col xs="sm">
                             <WindChart data={response.wind} />
                         </Col>
-                        <Col xs="sm-3">
+                        <Col xs="sm">
                             <WeatherChart data={response.weather} />
                         </Col>
                     </Row>

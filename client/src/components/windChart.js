@@ -63,7 +63,7 @@ const WindChart = (data) => {
     return (
         <div id="windChart" className="m-1">
             <h4>Wind</h4>
-            <p>Blowing from: {getCurrentDirection} ({getCurrentDegrees}&deg;)</p>
+            <p>Coming from: {getCurrentDirection} ({getCurrentDegrees}&deg;)</p>
             <p>Speed: {getCurrentWindSpeed} knots</p>
 
         </div>
