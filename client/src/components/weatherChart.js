@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-// import moment from 'moment';
 
 const WeatherChart = (data) => {
 
@@ -25,7 +24,6 @@ const WeatherChart = (data) => {
                     return bDiff < aDiff ? b : a;
                 }
             });
-            // console.log(closestTime);
             weatherData.map(element => {
                 if (element.timestamp === closestTime) {
                     setCurrentData(element);
@@ -135,11 +133,8 @@ const WeatherChart = (data) => {
         return (null)
     }
 
-    // console.log(weatherData);
-    // console.log(currentData);
     const temperature = Math.round(currentData.temperature);
     const weatherInfo = getWeatherConditionImg(currentData.condition);
-
 
     return (
         <div id="weatherChart" className="m-1">

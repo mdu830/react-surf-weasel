@@ -17,7 +17,7 @@ const TidesChart = (data) => {
 
     useEffect(() => {
         if (timestampArray != null) {
-            // find closest time to current time
+            // find closest timestamp to current time
             const closestTime = timestampArray.reduce((a, b) => {
                 let aDiff = Math.abs(a - currentTme);
                 let bDiff = Math.abs(b - currentTme);
@@ -28,7 +28,6 @@ const TidesChart = (data) => {
                     return bDiff < aDiff ? b : a;
                 }
             });
-            // console.log(closestTime);
             tidesData.map(element => {
                 if (element.timestamp === closestTime) {
                     setCurrentData(element);
@@ -51,9 +50,6 @@ const TidesChart = (data) => {
     }, [timestampArray]);
 
     if (currentData && highLowTides != null) {
-        // console.log(highLowTides)
-        // console.log(tidesData);
-        // console.log(currentData);
 
         const formattedTideTime = moment(highLowTides.time * 1000).format('hh:mm a').replace(/^0+/, '');
 

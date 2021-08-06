@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-// import moment from 'moment';
 
 const WindChart = (data) => {
 
@@ -25,7 +24,6 @@ const WindChart = (data) => {
                     return bDiff < aDiff ? b : a;
                 }
             });
-            // console.log(closestTime);
             windData.map(element => {
                 if (element.timestamp === closestTime) {
                     setCurrentData(element);
@@ -54,7 +52,6 @@ const WindChart = (data) => {
     if (currentData === null) {
         return (null)
     }
-    // console.log(currentData);
 
     const getCurrentDirection = getDirection(currentData.direction);
     const getCurrentDegrees = getDegrees();

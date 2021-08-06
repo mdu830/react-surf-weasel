@@ -25,7 +25,6 @@ const WaveChart = (data) => {
                     return bDiff < aDiff ? b : a;
                 }
             });
-            // console.log(closestTime);
             waveData.map(element => {
                 if (element.timestamp === closestTime) {
                     setCurrentData(element);
@@ -40,9 +39,8 @@ const WaveChart = (data) => {
     if (currentData === null) {
         return (null)
     }
+    
     const readableTime = moment(currentData.timestamp * 1000).format('hh:mm a').replace(/^0+/, '');
-
-    // console.log(currentData);
 
     return (
         <div id="waveChart" className="m-1">
