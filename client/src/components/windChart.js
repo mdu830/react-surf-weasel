@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Container, Row, Col } from 'reactstrap'
+
 
 const WindChart = (data) => {
 
@@ -62,7 +64,6 @@ const WindChart = (data) => {
             <h4>Wind</h4>
             <p>Coming from: {getCurrentDirection} ({getCurrentDegrees}&deg;)</p>
             <p>Speed: {getCurrentWindSpeed} knots</p>
-
         </div>
     )
 

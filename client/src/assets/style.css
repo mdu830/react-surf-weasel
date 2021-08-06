@@ -255,8 +255,9 @@ h1 {
   padding: 10px;
 }
 
-#waveChart, #tideChart, #windChart, #weatherChart {
+#waveChart, #tideChart, #swellsChart, #windChart, #weatherChart {
   padding-top: 10px;
+  padding: 10px;
   background-color: rgb(204, 216, 253);
   border: rgb(97, 114, 165) 1px solid;
   border-radius: 8px;

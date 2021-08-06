@@ -5,14 +5,13 @@ import { useMediaQuery } from 'react-responsive'
 // import moment from 'moment';
 
 
-const SwellsGraph = (data) => {
+const ForcastGraph = (data) => {
 
     const waveData = data.data;
     const currentTme = Date.now() / 1000;
     const [timestampArray, setTimestampArray] = useState(null);
     const [currentData, setCurrentData] = useState(null);
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 551px)' });
-    console.log(isTabletOrMobile);
 
     useEffect(() => {
         // get timestamps from all objects and set timestampArray
@@ -41,7 +40,6 @@ const SwellsGraph = (data) => {
         }
 
     }, [timestampArray]);
-
 
     if (currentData === null) {
         return (null)
@@ -81,23 +79,24 @@ const SwellsGraph = (data) => {
             ],
         },
     };
+    // console.log(currentData);
 
     if (isTabletOrMobile) {
         return (
-            <div className="mobileGraph justify-content-center pt-2">
+            <div className="mobileGraph justify-content-center pt-2 mb-1">
+                <h4>Forcast</h4>
                 <Line className="lineG" options={options} data={graphData} />
-                <h4>Swells</h4>
             </div>
         )
     }
 
     return (
-        <div className="graph justify-content-center pb-5 mb-5">
-            <h4 className="pt-3">Swells</h4>
+        <div className="graph justify-content-center pb-5 mb-2">
+            <h4 className="pt-3">Forcast</h4>
             <Line className="lineG pb-2" options={options} data={graphData} />
         </div>
     )
 
 }
 
-export default SwellsGraph;
+export default ForcastGraph;
