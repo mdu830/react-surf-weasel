@@ -58,13 +58,13 @@ const TidesChart = (data) => {
         const formattedTideTime = moment(highLowTides.time * 1000).format('hh:mm a').replace(/^0+/, '');
 
         return (
-            <div id="tideChart" className="p-2 m-2">
-                <h5>Tide</h5>
-                <h6>Height: {currentData.height} ft</h6>
+            <div id="tideChart" className="m-1">
+                <h4>Tide</h4>
+                <p>Height: {currentData.height} ft</p>
 
                 {highLowTides.type === "LOW" ? 
-                <h6>Low tide at {formattedTideTime}</h6> : 
-                <h6>High tide at {formattedTideTime}</h6>}
+                <p>Low tide at {formattedTideTime}</p> : 
+                <p>High tide at {formattedTideTime}</p>}
             </div>
         )
     }

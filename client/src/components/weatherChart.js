@@ -42,91 +42,91 @@ const WeatherChart = (data) => {
 
         switch (data) {
             case 'CLEAR':
-                weather = <h6>Clear</h6>
+                weather = <p>Clear</p>
                 break
             case 'MIST':
-                weather = <h6>Mist</h6>
+                weather = <p>Mist</p>
                 break
             case 'FOG':
-                weather = <h6>Foggy</h6>
+                weather = <p>Foggy</p>
                 break
             case 'MOSTLY_CLEAR':
-                weather = <h6>Mostly Clear</h6>
+                weather = <p>Mostly Clear</p>
                 break
             case 'MOSTLY_CLOUDY':
-                weather = <h6>Mostly Cloudy</h6>
+                weather = <p>Mostly Cloudy</p>
                 break
             case 'CLOUDY':
-                weather = <h6>Cloudy</h6>
+                weather = <p>Cloudy</p>
                 break
             case 'OVERCAST':
-                weather = <h6>Overcast</h6>
+                weather = <p>Overcast</p>
                 break
             case 'BRIEF_SHOWERS_POSSIBLE':
-                weather = <h6>Possible Brief Showers</h6>
+                weather = <p>Possible Brief Showers</p>
                 break
             case 'BRIEF_SHOWERS':
-                weather = <h6>Brief Showers</h6>
+                weather = <p>Brief Showers</p>
                 break
             case 'LIGHT_SHOWERS':
-                weather = <h6>Light Showers</h6>
+                weather = <p>Light Showers</p>
                 break
             case 'HEAVY_SHOWERS':
-                weather = <h6>Heavy Showers</h6>
+                weather = <p>Heavy Showers</p>
                 break
             case 'THUNDER_SHOWERS':
-                weather = <h6>Thunder Showers</h6>
+                weather = <p>Thunder Showers</p>
                 break
             case 'THUNDER_STORMS':
-                weather = <h6>Thunder Storms</h6>
+                weather = <p>Thunder Storms</p>
                 break
             case 'HEAVY_THUNDER_STORMS':
-                weather = <h6>Heavy Thunder Storms</h6>
+                weather = <p>Heavy Thunder Storms</p>
                 break
             case 'NIGHT_CLEAR':
-                weather = <h6>Night Clear</h6>
+                weather = <p>Night Clear</p>
                 break
             case 'NIGHT_MIST':
-                weather = <h6>Night Mist</h6>
+                weather = <p>Night Mist</p>
                 break
             case 'NIGHT_FOG':
-                weather = <h6>Night Foggy</h6>
+                weather = <p>Night Foggy</p>
                 break
             case 'NIGHT_MOSTLY_CLEAR':
-                weather = <h6>Night Mostly Clear</h6>
+                weather = <p>Night Mostly Clear</p>
                 break
             case 'NIGHT_MOSTLY_CLOUDY':
-                weather = <h6>Night Mostly Cloudy</h6>
+                weather = <p>Night Mostly Cloudy</p>
                 break
             case 'NIGHT_CLOUDY':
-                weather = <h6>Night Cloudy</h6>
+                weather = <p>Night Cloudy</p>
                 break
             case 'NIGHT_OVERCAST':
-                weather = <h6>Night Overcast</h6>
+                weather = <p>Night Overcast</p>
                 break
             case 'NIGHT_BRIEF_SHOWERS_POSSIBLE':
-                weather = <h6>Night Possible Brief Showers</h6>
+                weather = <p>Night Possible Brief Showers</p>
                 break
             case 'NIGHT_BRIEF_SHOWERS':
-                weather = <h6>Night Brief Showers</h6>
+                weather = <p>Night Brief Showers</p>
                 break
             case 'NIGHT_LIGHT_SHOWERS':
-                weather = <h6>Night Light Showers</h6>
+                weather = <p>Night Light Showers</p>
                 break
             case 'NIGHT_HEAVY_SHOWERS':
-                weather = <h6>Night Heavy Showers</h6>
+                weather = <p>Night Heavy Showers</p>
                 break
             case 'NIGHT_THUNDER_SHOWERS':
-                weather = <h6>Night Thunder Showers</h6>
+                weather = <p>Night Thunder Showers</p>
                 break
             case 'NIGHT_THUNDER_STORMS':
-                weather = <h6>Night Thunder Storms</h6>
+                weather = <p>Night Thunder Storms</p>
                 break
             case 'NIGHT_HEAVY_THUNDER_STORMS':
-                weather = <h6>Night Heavy Thunder Storms</h6>
+                weather = <p>Night Heavy Thunder Storms</p>
                 break
             default:
-                weather = <h6>Error</h6>
+                weather = <p>Error No Report</p>
         }
         return weather
     }
@@ -136,16 +136,16 @@ const WeatherChart = (data) => {
     }
 
     // console.log(weatherData);
-    console.log(currentData);
+    // console.log(currentData);
     const temperature = Math.round(currentData.temperature);
     const weatherInfo = getWeatherConditionImg(currentData.condition);
 
 
     return (
-        <div id="weatherChart" className="p-2 m-2">
-            <h5>Weather</h5>
+        <div id="weatherChart" className="m-1">
+            <h4>Weather</h4>
             {weatherInfo}
-            <h6>Temperature: {temperature}&deg;F</h6>
+            <p>Temperature: {temperature}&deg;F</p>
         </div>
     )
 

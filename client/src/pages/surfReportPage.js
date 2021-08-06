@@ -54,22 +54,18 @@ const SurfReportPage = (props) => {
             <div className="registerCont pb-4">
                 <h1 className="appTitle">{searchReqName}</h1>
                 <Container>
-                    <Row className="justify-content-center">
-                        <Col xs="auto">
+                    <Row id="reportRow" className="justify-content-center">
+                        <Col xs="sm-3">
+                            <WaveChart data={response.wave} />
                         </Col>
-                    </Row>
-                    <Row className="justify-content-center">
-                        <Col xs="auto">
-                            <WaveChart id="waveChart" data={response.wave} />
+                        <Col xs="sm-3">
+                            <TidesChart data={response.tides} />
                         </Col>
-                        <Col xs="auto">
-                            <TidesChart id="tidesChart" data={response.tides} />
+                        <Col xs="sm-3">
+                            <WindChart data={response.wind} />
                         </Col>
-                        <Col xs="auto">
-                            <WindChart id="windChart" data={response.wind} />
-                        </Col>
-                        <Col xs="auto">
-                            <WeatherChart id="weather" data={response.weather} />
+                        <Col xs="sm-3">
+                            <WeatherChart data={response.weather} />
                         </Col>
                     </Row>
                 </Container>

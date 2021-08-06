@@ -36,7 +36,7 @@ const WindChart = (data) => {
     }, [timestampArray]);
 
     const getDirection = (angle) => {
-        const directions = ["North", "North-West", "West", "South-West", "South", "South-East", "East", "North-East"];
+        const directions = ["N", "NW", "W", "SW", "S", "SE", "E", "NE"];
         const index = Math.round(((angle %= 360) < 0 ? angle + 360 : angle) / 45) % 8;
         return directions[index];
     }
@@ -61,10 +61,10 @@ const WindChart = (data) => {
     const getCurrentWindSpeed = getWindSpeed();
 
     return (
-        <div id="windChart" className="p-2 m-2">
-            <h5>Wind</h5>
-            <h6>Blowing from: {getCurrentDirection} ({getCurrentDegrees}&deg;)</h6>
-            <h6>Speed: {getCurrentWindSpeed} knots</h6>
+        <div id="windChart" className="m-1">
+            <h4>Wind</h4>
+            <p>Blowing from: {getCurrentDirection} ({getCurrentDegrees}&deg;)</p>
+            <p>Speed: {getCurrentWindSpeed} knots</p>
 
         </div>
     )
