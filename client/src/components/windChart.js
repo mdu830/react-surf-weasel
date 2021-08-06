@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import moment from 'moment';
+// import moment from 'moment';
 
 const WindChart = (data) => {
 

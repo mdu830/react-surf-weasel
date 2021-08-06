@@ -65,6 +65,9 @@ const WeatherChart = (data) => {
             case 'BRIEF_SHOWERS_POSSIBLE':
                 weather = <h6>Possible Brief Showers</h6>
                 break
+            case 'BRIEF_SHOWERS':
+                weather = <h6>Brief Showers</h6>
+                break
             case 'LIGHT_SHOWERS':
                 weather = <h6>Light Showers</h6>
                 break
@@ -104,6 +107,9 @@ const WeatherChart = (data) => {
             case 'NIGHT_BRIEF_SHOWERS_POSSIBLE':
                 weather = <h6>Night Possible Brief Showers</h6>
                 break
+            case 'NIGHT_BRIEF_SHOWERS':
+                weather = <h6>Night Brief Showers</h6>
+                break
             case 'NIGHT_LIGHT_SHOWERS':
                 weather = <h6>Night Light Showers</h6>
                 break
@@ -130,7 +136,7 @@ const WeatherChart = (data) => {
     }
 
     // console.log(weatherData);
-    // console.log(currentData);
+    console.log(currentData);
     const temperature = Math.round(currentData.temperature);
     const weatherInfo = getWeatherConditionImg(currentData.condition);
 
