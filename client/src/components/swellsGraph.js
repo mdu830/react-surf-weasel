@@ -80,9 +80,8 @@ const SwellsGraph = (data) => {
     };
 
     return (
-        <div id="SwellsGraph" className="m-1">
+        <div id="" className="m-1 graph">
             <Line options={options} data={graphData} />
-
         </div>
     )
 
