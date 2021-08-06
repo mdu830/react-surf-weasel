@@ -43,7 +43,7 @@ const SwellsChart = (data) => {
             const swells = currentData.swells;
 
             swells.map((element) => {
-                if (element.height > 0.5) {
+                if (element.height > 1) {
                     setSwells(arr => [...arr, element]);
                 }
                 return element;
@@ -65,7 +65,7 @@ const SwellsChart = (data) => {
         const index = Math.round(((angle %= 360) < 0 ? angle + 360 : angle) / 45) % 8;
         return directions[index];
     }
-    
+
     if (currentData === null) {
         return (null)
     }
