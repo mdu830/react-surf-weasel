@@ -68,8 +68,13 @@ const SwellsGraph = (data) => {
         ]
     };
 
+    const isMobile = () => {
+        const query = isTabletOrMobile ? false : true;
+        return query;
+    }
+
     const options = {
-        responsive: isTabletOrMobile ? false : true,
+        responsive: isMobile,
         maintainAspectRatio: false,
         scales: {
             yAxes: [
@@ -83,8 +88,8 @@ const SwellsGraph = (data) => {
     };
 
     return (
-        <div className="m-1 graph">
-            <Line options={options} data={graphData} />
+        <div className="graph justify-content-center">
+            <Line className="lineG" options={options} data={graphData} />
         </div>
     )
 
