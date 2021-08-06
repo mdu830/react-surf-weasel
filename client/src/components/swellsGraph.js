@@ -82,22 +82,20 @@ const SwellsGraph = (data) => {
         },
     };
 
-    if(isTabletOrMobile) {
+    if (isTabletOrMobile) {
         return (
-            <div className="graph justify-content-center">
+            <div className="mobileGraph justify-content-center pt-2">
                 <Line className="lineG" options={options} data={graphData} />
                 <h4>Swells</h4>
-    
             </div>
-        ) 
+        )
     }
 
-    return(
-        <div className="graph justify-content-center mb-5">
-        <Line className="lineG" options={options} data={graphData} />
-        <h4>Swells</h4>
-
-    </div>
+    return (
+        <div className="graph justify-content-center pb-5 mb-5">
+            <h4 className="pt-3">Swells</h4>
+            <Line className="lineG pb-2" options={options} data={graphData} />
+        </div>
     )
 
 }
