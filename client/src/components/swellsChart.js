@@ -65,12 +65,7 @@ const SwellsChart = (data) => {
         const index = Math.round(((angle %= 360) < 0 ? angle + 360 : angle) / 45) % 8;
         return directions[index];
     }
-
-    const getDegrees = (angle) => {
-        const degrees = Math.round(angle)
-        return degrees;
-    }
-
+    
     if (currentData === null) {
         return (null)
     }
@@ -83,7 +78,7 @@ const SwellsChart = (data) => {
                     return (
                         <Col>
                             <p className="mt-2" key={index}>{Math.round(element.height)}ft every {element.period}s
-                                from {getDirection(element.direction)} ({getDegrees(element.direction)}&deg;)</p>
+                                from {getDirection(element.direction)}</p>
                         </Col>
                     )
                 })}

@@ -259,7 +259,7 @@ h1 {
   padding-top: 10px;
   padding: 10px;
   background-color: rgb(236, 241, 255);
-  border: rgb(97, 114, 165) 1px solid;
+  border: rgb(216, 216, 219) 1px solid;
   border-radius: 8px;
   height: 120px;
   color: rgb(88, 88, 88);
@@ -273,7 +273,7 @@ h1 {
   position: relative;
   height:40vh; 
   background-color: rgb(236, 241, 255);
-  border: rgb(97, 114, 165) 1px solid;
+  border: rgb(216, 216, 219) 1px solid;
   border-radius: 8px;
   color: rgb(88, 88, 88);
   box-shadow:
@@ -284,7 +284,7 @@ h1 {
 
 .mobileGraph {
   background-color: rgb(236, 241, 255);
-  border: rgb(97, 114, 165) 1px solid;
+  border: rgb(216, 216, 219) 1px solid;
   border-radius: 8px;
   color: rgb(88, 88, 88);
   box-shadow:
