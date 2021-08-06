@@ -367,13 +367,6 @@ p {
     overflow: hidden;
   }
 
-  /* lineGraph */
-
-  .lineG {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   /* page */
 
   .page {
@@ -385,6 +378,14 @@ p {
   .titleBar {
     height: auto;
 
+  }
+
+  
+  /* lineGraph */
+
+  .lineG {
+    margin-left: auto;
+    margin-right: auto;
   }
   
 }
