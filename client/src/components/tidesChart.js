@@ -17,7 +17,6 @@ const TidesChart = (data) => {
 
     useEffect(() => {
         if (timestampArray != null) {
-            // find closest timestamp to current time
             const closestTime = timestampArray.reduce((a, b) => {
                 let aDiff = Math.abs(a - currentTme);
                 let bDiff = Math.abs(b - currentTme);

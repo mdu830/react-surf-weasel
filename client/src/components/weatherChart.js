@@ -34,7 +34,7 @@ const WeatherChart = (data) => {
 
     }, [timestampArray]);
 
-    const getWeatherConditionImg = (data) => {
+    const getWeatherCondition = (data) => {
 
         let weather;
 
@@ -133,14 +133,11 @@ const WeatherChart = (data) => {
         return (null)
     }
 
-    const temperature = Math.round(currentData.temperature);
-    const weatherInfo = getWeatherConditionImg(currentData.condition);
-
     return (
         <div id="weatherChart" className="m-1">
             <h4>Weather</h4>
-            {weatherInfo}
-            <p>Temperature: {temperature}&deg;F</p>
+            <p>{getWeatherCondition(currentData.condition)}</p>
+            <p>Temperature: {Math.round(currentData.temperature)}&deg;F</p>
         </div>
     )
 
