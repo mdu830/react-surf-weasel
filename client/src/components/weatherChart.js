@@ -37,6 +37,7 @@ const WeatherChart = (data) => {
     const getWeatherCondition = (data) => {
 
         let weather;
+        // let style;
 
         switch (data) {
             case 'CLEAR':
@@ -83,6 +84,7 @@ const WeatherChart = (data) => {
                 break
             case 'NIGHT_CLEAR':
                 weather = <p>Night Clear</p>
+                // style = "night"
                 break
             case 'NIGHT_MIST':
                 weather = <p>Night Mist</p>
@@ -126,7 +128,9 @@ const WeatherChart = (data) => {
             default:
                 weather = <p>Error No Report</p>
         }
+        // console.log(style);
         return weather
+        
     }
 
     if (currentData === null) {
