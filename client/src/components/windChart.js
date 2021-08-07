@@ -54,7 +54,6 @@ const WindChart = (data) => {
     if (currentData === null) {
         return (null)
     }
-    console.log(currentData.optimalScore);
 
     return (
         <div className={currentData.optimalScore === 1 ? "chartYellow m-1" : 

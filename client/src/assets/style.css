@@ -297,6 +297,17 @@ h1 {
   3px 3px 3px rgba(0,0,0,.25);
 }
 
+.fontYellow {
+  background-color: rgb(225, 255, 92);
+  border-radius: 6px;
+}
+
+.fontGreen {
+  background-color: rgb(35, 196, 56);
+  color: rgb(240, 240, 240);
+  border-radius: 6px;
+}
+
 .graph {
   position: relative;
   height:40vh; 
