@@ -52,7 +52,7 @@ const SurfReportPage = (props) => {
 
     return (
         <div id="surfReportPage" className="page">
-            <div className="registerCont pb-4">
+            <div className="reportCont pb-4">
                 <h1 className="appTitle mb-2">{searchReqName}</h1>
                 <Container>
                     <Row id="reportRow" className="justify-content-center">
