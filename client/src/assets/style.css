@@ -254,16 +254,18 @@ h1 {
   transition: opacity 150ms linear;
 }
 
-/* charts */
+/* charts & graph*/
 
 #reportRow {
   padding: 10px;
 }
 
-.waveChart, #tideChart, #swellsChart, #windChart, #weatherChart {
+.waveChart, #tideChart, #swellsChart, .windChart, #weatherChart {
   padding-top: 10px;
   padding: 10px;
   background-color: rgb(236, 241, 255);
+  background-image: url(./images/defaultCardBackground.png);
+  background-size: contain;
   border: rgb(216, 216, 219) 1px solid;
   border-radius: 8px;
   height: 120px;
@@ -275,11 +277,14 @@ h1 {
   3px 3px 3px rgba(0,0,0,.25);
 }
 
+/* dynamic classes for chart optimalScores */
+
 .chartYellow {
   padding-top: 10px;
   padding: 10px;
   background-color: rgb(225, 255, 92);
-  border: rgb(216, 216, 219) 1px solid;
+  background-image: url(./images/cardBackground.png);
+  background-size: cover;
   border-radius: 8px;
   height: 120px;
   color: rgb(88, 88, 88);
@@ -292,11 +297,12 @@ h1 {
 .chartGreen {
   padding-top: 10px;
   padding: 10px;
-  background-color: rgb(35, 196, 56);
-  /* border: rgb(216, 216, 219) 1px solid; */
+  background-color: rgba(35, 196, 57, 0.658);
+  background-image: url(./images/cardBackground.png);
+  background-size: cover;
   border-radius: 8px;
   height: 120px;
-  color: rgb(240, 240, 240);
+  color: rgb(255, 255, 255);
   box-shadow:
   -1px -1px 0 rgba(255, 255, 255, 0),
   1px 1px 0 rgba(0,0,0,.25),
