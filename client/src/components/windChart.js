@@ -54,9 +54,11 @@ const WindChart = (data) => {
     if (currentData === null) {
         return (null)
     }
+    console.log(currentData.optimalScore);
 
     return (
-        <div id="windChart" className="m-1">
+        <div className={currentData.optimalScore === 1 ? "chartYellow m-1" : 
+        currentData.optimalScore === 2 ? "chartGreen m-1" : "waveChart m-1"}>
             <h4>Wind</h4>
             <p>Coming from: {getDirection(currentData.direction)} ({getDegrees(currentData.direction)}&deg;)</p>
             <p>Speed: {getWindSpeed(currentData.speed)} knots</p>
