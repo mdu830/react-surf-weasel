@@ -11,7 +11,7 @@ const ForcastGraph = (data) => {
     const currentTme = Date.now() / 1000;
     const [timestampArray, setTimestampArray] = useState(null);
     const [currentData, setCurrentData] = useState(null);
-    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 760px)' });
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 820px)' });
 
     useEffect(() => {
         // get timestamps from all objects and set timestampArray
