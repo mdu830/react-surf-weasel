@@ -74,10 +74,10 @@ const SwellsChart = (data) => {
         <div id="swellsChart" className="m-1">
             <h4>Swells</h4>
             <Row>
-                {currentSwells.map((element, index) => {
+                {currentSwells.map((element) => {
                     return (
-                        <Col>
-                            <p className="mt-2" key={index}>{Math.round(element.height)}ft every {element.period}s
+                        <Col key={element.id}>
+                            <p className="mt-2" >{Math.round(element.height)}ft every {element.period}s
                                 from {getDirection(element.direction)}</p>
                         </Col>
                     )

@@ -255,7 +255,7 @@ h1 {
   padding: 10px;
 }
 
-#waveChart, #tideChart, #swellsChart, #windChart, #weatherChart {
+.waveChart, #tideChart, #swellsChart, #windChart, #weatherChart {
   padding-top: 10px;
   padding: 10px;
   background-color: rgb(236, 241, 255);
@@ -263,6 +263,34 @@ h1 {
   border-radius: 8px;
   height: 120px;
   color: rgb(88, 88, 88);
+  box-shadow:
+  -1px -1px 0 rgba(255, 255, 255, 0),
+  1px 1px 0 rgba(0,0,0,.25),
+  3px 3px 3px rgba(0,0,0,.25);
+}
+
+.chartYellow {
+  padding-top: 10px;
+  padding: 10px;
+  background-color: rgb(225, 255, 92);
+  border: rgb(216, 216, 219) 1px solid;
+  border-radius: 8px;
+  height: 120px;
+  color: rgb(88, 88, 88);
+  box-shadow:
+  -1px -1px 0 rgba(255, 255, 255, 0),
+  1px 1px 0 rgba(0,0,0,.25),
+  3px 3px 3px rgba(0,0,0,.25);
+}
+
+.chartGreen {
+  padding-top: 10px;
+  padding: 10px;
+  background-color: rgb(35, 196, 56);
+  /* border: rgb(216, 216, 219) 1px solid; */
+  border-radius: 8px;
+  height: 120px;
+  color: rgb(240, 240, 240);
   box-shadow:
   -1px -1px 0 rgba(255, 255, 255, 0),
   1px 1px 0 rgba(0,0,0,.25),
