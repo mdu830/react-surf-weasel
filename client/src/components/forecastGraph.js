@@ -51,15 +51,15 @@ const ForcastGraph = (data) => {
         labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
         datasets: [
             {
-                label: "This Graph",
+                label: "max",
                 data: [33, 53, 85, 41, 44, 65],
                 fill: true,
                 backgroundColor: "rgba(75,192,192,0.2)",
                 borderColor: "rgba(75,192,192,1)"
             },
             {
-                label: "Does Nothing",
-                data: [33, 25, 35, 51, 54, 76],
+                label: "min",
+                data: [30, 50, 80, 35, 40, 60],
                 fill: false,
                 borderColor: "#742774"
             }
@@ -83,8 +83,8 @@ const ForcastGraph = (data) => {
 
     if (isTabletOrMobile) {
         return (
-            <div className="mobileGraph justify-content-center pt-2 mb-1">
-                <h4>Forcast</h4>
+            <div className="mobileGraph justify-content-center pt-2 mb-2">
+                <h4>5 Day Forcast</h4>
                 <Line className="lineG" options={options} data={graphData} />
             </div>
         )
@@ -92,7 +92,7 @@ const ForcastGraph = (data) => {
 
     return (
         <div className="graph justify-content-center pb-5 mb-2">
-            <h4 className="pt-3">Forcast</h4>
+            <h4 className="pt-3">5 Day Forcast</h4>
             <Line className="lineG pb-2" options={options} data={graphData} />
         </div>
     )

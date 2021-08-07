@@ -43,8 +43,8 @@ const WaveChart = (data) => {
     const readableTime = moment(currentData.timestamp * 1000).format('hh:mm a').replace(/^0+/, '');
 
     return (
-        <div className={currentData.surf.optimalScore === 1 ? "chartYellow mt-1" : 
-        currentData.surf.optimalScore === 2 ? "chartGreen mt-1" : "waveChart mt-1"}>
+        <div className={currentData.surf.optimalScore === 1 ? "chartYellow mt-2" : 
+        currentData.surf.optimalScore === 2 ? "chartGreen mt-2" : "waveChart mt-2"}>
             <h4>Surf</h4>
             <p>Height: {Math.round(currentData.surf.min)}-{Math.round(currentData.surf.max)}ft</p>
             <p> at {readableTime}</p>

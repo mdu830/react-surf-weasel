@@ -138,7 +138,7 @@ const WeatherChart = (data) => {
     }
 
     return (
-        <div id="weatherChart" className="mt-1">
+        <div id="weatherChart" className="mt-2">
             <h4>Weather</h4>
             <p>{getWeatherCondition(currentData.condition)}</p>
             <p>Temperature: {Math.round(currentData.temperature)}&deg;F</p>
