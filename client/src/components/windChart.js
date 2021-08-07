@@ -59,8 +59,8 @@ const WindChart = (data) => {
         <div className={currentData.optimalScore === 1 ? "chartYellow mt-1" : 
         currentData.optimalScore === 2 ? "chartGreen mt-1" : "waveChart mt-1"}>
             <h4>Wind</h4>
-            <p>Coming from: {getDirection(currentData.direction)} ({getDegrees(currentData.direction)}&deg;)</p>
-            <p>Speed: {getWindSpeed(currentData.speed)} knts</p>
+            <p>from {getDirection(currentData.direction)} ({getDegrees(currentData.direction)}&deg;)</p>
+            <p>Speed: {getWindSpeed(currentData.speed)} kts</p>
         </div>
     )
 
