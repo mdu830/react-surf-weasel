@@ -3,6 +3,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  overflow:hidden;
 }
 
 
@@ -206,6 +207,10 @@ h1 {
 }
 
 /* surf report page */
+
+#surfReportPage {
+  overflow-y: scroll;
+}
 
 .spinner {
   margin-top: 200px;

@@ -51,7 +51,7 @@ const SurfReportPage = (props) => {
     }
 
     return (
-        <div className="page">
+        <div id="surfReportPage" className="page">
             <div className="registerCont pb-4">
                 <h1 className="appTitle mb-2">{searchReqName}</h1>
                 <Container>
