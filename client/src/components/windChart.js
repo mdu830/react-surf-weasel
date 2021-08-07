@@ -41,13 +41,13 @@ const WindChart = (data) => {
         return directions[index];
     }
 
-    const getDegrees = () => {
-        const degrees = Math.round(currentData.direction)
+    const getDegrees = (angle) => {
+        const degrees = Math.round(angle)
         return degrees;
     }
 
-    const getWindSpeed = () => {
-        const speed = Math.round(currentData.speed);
+    const getWindSpeed = (value) => {
+        const speed = Math.round(value);
         return speed;
     }
 
@@ -55,15 +55,11 @@ const WindChart = (data) => {
         return (null)
     }
 
-    const getCurrentDirection = getDirection(currentData.direction);
-    const getCurrentDegrees = getDegrees();
-    const getCurrentWindSpeed = getWindSpeed();
-
     return (
         <div id="windChart" className="m-1">
             <h4>Wind</h4>
-            <p>Coming from: {getCurrentDirection} ({getCurrentDegrees}&deg;)</p>
-            <p>Speed: {getCurrentWindSpeed} knots</p>
+            <p>Coming from: {getDirection(currentData.direction)} ({getDegrees(currentData.direction)}&deg;)</p>
+            <p>Speed: {getWindSpeed(currentData.speed)} knots</p>
         </div>
     )
 
