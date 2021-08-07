@@ -43,7 +43,7 @@ const SwellsChart = (data) => {
             const swells = currentData.swells;
 
             swells.map((element) => {
-                if (element.direction  ) {
+                if (element.height > 0.5) {
                     setSwells(arr => [...arr, element]);
                 }
                 return element;
