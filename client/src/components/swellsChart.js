@@ -69,7 +69,7 @@ const SwellsChart = (data) => {
     if (currentData === null) {
         return (null)
     }
-    console.log(currentSwells);
+
     return (
         <div id="swellsChart" className="m-1">
             <h4>Swells</h4>
