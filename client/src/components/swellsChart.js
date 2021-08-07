@@ -43,7 +43,7 @@ const SwellsChart = (data) => {
             const swells = currentData.swells;
 
             swells.map((element) => {
-                if (element.height > 1) {
+                if (element.direction  ) {
                     setSwells(arr => [...arr, element]);
                 }
                 return element;
@@ -71,7 +71,7 @@ const SwellsChart = (data) => {
     }
 
     return (
-        <div id="swellsChart" className="m-1">
+        <div id="swellsChart" className="text-center">
             <h4>Swells</h4>
             <Row>
                 {currentSwells.map((element) => {

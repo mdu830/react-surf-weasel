@@ -262,6 +262,7 @@ h1 {
   border: rgb(216, 216, 219) 1px solid;
   border-radius: 8px;
   height: 120px;
+  /* min-width: 150px; */
   color: rgb(88, 88, 88);
   box-shadow:
   -1px -1px 0 rgba(255, 255, 255, 0),
@@ -428,3 +429,19 @@ p {
   }
   
 }
+
+@media screen and (max-width: 991px) {
+
+  p {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    text-shadow:   
+    -1px -1px 0 rgba(255, 255, 255, 0),
+    1px 1px 0 rgba(0,0,0,.25),
+    3px 3px 3px rgba(0,0,0,.25);
+  }
+}
+
+
+

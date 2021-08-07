@@ -77,7 +77,7 @@ function Header(props) {
                 </Modal>
 
                 {/* Navbar */}
-                <Navbar className="titleBar" color="light" light expand="md">
+                <Navbar className="titleBar" color="light" light expand="md" fixed="top">
                     <NavLink onClick={handleHomeLink}>
                         <img className="image-fluid icon" alt="" src={Icon} />
                     </NavLink>

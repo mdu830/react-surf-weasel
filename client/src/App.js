@@ -7,6 +7,7 @@ import Footer from './components/footer'
 import HomePage from './pages/homePage';
 import RegisterPage from './pages/registerPage';
 import SurfReportPage from './pages/surfReportPage';
+import ScrollToTop from './components/scrollToTop';
 
 
 
@@ -19,6 +20,7 @@ class App extends Component {
       <div className="App">
         <Router>
           <div>
+            <ScrollToTop />
             <Header />
           </div>
           <Route render={({location}) => (
