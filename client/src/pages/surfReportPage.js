@@ -55,7 +55,7 @@ const SurfReportPage = (props) => {
             <div className="reportCont pb-4">
                 <h1 className="appTitle mb-2">{searchReqName}</h1>
                 <Container>
-                    <Row id="reportRow" className="justify-content-center">
+                    {/* <Row id="reportRow" className="justify-content-center">
                         <Col xs="12" sm="12">
                             <ForcastGraph data={response.wave} />
                         </Col>
@@ -74,7 +74,7 @@ const SurfReportPage = (props) => {
                         <Col xs="12" sm="3">
                             <WeatherChart data={response.weather} />
                         </Col>
-                    </Row>
+                    </Row> */}
                 </Container>
             </div>
         </div>

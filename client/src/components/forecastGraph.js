@@ -59,7 +59,6 @@ const ForcastGraph = (data) => {
             ],
         },
     };
-    // console.log(currentData);
 
     if (isTabletOrMobile) {
         return (
