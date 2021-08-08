@@ -43,10 +43,10 @@ const WaveChart = (data) => {
     const readableTime = moment(currentData.timestamp * 1000).format('h:mm a');
 
     return (
-        <div className={currentData.surf.optimalScore === 1 ? "chartYellow mt-2" : 
-        currentData.surf.optimalScore === 2 ? "chartGreen mt-2" : "waveChart mt-2"}>
+        <div className="waveChart mt-2">
             <h4>Surf</h4>
-            <p>Height: {Math.round(currentData.surf.min)}-{Math.round(currentData.surf.max)}ft</p>
+            <p className={currentData.surf.optimalScore === 1 ? "fontYellow" : 
+        currentData.surf.optimalScore === 2 ? "fontGreen" : ""}>Height: {Math.round(currentData.surf.min)}-{Math.round(currentData.surf.max)}ft</p>
             <p> at {readableTime}</p>
         </div>
     )
