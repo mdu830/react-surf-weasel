@@ -50,7 +50,7 @@ const TidesChart = (data) => {
 
     if (currentData && highLowTides != null) {
 
-        const formattedTideTime = moment(highLowTides.time * 1000).format('hh:mm a').replace(/^0+/, '');
+        const formattedTideTime = moment(highLowTides.time * 1000).format('h:mm a');
 
         return (
             <div id="tideChart" className="mt-2">

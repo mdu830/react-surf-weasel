@@ -40,7 +40,7 @@ const WaveChart = (data) => {
         return (null)
     }
     
-    const readableTime = moment(currentData.timestamp * 1000).format('hh:mm a').replace(/^0+/, '');
+    const readableTime = moment(currentData.timestamp * 1000).format('h:mm a');
 
     return (
         <div className={currentData.surf.optimalScore === 1 ? "chartYellow mt-2" : 
