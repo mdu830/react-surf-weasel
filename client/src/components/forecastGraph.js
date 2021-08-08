@@ -8,38 +8,40 @@ import moment from 'moment';
 const ForcastGraph = (data) => {
 
     const forecastData = data.data;
+
     const today = new Date()
     const tomorrow = new Date(today);
     tomorrow.setDate(tomorrow.getDate() + 1);
 
-    const [timestampArray, setTimestampArray] = useState(null);
+    const [fiveDayData, setFiveDayData] = useState(null);
+
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 820px)' });
 
     useEffect(() => {
-        setTimestampArray(forecastData.map((element) => element.timestamp)
-        .filter(timestamp => timestamp >= tomorrow.setHours(0, 0, 0, 0)  / 1000));
+        setFiveDayData(forecastData.map((element) => element)
+        .filter(element => element.timestamp >= tomorrow.setHours(0, 0, 0, 0)  / 1000));
     }, [forecastData]);
 
-    if (timestampArray === null) {
+    if (fiveDayData === null) {
         return (null)
     }
-    
-    const uniqueDay = [...new Set(timestampArray.map(item => moment(item * 1000).format('ddd')))]
+    // moment(item * 1000).format('ddd h a')
+    // const uniqueDay = [...new Set(fiveDayData.map(item => item))];
 
-    console.log(uniqueDay);
+    // console.log(fiveDayData);
 
     const graphData = {
-        labels: uniqueDay,
+        labels: "",
         datasets: [
             {
                 label: "min",
-                data: [2, 4, 6, 3, 2, 1],
+                data: [0, 0, 0, 0, 0, 0],
                 fill: false,
                 borderColor: "#742774"
             },
             {
                 label: "max",
-                data: [3, 5, 8, 3, 4, 6],
+                data: [1, 1, 1, 1, 1, 1],
                 fill: true,
                 backgroundColor: "rgba(75,192,192,0.2)",
                 borderColor: "rgba(75,192,192,1)"
