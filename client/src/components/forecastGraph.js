@@ -8,26 +8,23 @@ import moment from 'moment';
 const ForcastGraph = (data) => {
 
     const forecastData = data.data;
+    const today = new Date()
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    
     const [timestampArray, setTimestampArray] = useState(null);
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 820px)' });
 
     useEffect(() => {
-        setTimestampArray(forecastData.map((element) => element.timestamp));
+        setTimestampArray(forecastData.map((element) => element.timestamp)
+        .filter(timestamp => timestamp >= tomorrow.setHours(0, 0, 0, 0)  / 1000));
     }, [forecastData]);
 
     if (timestampArray === null) {
         return (null)
     }
 
-    // get day labels for graph
-    const today = new Date()
-    const tomorrow = new Date(today);
-    tomorrow.setDate(tomorrow.getDate() + 1);
-
-    const filtered = timestampArray.filter(timestamp => timestamp >= tomorrow.setHours(0, 0, 0, 0)  / 1000)
-    .map(item => moment(item * 1000).format('ddd').replace(/^0+/, ''));
-
-    const uniqueDay = [...new Set(filtered)]
+    const uniqueDay = [...new Set(timestampArray.map(item => moment(item * 1000).format('ddd').replace(/^0+/, '')))]
 
     console.log(uniqueDay)
 
@@ -36,13 +33,13 @@ const ForcastGraph = (data) => {
         datasets: [
             {
                 label: "min",
-                data: [30, 50, 80, 35, 40, 60],
+                data: [2, 4, 6, 3, 2, 1],
                 fill: false,
                 borderColor: "#742774"
             },
             {
                 label: "max",
-                data: [33, 53, 85, 41, 44, 65],
+                data: [3, 5, 8, 3, 4, 6],
                 fill: true,
                 backgroundColor: "rgba(75,192,192,0.2)",
                 borderColor: "rgba(75,192,192,1)"
