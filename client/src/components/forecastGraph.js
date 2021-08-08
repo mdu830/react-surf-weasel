@@ -26,10 +26,8 @@ const ForcastGraph = (data) => {
     if (fiveDayData === null) {
         return (null)
     }
-    // moment(item * 1000).format('ddd h a')
+    
     // const uniqueDay = [...new Set(fiveDayData.map(item => item))];
-
-    console.log( fiveDayData.map((element) => Math.round(element.surf.min)) );
 
     const graphData = {
         labels: fiveDayData.map((element) => moment(element.timestamp * 1000).format('ddd h a')),
@@ -37,7 +35,7 @@ const ForcastGraph = (data) => {
             {
                 label: "min",
                 data: fiveDayData.map((element) => element.surf.min),
-                fill: false,
+                fill: true,
                 borderColor: "#742774"
             },
             {
