@@ -68,7 +68,7 @@ class Carousel extends React.Component {
             animation={{ y: 30, opacity: 0, type: 'from', delay: 100 }}
           >
             <div className="carouselText">
-              We are currently setting up our camera API and surf report page. Will be in beta(1.0) soon!
+              The surf report is in beta, no search options yet. Still setting up camera API
             </div>
           </TweenOne>
         </Element>
@@ -87,14 +87,14 @@ class Carousel extends React.Component {
           />
           <TweenOne className="banner-user-title" animation={{ y: 30, opacity: 0, type: 'from' }}>
             <div className="carouselText">
-              Currently Optimized for the Iphone 6/7/8 and desktop PC
+              Currently Optimized for most mobile devices and desktop
             </div>
           </TweenOne>
           <TweenOne className="banner-user-text"
             animation={{ y: 30, opacity: 0, type: 'from', delay: 100 }}
           >
             <div className="carouselText">
-              We are still working on making the mobile experience smooth for everyone.
+              We are still making the mobile experience smooth for everyone.
             </div>
           </TweenOne>
         </Element>
