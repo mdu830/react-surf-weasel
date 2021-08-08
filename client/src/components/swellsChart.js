@@ -76,7 +76,7 @@ const SwellsChart = (data) => {
             <Row>
                 {currentSwells.map((element, index) => {
                     return (
-                        <Col xs="" sm="4" key={index}>
+                        <Col xs="" sm=" " key={index}>
                             <p className={element.optimalScore === 1 ? "fontYellow mt-2" : 
                             element.optimalScore === 2 ? "fontGreen mt-2" : "mt-2"}
                             >{Math.round(element.height)}ft every {element.period}s
