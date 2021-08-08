@@ -19,7 +19,8 @@ const ForcastGraph = (data) => {
 
     useEffect(() => {
         setFiveDayData(forecastData.map((element) => element)
-        .filter(element => element.timestamp >= tomorrow.setHours(0, 0, 0, 0)  / 1000));
+        .filter(element => element.timestamp >= tomorrow.setHours(0, 0, 0, 0)  / 1000 
+        && (moment(element.timestamp * 1000).format('h') === '6')));
     }, [forecastData]);
 
     if (fiveDayData === null) {
@@ -28,20 +29,20 @@ const ForcastGraph = (data) => {
     // moment(item * 1000).format('ddd h a')
     // const uniqueDay = [...new Set(fiveDayData.map(item => item))];
 
-    // console.log(fiveDayData);
+    console.log( fiveDayData.map((element) => Math.round(element.surf.min)) );
 
     const graphData = {
-        labels: "",
+        labels: fiveDayData.map((element) => moment(element.timestamp * 1000).format('ddd h a')),
         datasets: [
             {
                 label: "min",
-                data: [0, 0, 0, 0, 0, 0],
+                data: fiveDayData.map((element) => element.surf.min),
                 fill: false,
                 borderColor: "#742774"
             },
             {
                 label: "max",
-                data: [1, 1, 1, 1, 1, 1],
+                data: fiveDayData.map((element) => element.surf.max),
                 fill: true,
                 backgroundColor: "rgba(75,192,192,0.2)",
                 borderColor: "rgba(75,192,192,1)"
@@ -67,7 +68,7 @@ const ForcastGraph = (data) => {
     if (isTabletOrMobile) {
         return (
             <div className="mobileGraph justify-content-center pt-2 mb-2">
-                <h4>5 Day Forcast</h4>
+                <h4>5 Day Forcast (ft)</h4>
                 <Line className="lineG" options={options} data={graphData} />
             </div>
         )
@@ -75,7 +76,7 @@ const ForcastGraph = (data) => {
 
     return (
         <div className="graph justify-content-center pb-5 mb-2">
-            <h4 className="pt-3">5 Day Forcast</h4>
+            <h4 className="pt-3">5 Day Forcast (ft)</h4>
             <Line className="lineG pb-2" options={options} data={graphData} />
         </div>
     )
