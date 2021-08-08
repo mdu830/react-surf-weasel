@@ -11,7 +11,7 @@ const ForcastGraph = (data) => {
     const today = new Date()
     const tomorrow = new Date(today);
     tomorrow.setDate(tomorrow.getDate() + 1);
-    
+
     const [timestampArray, setTimestampArray] = useState(null);
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 820px)' });
 
@@ -23,7 +23,7 @@ const ForcastGraph = (data) => {
     if (timestampArray === null) {
         return (null)
     }
-
+    
     const uniqueDay = [...new Set(timestampArray.map(item => moment(item * 1000).format('ddd').replace(/^0+/, '')))]
 
     console.log(uniqueDay)
@@ -46,7 +46,6 @@ const ForcastGraph = (data) => {
             }
         ]
     };
-
 
     const options = {
         responsive: isTabletOrMobile ? false : true,
