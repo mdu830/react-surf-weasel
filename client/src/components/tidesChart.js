@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import moment from 'moment';
 
 
-const TidesChart = (data) => {
+const TidesChart = React.memo(data => {
 
     const tidesData = data.data;
     const currentTme = Date.now() / 1000;
@@ -64,6 +64,6 @@ const TidesChart = (data) => {
         )
     }
     return (null)
-}
+})
 
 export default TidesChart;

@@ -5,7 +5,7 @@ import { useMediaQuery } from 'react-responsive'
 import moment from 'moment';
 
 
-const ForcastGraph = (data) => {
+const ForcastGraph = React.memo(data => {
 
     const forecastData = data.data;
 
@@ -76,6 +76,6 @@ const ForcastGraph = (data) => {
         </div>
     )
 
-}
+})
 
 export default ForcastGraph;

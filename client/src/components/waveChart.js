@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
 
-const WaveChart = (data) => {
+const WaveChart = React.memo(data => {
 
     const waveData = data.data;
     const currentTme = Date.now() / 1000;
@@ -51,6 +51,6 @@ const WaveChart = (data) => {
         </div>
     )
 
-}
+})
 
 export default WaveChart;

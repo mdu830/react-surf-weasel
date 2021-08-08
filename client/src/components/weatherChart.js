@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const WeatherChart = (data) => {
+const WeatherChart = React.memo(data => {
 
     const weatherData = data.data;
     const currentTme = Date.now() / 1000;
@@ -145,6 +145,6 @@ const WeatherChart = (data) => {
         </div>
     )
 
-}
+})
 
 export default WeatherChart;

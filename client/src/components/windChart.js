@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'reactstrap'
 
 
-const WindChart = (data) => {
+const WindChart = React.memo(data => {
 
     const windData = data.data;
     const currentTme = Date.now() / 1000;
@@ -64,6 +64,6 @@ const WindChart = (data) => {
         </div>
     )
 
-}
+})
 
 export default WindChart;

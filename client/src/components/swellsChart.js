@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Row, Col } from 'reactstrap'
 
 
-const SwellsChart = (data) => {
+const SwellsChart = React.memo(data => {
 
     const waveData = data.data;
     const currentTme = Date.now() / 1000;
@@ -88,6 +88,6 @@ const SwellsChart = (data) => {
         </div>
     )
 
-}
+})
 
 export default SwellsChart;
