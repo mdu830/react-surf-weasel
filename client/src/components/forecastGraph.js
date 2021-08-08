@@ -12,9 +12,7 @@ const ForcastGraph = (data) => {
     const today = new Date()
     const tomorrow = new Date(today);
     tomorrow.setDate(tomorrow.getDate() + 1);
-
     const [fiveDayData, setFiveDayData] = useState(null);
-
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 820px)' });
 
     useEffect(() => {
