@@ -24,7 +24,7 @@ const ForcastGraph = (data) => {
         return (null)
     }
     
-    const uniqueDay = [...new Set(timestampArray.map(item => moment(item * 1000).format('ddd h a')))]
+    const uniqueDay = [...new Set(timestampArray.map(item => moment(item * 1000).format('ddd')))]
 
     console.log(uniqueDay);
 
