@@ -2,69 +2,54 @@ import React, { useEffect, useState } from 'react';
 import { Line } from "react-chartjs-2";
 import { useMediaQuery } from 'react-responsive'
 
-// import moment from 'moment';
+import moment from 'moment';
 
 
 const ForcastGraph = (data) => {
 
-    const waveData = data.data;
-    const currentTme = Date.now() / 1000;
+    const forecastData = data.data;
     const [timestampArray, setTimestampArray] = useState(null);
-    const [currentData, setCurrentData] = useState(null);
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 820px)' });
 
     useEffect(() => {
-        // get timestamps from all objects and set timestampArray
-        setTimestampArray(waveData.map((element) => element.timestamp));
-    }, [waveData]);
+        setTimestampArray(forecastData.map((element) => element.timestamp));
+    }, [forecastData]);
 
-    useEffect(() => {
-        if (timestampArray != null) {
-            const closestTime = timestampArray.reduce((a, b) => {
-                let aDiff = Math.abs(a - currentTme);
-                let bDiff = Math.abs(b - currentTme);
-                // eslint-disable-next-line eqeqeq
-                if (aDiff == bDiff) {
-                    return a > b ? a : b;
-                } else {
-                    return bDiff < aDiff ? b : a;
-                }
-            });
-            // console.log(closestTime);
-            waveData.map(element => {
-                if (element.timestamp === closestTime) {
-                    setCurrentData(element);
-                }
-                return element;
-            });
-        }
-
-    }, [timestampArray]);
-
-    if (currentData === null) {
+    if (timestampArray === null) {
         return (null)
     }
 
-    // console.log(currentData);
+    // get day labels for graph
+    const today = new Date()
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+
+    const filtered = timestampArray.filter(timestamp => timestamp >= tomorrow.setHours(0, 0, 0, 0)  / 1000)
+    .map(item => moment(item * 1000).format('ddd').replace(/^0+/, ''));
+
+    const uniqueDay = [...new Set(filtered)]
+
+    console.log(uniqueDay)
 
     const graphData = {
-        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+        labels: uniqueDay,
         datasets: [
+            {
+                label: "min",
+                data: [30, 50, 80, 35, 40, 60],
+                fill: false,
+                borderColor: "#742774"
+            },
             {
                 label: "max",
                 data: [33, 53, 85, 41, 44, 65],
                 fill: true,
                 backgroundColor: "rgba(75,192,192,0.2)",
                 borderColor: "rgba(75,192,192,1)"
-            },
-            {
-                label: "min",
-                data: [30, 50, 80, 35, 40, 60],
-                fill: false,
-                borderColor: "#742774"
             }
         ]
     };
+
 
     const options = {
         responsive: isTabletOrMobile ? false : true,

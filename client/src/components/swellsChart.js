@@ -55,7 +55,7 @@ const SwellsChart = (data) => {
 
     useEffect(() => {
         if (isSwells === true) {
-            console.log(currentSwells);
+            // console.log(currentSwells);
 
         }
     }, [isSwells]);
@@ -74,9 +74,9 @@ const SwellsChart = (data) => {
         <div id="swellsChart" className="text-center">
             <h4>Swells</h4>
             <Row>
-                {currentSwells.map((element) => {
+                {currentSwells.map((element, index) => {
                     return (
-                        <Col xs="" sm="4" key={element.id}>
+                        <Col xs="" sm="4" key={index}>
                             <p className={element.optimalScore === 1 ? "fontYellow mt-2" : 
                             element.optimalScore === 2 ? "fontGreen mt-2" : "mt-2"}
                             >{Math.round(element.height)}ft every {element.period}s
