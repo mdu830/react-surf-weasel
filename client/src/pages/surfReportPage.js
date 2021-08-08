@@ -57,7 +57,7 @@ const SurfReportPage = (props) => {
                 <Container>
                     <Row id="reportRow" className="justify-content-center">
                         <Col xs="12" sm="12">
-                            <ForcastGraph data={response.wave} />
+                            {/* <ForcastGraph data={response.wave} /> */}
                         </Col>
                         <Col xs="12" sm="12">
                             <SwellsChart data={response.wave} />
