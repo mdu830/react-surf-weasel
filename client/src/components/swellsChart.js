@@ -9,10 +9,8 @@ const SwellsChart = React.memo(data => {
     const [timestampArray, setTimestampArray] = useState(null);
     const [currentData, setCurrentData] = useState(null);
     const [currentSwells, setSwells] = useState([]);
-    const [isSwells, setISSwells] = useState(false);
 
     useEffect(() => {
-        // get timestamps from all objects and set timestampArray
         setTimestampArray(waveData.map((element) => element.timestamp));
     }, [waveData]);
 
@@ -47,18 +45,9 @@ const SwellsChart = React.memo(data => {
                     setSwells(arr => [...arr, element]);
                 }
                 return element;
-
             });
-            setISSwells(true);
         }
     }, [currentData]);
-
-    useEffect(() => {
-        if (isSwells === true) {
-            // console.log(currentSwells);
-
-        }
-    }, [isSwells]);
 
     const getDirection = (angle) => {
         const directions = ["N", "NW", "W", "SW", "S", "SE", "E", "NE"];
@@ -87,7 +76,6 @@ const SwellsChart = React.memo(data => {
             </Row>
         </div>
     )
-
 })
 
 export default SwellsChart;

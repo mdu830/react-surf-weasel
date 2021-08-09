@@ -8,7 +8,6 @@ const WeatherChart = React.memo(data => {
     const [currentData, setCurrentData] = useState(null);
 
     useEffect(() => {
-        // get timestamps from all objects and set timestampArray
         setTimestampArray(weatherData.map((element) => element.timestamp));
     }, [weatherData]);
 
@@ -31,14 +30,11 @@ const WeatherChart = React.memo(data => {
                 return element;
             });
         }
-
     }, [timestampArray]);
 
     const getWeatherCondition = (data) => {
-
         let weather;
         // let style;
-
         switch (data) {
             case 'CLEAR':
                 weather = <p>Clear</p>

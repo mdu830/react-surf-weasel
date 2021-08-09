@@ -25,8 +25,6 @@ const ForcastGraph = React.memo(data => {
         return (null)
     }
     
-    // const uniqueDay = [...new Set(fiveDayData.map(item => item))];
-
     const graphData = {
         labels: fiveDayData.map((element) => moment(element.timestamp * 1000).format('ddd h a')),
         datasets: [

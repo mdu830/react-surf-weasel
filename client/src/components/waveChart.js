@@ -9,7 +9,6 @@ const WaveChart = React.memo(data => {
     const [currentData, setCurrentData] = useState(null);
 
     useEffect(() => {
-        // get timestamps from all objects and set timestampArray
         setTimestampArray(waveData.map((element) => element.timestamp));
     }, [waveData]);
 
@@ -32,9 +31,7 @@ const WaveChart = React.memo(data => {
                 return element;
             });
         }
-
     }, [timestampArray]);
-
 
     if (currentData === null) {
         return (null)
@@ -50,7 +47,6 @@ const WaveChart = React.memo(data => {
             <p> at {readableTime}</p>
         </div>
     )
-
 })
 
 export default WaveChart;

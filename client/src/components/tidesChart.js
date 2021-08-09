@@ -11,7 +11,6 @@ const TidesChart = React.memo(data => {
     const [highLowTides, setHighLowTides] = useState(null);
 
     useEffect(() => {
-        // get timestamps from all objects and set timestampArray
         setTimestampArray(tidesData.map((element) => element.timestamp));
     }, [tidesData]);
 
@@ -34,7 +33,6 @@ const TidesChart = React.memo(data => {
                 return element;
             });
 
-            // get next high/low tide
             const futureTide = closestTime + 24250;
 
             tidesData.map(element => {

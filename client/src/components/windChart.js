@@ -10,7 +10,6 @@ const WindChart = React.memo(data => {
     const [currentData, setCurrentData] = useState(null);
 
     useEffect(() => {
-        // get timestamps from all objects and set timestampArray
         setTimestampArray(windData.map((element) => element.timestamp));
     }, [windData]);
 
@@ -63,7 +62,6 @@ const WindChart = React.memo(data => {
             <p>Speed: {getWindSpeed(currentData.speed)} kts</p>
         </div>
     )
-
 })
 
 export default WindChart;
