@@ -26,7 +26,7 @@ const ForcastGraph = React.memo(data => {
     }
     
     const graphData = {
-        labels: fiveDayData.map((element) => moment(element.timestamp * 1000).format('ddd h a')),
+        labels: fiveDayData.map((element) => moment(element.timestamp * 1000).format('ddd A')),
         datasets: [
             {
                 label: "min",
