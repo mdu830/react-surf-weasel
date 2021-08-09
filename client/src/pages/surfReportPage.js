@@ -8,6 +8,7 @@ import WindChart from '../components/windChart';
 import WeatherChart from '../components/weatherChart';
 import SwellsChart from '../components/swellsChart';
 import ForcastGraph from '../components/forecastGraph';
+// import surflineLogo from '../assets/images/surfline-logo.png'
 const SurfReportPage = (props) => {
 
     const searchReqName = props.location.state.beachName.trim();
@@ -53,7 +54,9 @@ const SurfReportPage = (props) => {
     return (
         <div id="surfReportPage" className="page">
             <div className="reportCont pb-4">
-                <h1 className="appTitle mb-2">{searchReqName}</h1>
+                <h1 className="appTitle mb-2">
+                    {searchReqName}
+                </h1>
                 <Container>
                     <Row id="reportRow" className="justify-content-center">
                         <Col xs="12" sm="12">

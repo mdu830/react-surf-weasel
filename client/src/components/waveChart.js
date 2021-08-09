@@ -43,7 +43,7 @@ const WaveChart = React.memo(data => {
         <div className="waveChart mt-2">
             <h4>Surf</h4>
             <p className={currentData.surf.optimalScore === 1 ? "fontYellow" : 
-        currentData.surf.optimalScore === 2 ? "fontGreen" : ""}>Height: {Math.round(currentData.surf.min)}-{Math.round(currentData.surf.max)}ft</p>
+        currentData.surf.optimalScore === 2 ? "fontGreen" : ""}>Ht: {Math.round(currentData.surf.min)}-{Math.round(currentData.surf.max)}ft</p>
             <p> at {readableTime}</p>
         </div>
     )

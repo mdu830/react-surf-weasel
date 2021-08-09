@@ -230,6 +230,11 @@ h1 {
 
 }
 
+#surflineLogo {
+  width: 70px;
+  height: auto;
+}
+
 .spinner {
   margin-top: 200px;
 }
@@ -422,6 +427,11 @@ p {
   .lineG {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  #surflineLogo {
+    width: 45px;
+    height: auto;
   }
   
 }

@@ -53,7 +53,7 @@ const TidesChart = React.memo(data => {
         return (
             <div id="tideChart" className="mt-2">
                 <h4>Tide</h4>
-                <p>Height: {currentData.height} ft</p>
+                <p>Ht: {currentData.height} ft</p>
 
                 {highLowTides.type === "LOW" ? 
                 <p>Low tide at {formattedTideTime}</p> : 
