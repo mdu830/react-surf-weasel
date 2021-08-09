@@ -68,7 +68,7 @@ class Carousel extends React.Component {
             animation={{ y: 30, opacity: 0, type: 'from', delay: 100 }}
           >
             <div className="carouselText">
-              The surf report is in beta with no search options yet. We Still setting up our camera API
+              The surf report is in beta with no search options yet. We're Still setting up our camera API
             </div>
           </TweenOne>
         </Element>
