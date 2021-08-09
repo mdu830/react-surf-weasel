@@ -6,8 +6,6 @@ body {
   /* overflow: hidden; */
 }
 
-
-
 /* Header */
 
 @import url('https://fonts.googleapis.com/css2?family=Syncopate&display=swap');
@@ -302,7 +300,7 @@ p {
   3px 3px 3px rgba(0,0,0,.25);
 }
 
-.waveChart, #tideChart, #swellsChart, .windChart, #weatherChart {
+.waveChart, #tideChart, #swellsChart, .windChart, #weatherChartDay {
   padding-top: 10px;
   padding: 10px;
   background-color: rgb(236, 241, 255);
@@ -353,6 +351,27 @@ p {
   color: rgb(240, 240, 240);
   border-radius: 6px;
 }
+
+#weatherChartNight {
+  padding-top: 10px;
+  padding: 10px;
+  background-color: rgb(128, 128, 128);
+  color: rgb(240, 240, 240);
+  border-radius: 8px;
+  height: 120px;
+  /* min-width: 150px; */
+  box-shadow:
+  -1px -1px 0 rgba(255, 255, 255, 0),
+  1px 1px 0 rgba(0,0,0,.25),
+  3px 3px 3px rgba(0,0,0,.25);
+}
+
+.weatherIcon {
+  width: 36px;
+  height: auto;
+  flex-direction:row-reverse;
+}
+
 
 /* Media Queries */
 
