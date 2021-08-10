@@ -6,8 +6,6 @@ import { Navbar, Button } from 'reactstrap';
 import { useHistory } from "react-router-dom";
 import API from '../components/baseUrl';
 
-
-
 const SearchBar = () => {
 
     let history = useHistory();
@@ -15,22 +13,37 @@ const SearchBar = () => {
     const [searchValue, setSearchValue] = useState("");
 
     async function getSpotId(evt) {
-        const res = API.get(`/search/site?q=${searchValue.replace(" ", "").toLowerCase()}`);
-        console.log((await res).data[0].suggest['spot-suggest'][0].options[0]);
+        const res = await API.get(`/search/site?q=${searchValue.toLowerCase()}`)
+        
+        if(res.data[0].suggest['spot-suggest'][0].options.length === 0) {
+            alert("no beaches matched your search");
+            return
+        }
 
+        const beach = res.data[0].suggest['spot-suggest'][0].options[0].text;
+        const state = res.data[0].suggest['spot-suggest'][0].options[0]._source.breadCrumbs[1];
+        const spot = res.data[0].suggest['spot-suggest'][0].options[0]._id
+
+        console.log(searchValue);
+        console.log(res);
+        console.log(spot);
+        
         evt.preventDefault(history.push({
-            pathname: '/report', 
+            pathname: '/report',
             state: {
-                beachName: (await res).data[0].suggest['spot-suggest'][0].options[0].text + 
-                ` ${(await res).data[0].suggest['spot-suggest'][0].options[0]._source.breadCrumbs[1]}`,
-                spotId: (await res).data[0].suggest['spot-suggest'][0].options[0]._id,
-
+                beachName: beach + ` ${state}`,
+                spotId: spot,
             }
         }));
+        
     }
-    
+
     const handleSubmit = (evt) => {
         evt.preventDefault();
+        if (searchValue === '') {
+            alert('no beach entered');
+            return
+        }
         getSpotId(evt);
     }
 
@@ -51,7 +64,6 @@ const SearchBar = () => {
                 <form className="searchForm" onSubmit={handleSubmit}>
                     <SearchIcon className="searchIcon" />
                     <TextField
-                        disabled
                         id="standard-basic"
                         type="text"
                         label="Beach Search"

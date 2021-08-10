@@ -22,28 +22,24 @@ const SurfReportPage = (props) => {
         weather: []
     });
 
-    // const API = axios.create({
-    //     baseURL: `https://services.surfline.com/kbyg/spots/forecasts/`
-    // });
+    async function fetchReport() {
+        const res = API.get(`/kbyg/spots/forecasts/wave?spotId=${searchReqSpotId}`);
+        const res2 = API.get(`/kbyg/spots/forecasts/tides?spotId=${searchReqSpotId}`);
+        const res3 = API.get(`/kbyg/spots/forecasts/wind?spotId=${searchReqSpotId}`);
+        const res4 = API.get(`/kbyg/spots/forecasts/weather?spotId=${searchReqSpotId}`);
+
+        setResponse({
+            wave: (await res).data.data.wave,
+            tides: (await res2).data.data.tides,
+            wind: (await res3).data.data.wind,
+            weather: (await res4).data.data.weather
+        });
+        setLoading(false)
+    }
 
     useEffect(() => {
-        async function fetchReport() {
-            const res = API.get(`/kbyg/spots/forecasts/wave?spotId=${searchReqSpotId}`);
-            const res2 = API.get(`/kbyg/spots/forecasts/tides?spotId=${searchReqSpotId}`);
-            const res3 = API.get(`/kbyg/spots/forecasts/wind?spotId=${searchReqSpotId}`);
-            const res4 = API.get(`/kbyg/spots/forecasts/weather?spotId=${searchReqSpotId}`);
-            setResponse({
-                wave: (await res).data.data.wave,
-                tides: (await res2).data.data.tides,
-                wind: (await res3).data.data.wind,
-                weather: (await res4).data.data.weather
-            });
-            setLoading(false)
-        };
         fetchReport();
     }, [searchReqSpotId]);
-
-    // console.log(response);
 
     if (isLoading) {
         return (

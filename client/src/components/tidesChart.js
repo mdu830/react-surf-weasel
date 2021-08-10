@@ -15,7 +15,7 @@ const TidesChart = React.memo(data => {
     }, [tidesData]);
 
     useEffect(() => {
-        if (timestampArray != null) {
+        if (timestampArray !== null) {
             const closestTime = timestampArray.reduce((a, b) => {
                 let aDiff = Math.abs(a - currentTme);
                 let bDiff = Math.abs(b - currentTme);
@@ -46,6 +46,8 @@ const TidesChart = React.memo(data => {
         }
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [timestampArray]);
+
+    console.log(currentData);
 
     if (currentData && highLowTides != null) {
 
