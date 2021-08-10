@@ -279,7 +279,7 @@ const WeatherChart = React.memo(data => {
                 weather = 
                 <div id="weatherChartDay" className="mt-2">
                     <h4>Weather</h4>
-                    <p>No Report</p>
+                    <p>No Report for this location</p>
                 </div>
         }
         return weather

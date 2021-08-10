@@ -17,7 +17,7 @@ class ErrorBoundary extends React.Component {
       return (
         <div id="tideChart" className="mt-2">
           <h4>Tides</h4>
-          <p>No Report</p>
+          <p>No Report for this location</p>
         </div>)
     }
 
