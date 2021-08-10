@@ -19,6 +19,7 @@ const ForcastGraph = React.memo(data => {
         setFiveDayData(forecastData.map((element) => element)
         .filter(element => element.timestamp >= tomorrow.setHours(0, 0, 0, 0)  / 1000 
         && (moment(element.timestamp * 1000).format('h') === '6')));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [forecastData]);
 
     if (fiveDayData === null) {

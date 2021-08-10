@@ -31,6 +31,7 @@ const WaveChart = React.memo(data => {
                 return element;
             });
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [timestampArray]);
 
     if (currentData === null) {

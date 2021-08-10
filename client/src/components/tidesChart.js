@@ -44,6 +44,7 @@ const TidesChart = React.memo(data => {
                 return highLowTides
             });
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [timestampArray]);
 
     if (currentData && highLowTides != null) {

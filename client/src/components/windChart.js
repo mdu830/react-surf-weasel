@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Row, Col } from 'reactstrap'
 
 
 const WindChart = React.memo(data => {
@@ -32,6 +31,7 @@ const WindChart = React.memo(data => {
                 return element;
             });
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [timestampArray]);
 
     const getDirection = (angle) => {

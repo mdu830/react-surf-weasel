@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'reactstrap'
-import axios from 'axios';
 import { CircularProgress } from '@material-ui/core';
+import API from '../components/baseUrl';
 import WaveChart from '../components/waveChart';
 import TidesChart from '../components/tidesChart';
 import WindChart from '../components/windChart';
 import WeatherChart from '../components/weatherChart';
 import SwellsChart from '../components/swellsChart';
 import ForcastGraph from '../components/forecastGraph';
-// import surflineLogo from '../assets/images/surfline-logo.png'
+
 const SurfReportPage = (props) => {
 
     const searchReqName = props.location.state.beachName.trim();
@@ -22,16 +22,16 @@ const SurfReportPage = (props) => {
         weather: []
     });
 
-    const API = axios.create({
-        baseURL: `https://services.surfline.com/kbyg/spots/forecasts/`
-    });
+    // const API = axios.create({
+    //     baseURL: `https://services.surfline.com/kbyg/spots/forecasts/`
+    // });
 
     useEffect(() => {
         async function fetchReport() {
-            const res = API.get(`/wave?spotId=${searchReqSpotId}`);
-            const res2 = API.get(`/tides?spotId=${searchReqSpotId}`);
-            const res3 = API.get(`/wind?spotId=${searchReqSpotId}`);
-            const res4 = API.get(`/weather?spotId=${searchReqSpotId}`);
+            const res = API.get(`/kbyg/spots/forecasts/wave?spotId=${searchReqSpotId}`);
+            const res2 = API.get(`/kbyg/spots/forecasts/tides?spotId=${searchReqSpotId}`);
+            const res3 = API.get(`/kbyg/spots/forecasts/wind?spotId=${searchReqSpotId}`);
+            const res4 = API.get(`/kbyg/spots/forecasts/weather?spotId=${searchReqSpotId}`);
             setResponse({
                 wave: (await res).data.data.wave,
                 tides: (await res2).data.data.tides,

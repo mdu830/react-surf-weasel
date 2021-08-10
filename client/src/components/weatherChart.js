@@ -45,6 +45,7 @@ const WeatherChart = React.memo(data => {
                 return element;
             });
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [timestampArray]);
 
     const getWeatherCondition = (data) => {

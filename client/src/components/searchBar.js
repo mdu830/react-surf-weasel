@@ -4,6 +4,8 @@ import Grid from '@material-ui/core/Grid';
 import SearchIcon from '@material-ui/icons/Search';
 import { Navbar, Button } from 'reactstrap';
 import { useHistory } from "react-router-dom";
+import API from '../components/baseUrl';
+
 
 
 const SearchBar = () => {
@@ -11,23 +13,35 @@ const SearchBar = () => {
     let history = useHistory();
 
     const [searchValue, setSearchValue] = useState("");
+
+
+    // const getSpotId = () => {
+    //     const res = API.get(`/search/site?q=${searchValue}`);
+    //     console.log(res)
+    // }
     
     const handleSubmit = (evt) => {
+
+        async function getSpotId() {
+            evt.preventDefault();
+            const res = API.get(`/search/site?q=${searchValue.replace(" ", "").toLowerCase()}`);
+            console.log((await res).data[0].suggest['spot-suggest'][0].options[0]._id);
+        }
         
         if(searchValue !== "" ) {
-            console.log('A beach was submitted: ' + searchValue);
-            evt.preventDefault(history.push({
-                pathname: '/report', 
-                state: {
-                    beachName: searchValue,
-                    spotId: '',
-                    
-                }
-            }));
+            // console.log('A beach was submitted: ' + searchValue);
+            getSpotId();
 
-        } else {
-            evt.preventDefault();
-            alert("That ain't a beach");
+
+            // evt.preventDefault(history.push({
+            //     pathname: '/report', 
+            //     state: {
+            //         beachName: searchValue,
+            //         spotId: '',
+                    
+            //     }
+            // }));
+
         }
 
     }
@@ -40,7 +54,6 @@ const SearchBar = () => {
             state: {
                 beachName: e.target.name,
                 spotId: e.target.value
-
             }
         }));
          
@@ -52,7 +65,7 @@ const SearchBar = () => {
                 <form className="searchForm" onSubmit={handleSubmit}>
                     <SearchIcon className="searchIcon" />
                     <TextField 
-                    disabled 
+                    disabled
                     id="standard-basic" 
                     type="text" 
                     label="Beach Search" 
