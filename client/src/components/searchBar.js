@@ -14,49 +14,35 @@ const SearchBar = () => {
 
     const [searchValue, setSearchValue] = useState("");
 
+    async function getSpotId(evt) {
+        const res = API.get(`/search/site?q=${searchValue.replace(" ", "").toLowerCase()}`);
+        console.log((await res).data[0].suggest['spot-suggest'][0].options[0]);
 
-    // const getSpotId = () => {
-    //     const res = API.get(`/search/site?q=${searchValue}`);
-    //     console.log(res)
-    // }
+        evt.preventDefault(history.push({
+            pathname: '/report', 
+            state: {
+                beachName: (await res).data[0].suggest['spot-suggest'][0].options[0].text + 
+                ` ${(await res).data[0].suggest['spot-suggest'][0].options[0]._source.breadCrumbs[1]}`,
+                spotId: (await res).data[0].suggest['spot-suggest'][0].options[0]._id,
+
+            }
+        }));
+    }
     
     const handleSubmit = (evt) => {
-
-        async function getSpotId() {
-            evt.preventDefault();
-            const res = API.get(`/search/site?q=${searchValue.replace(" ", "").toLowerCase()}`);
-            console.log((await res).data[0].suggest['spot-suggest'][0].options[0]._id);
-        }
-        
-        if(searchValue !== "" ) {
-            // console.log('A beach was submitted: ' + searchValue);
-            getSpotId();
-
-
-            // evt.preventDefault(history.push({
-            //     pathname: '/report', 
-            //     state: {
-            //         beachName: searchValue,
-            //         spotId: '',
-                    
-            //     }
-            // }));
-
-        }
-
+        evt.preventDefault();
+        getSpotId(evt);
     }
 
     const handleButtonSubmit = (e) => {
-        // console.log(e.target.name);
-
         e.preventDefault(history.push({
-            pathname: '/report', 
+            pathname: '/report',
             state: {
                 beachName: e.target.name,
                 spotId: e.target.value
             }
         }));
-         
+
     }
 
     return (
@@ -64,37 +50,37 @@ const SearchBar = () => {
             <Grid item>
                 <form className="searchForm" onSubmit={handleSubmit}>
                     <SearchIcon className="searchIcon" />
-                    <TextField 
-                    disabled
-                    id="standard-basic" 
-                    type="text" 
-                    label="Beach Search" 
-                    value={searchValue} 
-                    onChange={(e) => setSearchValue(e.target.value)} />
+                    <TextField
+                        disabled
+                        id="standard-basic"
+                        type="text"
+                        label="Beach Search"
+                        value={searchValue}
+                        onChange={(e) => setSearchValue(e.target.value)} />
                 </form>
             </Grid>
             <Grid item>
-                <Button 
-                className="beachButtons" 
-                name={"Atlantic Beach NC"}
-                value={"5842041f4e65fad6a7708a4e"} 
-                onClick={(e) => {handleButtonSubmit(e)}} 
-                outline color="success"
+                <Button
+                    className="beachButtons"
+                    name={"Atlantic Beach NC"}
+                    value={"5842041f4e65fad6a7708a4e"}
+                    onClick={(e) => { handleButtonSubmit(e) }}
+                    outline color="success"
                 >Atlantic Beach NC
                 </Button>{' '}
-                <Button 
-                className="beachButtons" 
-                name="Emerald Isle NC"
-                value="5842041f4e65fad6a7708a4d" 
-                onClick={(e) => handleButtonSubmit(e)} 
-                outline color="success"
+                <Button
+                    className="beachButtons"
+                    name="Emerald Isle NC"
+                    value="5842041f4e65fad6a7708a4d"
+                    onClick={(e) => handleButtonSubmit(e)}
+                    outline color="success"
                 >Emerald Isle NC</Button>{' '}
-                <Button 
-                className="beachButtons" 
-                name="Topsail NC"
-                value="5842041f4e65fad6a7708a4b" 
-                onClick={(e) => handleButtonSubmit(e)} 
-                outline color="success"
+                <Button
+                    className="beachButtons"
+                    name="Topsail NC"
+                    value="5842041f4e65fad6a7708a4b"
+                    onClick={(e) => handleButtonSubmit(e)}
+                    outline color="success"
                 >Topsail NC</Button>{' '}
             </Grid>
         </Navbar>
