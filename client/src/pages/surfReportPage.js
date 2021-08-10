@@ -8,6 +8,7 @@ import WindChart from '../components/windChart';
 import WeatherChart from '../components/weatherChart';
 import SwellsChart from '../components/swellsChart';
 import ForcastGraph from '../components/forecastGraph';
+import ErrorBoundary from '../components/errorBoundary';
 
 const SurfReportPage = (props) => {
 
@@ -56,22 +57,40 @@ const SurfReportPage = (props) => {
                 <Container>
                     <Row id="reportRow" className="justify-content-center">
                         <Col xs="12" sm="12">
-                            <ForcastGraph data={response.wave} />
+                            <ErrorBoundary>
+                                <ForcastGraph data={response.wave} />
+
+                            </ErrorBoundary>
                         </Col>
                         <Col xs="12" sm="12">
-                            <SwellsChart data={response.wave} />
+                            <ErrorBoundary>
+                                <SwellsChart data={response.wave} />
+
+                            </ErrorBoundary>
                         </Col>
                         <Col xs="12" sm="3">
-                            <WaveChart data={response.wave} />
+                            <ErrorBoundary>
+                                <WaveChart data={response.wave} />
+
+                            </ErrorBoundary>
                         </Col>
                         <Col xs="12" sm="3">
-                            <TidesChart data={response.tides} />
+                            <ErrorBoundary>
+                                <TidesChart data={response.tides} />
+
+                            </ErrorBoundary>
                         </Col>
                         <Col xs="12" sm="3">
-                            <WindChart data={response.wind} />
+                            <ErrorBoundary>
+                                <WindChart data={response.wind} />
+
+                            </ErrorBoundary>
                         </Col>
                         <Col xs="12" sm="3">
-                            <WeatherChart data={response.weather} />
+                            <ErrorBoundary>
+                                <WeatherChart data={response.weather} />
+
+                            </ErrorBoundary>
                         </Col>
                     </Row>
                 </Container>

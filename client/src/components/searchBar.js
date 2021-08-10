@@ -15,14 +15,7 @@ const SearchBar = () => {
     async function getSpotId(evt) {
         const res = await API.get(`/search/site?q=${searchValue.toLowerCase()}`)
         
-        if(res.data[0].suggest['spot-suggest'][0].options.length === 0 
-        || searchValue === "mmm" 
-        || searchValue === "nnn" 
-        || searchValue === "ggg"
-        || searchValue === "iii"
-        || searchValue === "rrr"
-        || searchValue === "ttt"
-        || searchValue === "vvv") {
+        if(res.data[0].suggest['spot-suggest'][0].options.length === 0) {
             alert("no beaches matched your search");
             return
         }
