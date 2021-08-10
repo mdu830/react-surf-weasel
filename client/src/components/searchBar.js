@@ -15,18 +15,24 @@ const SearchBar = () => {
     async function getSpotId(evt) {
         const res = await API.get(`/search/site?q=${searchValue.toLowerCase()}`)
         
-        if(res.data[0].suggest['spot-suggest'][0].options.length === 0) {
+        if(res.data[0].suggest['spot-suggest'][0].options.length === 0 
+        || searchValue === "mmm" 
+        || searchValue === "nnn" 
+        || searchValue === "ggg"
+        || searchValue === "iii"
+        || searchValue === "rrr"
+        || searchValue === "ttt"
+        || searchValue === "vvv") {
             alert("no beaches matched your search");
             return
         }
 
-        const beach = res.data[0].suggest['spot-suggest'][0].options[0].text;
+        console.log(res.data[0].suggest['spot-suggest'][0].options[0])
+
+        const beach = await res.data[0].suggest['spot-suggest'][0].options[0].text;
         const state = res.data[0].suggest['spot-suggest'][0].options[0]._source.breadCrumbs[1];
         const spot = res.data[0].suggest['spot-suggest'][0].options[0]._id
 
-        console.log(searchValue);
-        console.log(res);
-        console.log(spot);
         
         evt.preventDefault(history.push({
             pathname: '/report',

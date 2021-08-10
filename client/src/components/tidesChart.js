@@ -47,8 +47,6 @@ const TidesChart = React.memo(data => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [timestampArray]);
 
-    console.log(currentData);
-
     if (currentData && highLowTides != null) {
 
         const formattedTideTime = moment(highLowTides.time * 1000).format('h:mm a');
