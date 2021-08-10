@@ -40,6 +40,7 @@ const SurfReportPage = (props) => {
 
     useEffect(() => {
         fetchReport();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [searchReqSpotId]);
 
     if (isLoading) {
@@ -59,37 +60,31 @@ const SurfReportPage = (props) => {
                         <Col xs="12" sm="12">
                             <ErrorBoundary>
                                 <ForcastGraph data={response.wave} />
-
                             </ErrorBoundary>
                         </Col>
                         <Col xs="12" sm="12">
                             <ErrorBoundary>
                                 <SwellsChart data={response.wave} />
-
                             </ErrorBoundary>
                         </Col>
                         <Col xs="12" sm="3">
                             <ErrorBoundary>
                                 <WaveChart data={response.wave} />
-
                             </ErrorBoundary>
                         </Col>
                         <Col xs="12" sm="3">
                             <ErrorBoundary>
                                 <TidesChart data={response.tides} />
-
                             </ErrorBoundary>
                         </Col>
                         <Col xs="12" sm="3">
                             <ErrorBoundary>
                                 <WindChart data={response.wind} />
-
                             </ErrorBoundary>
                         </Col>
                         <Col xs="12" sm="3">
                             <ErrorBoundary>
                                 <WeatherChart data={response.weather} />
-
                             </ErrorBoundary>
                         </Col>
                     </Row>

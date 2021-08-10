@@ -276,7 +276,7 @@ const WeatherChart = React.memo(data => {
                     </div>
                 break
             default:
-                weather = <p>Error No Report</p>
+                weather = <div></div>
         }
         return weather
     }

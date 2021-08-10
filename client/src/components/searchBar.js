@@ -19,9 +19,7 @@ const SearchBar = () => {
             alert("no beaches matched your search");
             return
         }
-
-        console.log(res.data[0].suggest['spot-suggest'][0].options[0])
-
+        
         const beach = await res.data[0].suggest['spot-suggest'][0].options[0].text;
         const state = res.data[0].suggest['spot-suggest'][0].options[0]._source.breadCrumbs[1];
         const spot = res.data[0].suggest['spot-suggest'][0].options[0]._id
