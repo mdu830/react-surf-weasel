@@ -45,7 +45,7 @@ const WeatherChart = React.memo(data => {
                 return element;
             });
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [timestampArray]);
 
     const getWeatherCondition = (data) => {
@@ -276,7 +276,11 @@ const WeatherChart = React.memo(data => {
                     </div>
                 break
             default:
-                weather = <div></div>
+                weather = 
+                <div id="weatherChart" className="mt-2">
+                    <h4>Weather</h4>
+                    <p>No Report</p>
+                </div>
         }
         return weather
     }

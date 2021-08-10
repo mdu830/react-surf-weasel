@@ -40,7 +40,7 @@ const SurfReportPage = (props) => {
 
     useEffect(() => {
         fetchReport();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [searchReqSpotId]);
 
     if (isLoading) {
@@ -58,19 +58,13 @@ const SurfReportPage = (props) => {
                 <Container>
                     <Row id="reportRow" className="justify-content-center">
                         <Col xs="12" sm="12">
-                            <ErrorBoundary>
-                                <ForcastGraph data={response.wave} />
-                            </ErrorBoundary>
+                            <ForcastGraph data={response.wave} />
                         </Col>
                         <Col xs="12" sm="12">
-                            <ErrorBoundary>
-                                <SwellsChart data={response.wave} />
-                            </ErrorBoundary>
+                            <SwellsChart data={response.wave} />
                         </Col>
                         <Col xs="12" sm="3">
-                            <ErrorBoundary>
-                                <WaveChart data={response.wave} />
-                            </ErrorBoundary>
+                            <WaveChart data={response.wave} />
                         </Col>
                         <Col xs="12" sm="3">
                             <ErrorBoundary>
@@ -78,14 +72,10 @@ const SurfReportPage = (props) => {
                             </ErrorBoundary>
                         </Col>
                         <Col xs="12" sm="3">
-                            <ErrorBoundary>
-                                <WindChart data={response.wind} />
-                            </ErrorBoundary>
+                            <WindChart data={response.wind} />
                         </Col>
                         <Col xs="12" sm="3">
-                            <ErrorBoundary>
-                                <WeatherChart data={response.weather} />
-                            </ErrorBoundary>
+                            <WeatherChart data={response.weather} />
                         </Col>
                     </Row>
                 </Container>
