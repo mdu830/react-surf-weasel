@@ -15,7 +15,7 @@ class ErrorBoundary extends React.Component {
     if (this.state.hasError) {
       // You can render any custom fallback UI
       return (
-        <div id="weatherChart" className="mt-2">
+        <div id="tideChart" className="mt-2">
           <h4>Tides</h4>
           <p>No Report</p>
         </div>)

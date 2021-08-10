@@ -277,7 +277,7 @@ const WeatherChart = React.memo(data => {
                 break
             default:
                 weather = 
-                <div id="weatherChart" className="mt-2">
+                <div id="weatherChartDay" className="mt-2">
                     <h4>Weather</h4>
                     <p>No Report</p>
                 </div>
