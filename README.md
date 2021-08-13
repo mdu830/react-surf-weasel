@@ -3,7 +3,7 @@
 ### Description: 
 
 <ul>
-  Surf Weasel was originally an idea I had for a project in the UNC Chapel Hill coding bootcamp. I decided to remake it into a more visually pleasing react-application.
+  <a href="https://github.com/sr70079/surf-weasel">Surf Weasel</a> was originally an idea I had for a project in the UNC Chapel Hill coding bootcamp. I decided to remake it into a more visually pleasing react-application.
 </ul>
 <ul>
   react-surf-weasel helps surfers find the best conditions for waves using the surfline API. 
