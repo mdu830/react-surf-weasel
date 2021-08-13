@@ -9,10 +9,16 @@
   react-surf-weasel helps surfers find the best conditions for waves using the surfline API. 
 </ul>
 <ul>  
-  Currently react-surf-weasel only works on local machines, as deployed applications get a *CORS policy: No 'Access-Control-Allow-Origin'* from surfline's API security (they don't use api keys). I am trying to resolve this problem with surfline in the meantime.  
+  Currently react-surf-weasel only works on local machines, as deployed applications get a *CORS policy: No 'Access-Control-Allow-Origin'* from surfline's API security (they don't use api keys). I am trying to resolve this problem with surfline. In the meantime i have found another <a href="https://www.programmableweb.com/api/marinesurfing-weather-rest-api">API</a> I plan to implement into a deployed application soon. 
 </ul> 
+
+#### future developement: 
 <ul>
-  In future developement, I would like to remake this into a mobile application where the API can be utilized from a local device, instead of using a deployed application.   
+  I'm remaking surf weasel into mobile applications for android and ios. Later I may give users the option to use surflines API, but at present the new API I have   found seems to be more accurate than surflines forecasts. 
+</ul>
+<ul>
+  I plan to setup my own HD beach camera API for users live stream beach conditions; to get a more accurate visual than what surflines cameras have to offer (starting off for carteret county NC and the surrounding areas)
+  
 </ul>
 <ul>
   At this time react-surf-weasel is still in developement. 
