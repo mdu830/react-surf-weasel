@@ -3,17 +3,17 @@ import '../assets/style.css'
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
 import {
-    Collapse,
+    // Collapse,
     Navbar,
-    NavbarToggler,
-    Nav,
-    NavItem,
+    // NavbarToggler,
+    // Nav,
+    // NavItem,
     NavLink,
-    Button,
-    Modal
+    // Button,
+    // Modal
 } from 'reactstrap';
-import { TextField } from '@material-ui/core';
-import AccountCircle from '@material-ui/icons/AccountCircle';
+// import { TextField } from '@material-ui/core';
+// import AccountCircle from '@material-ui/icons/AccountCircle';
 
 
 
@@ -21,40 +21,40 @@ function Header(props) {
 
     const [isOpen, setIsOpen] = useState(false);
 
-    const toggle = () => setIsOpen(!isOpen);
+    // const toggle = () => setIsOpen(!isOpen);
 
     let history = useHistory();
 
-    const [modal, setModal] = useState(false);
+    // const [modal, setModal] = useState(false);
 
-    const toggle2 = () => setModal(!modal);
+    // const toggle2 = () => setModal(!modal);
 
     // modal clicks
-    const handleLoginReq = () => {
-        toggle2();
-    }
+    // const handleLoginReq = () => {
+    //     toggle2();
+    // }
 
-    const handleRegisterReq = () => {
-        history.push('/register');
-        toggle2();
-    }
+    // const handleRegisterReq = () => {
+    //     history.push('/register');
+    //     toggle2();
+    // }
 
     // navbar clicks
     const handleHomeLink = () => {
         history.push('/')
         setIsOpen(false);
     }
-    const handleRegisterLink = () => {
-        history.push('/register');
-        toggle();
-    }
+    // const handleRegisterLink = () => {
+    //     history.push('/register');
+    //     toggle();
+    // }
 
     return (
         <>
             <div>
                 {/* Login popup modal */}
 
-                <Modal isOpen={modal}
+                {/* <Modal isOpen={modal}
                     toggle={toggle2}
                     className="modaler">
                     <form className="m-3" id="loginForm" noValidate autoComplete="off">
@@ -74,7 +74,7 @@ function Header(props) {
                             <Button className="m-1" color="primary" type="submit" onSubmit={handleLoginReq}>Login</Button>{' '}
                         </div>
                     </form>
-                </Modal>
+                </Modal> */}
 
                 {/* Navbar */}
                 <Navbar className="titleBar" color="light" light expand="md" fixed="top">
@@ -82,11 +82,12 @@ function Header(props) {
                         <img className="image-fluid icon" alt="" src={Icon} />
                     </NavLink>
                     <NavLink onClick={handleHomeLink}>
-                        <div className="appTitle mr-auto">Surf Weasel</div>
+                        <div className="appTitle">Surf Weasel</div>
                     </NavLink>
-
-                    <NavbarToggler className="m-3" onClick={toggle} />
-                    <Collapse isOpen={isOpen} navbar>
+                    
+                    <div className="m-4"></div>
+                    {/* <NavbarToggler className="m-3" onClick={toggle} /> */}
+                    {/* <Collapse isOpen={isOpen} navbar>
                         <Nav className="mr-auto" navbar>
 
                             <NavItem>
@@ -96,7 +97,7 @@ function Header(props) {
                                 <NavLink onClick={handleRegisterLink}>Register</NavLink>
                             </NavItem>
                         </Nav>
-                    </Collapse>
+                    </Collapse> */}
                 </Navbar>
             </div>
         </>
