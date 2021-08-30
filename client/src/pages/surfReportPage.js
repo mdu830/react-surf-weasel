@@ -52,7 +52,7 @@ const SurfReportPage = (props) => {
     return (
         <div id="surfReportPage" className="page">
             <div className="reportCont pb-4">
-                <h1 className="appTitle mb-2">
+                <h1 className="searchTitle mb-2">
                     {searchReqName}
                 </h1>
                 <Container>
